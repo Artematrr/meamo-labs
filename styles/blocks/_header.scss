@@ -1,0 +1,8 @@
+.header {
+	&__container {
+		@include mobile {
+		}
+	}
+	@include mobile {
+	}
+}

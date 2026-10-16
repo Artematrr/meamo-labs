@@ -1,0 +1,220 @@
+html {
+	min-height: 100%;
+	scroll-padding-top: var(--header-height);
+	scroll-behavior: smooth;
+}
+
+body {
+	@include fluid-text(18, 16);
+
+	font-family: var(--font-family-base);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.55px;
+	background-color: var(--color-white);
+	min-height: 100%;
+	overflow-x: hidden;
+	font-optical-sizing: auto;
+	scrollbar-color: var(--color-blue) var(--transparent);
+	scrollbar-width: thin;
+	overscroll-behavior: contain;
+
+	&::-webkit-scrollbar {
+		width: 2px;
+		height: 2px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--transparent);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--color-blue);
+		border-radius: 0;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: var(--color-hover);
+	}
+}
+
+::selection {
+	color: var(--color-white);
+	background-color: var(--color-blue);
+}
+
+main {
+	overflow-x: clip;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+	transition-duration: var(--transition-duration);
+	transition-timing-function: var(--transition-timing-function);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+p {
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+img,
+svg {
+	user-select: none;
+}
+
+img {
+	height: auto;
+	object-fit: cover;
+}
+
+svg {
+	display: block;
+	flex-shrink: 0;
+}
+
+input,
+textarea {
+	border-radius: var(--radius-sm);
+
+	&::placeholder {
+		color: var(--color-muted);
+		opacity: 1;
+	}
+}
+
+.f-display {
+	@include fluid-text(64, 64);
+
+	font-family: var(--font-family-accent);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.12px;
+	letter-spacing: -1.6px;
+}
+
+h1,
+.h1 {
+	@include fluid-text(48, 36);
+
+	font-family: var(--font-family-accent);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.11;
+	letter-spacing: -1px;
+
+	@include mobile {
+		line-height: 1.22;
+		letter-spacing: -0.5px;
+	}
+}
+
+h2,
+.h2 {
+	@include fluid-text(40, 28);
+
+	font-family: var(--font-family-accent);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.2;
+	letter-spacing: -0.6px;
+
+	@include mobile {
+		line-height: 1.28;
+		letter-spacing: -0.3px;
+	}
+}
+
+h3,
+.h3 {
+	@include fluid-text(28, 28);
+
+	font-family: var(--font-family-accent);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.28;
+	letter-spacing: -0.3px;
+}
+
+h4,
+.h4 {
+	@include fluid-text(20, 20);
+
+	font-family: var(--font-family-base);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.4;
+}
+
+.f-large {
+	@include fluid-text(18, 18);
+
+	font-family: var(--font-family-base);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.55px;
+}
+
+.f-body {
+	@include fluid-text(16, 16);
+
+	font-family: var(--font-family-base);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.5px;
+}
+
+.f-small {
+	@include fluid-text(14, 14);
+
+	font-family: var(--font-family-base);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.42px;
+}
+
+.f-caption {
+	@include fluid-text(12, 12);
+
+	font-family: var(--font-family-base);
+	color: var(--color-ink);
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.33;
+	line-height: 1.42px;
+}
+
+.background-dark {
+	background-color: var(--color-mist);
+}
+
+.background-light {
+	background-color: var(--color-paper);
+}

@@ -1,0 +1,135 @@
+Один скриншот содержит несколько состояний. Состояния распределены по сетке.
+Состояния названы по порядку слева направо - сверху вниз.
+
+# MEAMO/Button 
+Type=Primary, State=Default
+Type=Primary, State=Hover
+Type=Primary, State=Active
+Type=Primary, State=Disabled
+Type=Primary, State=Focus
+Type=Secondary, State=Default
+Type=Secondary, State=Hover
+Type=Secondary, State=Active
+Type=Secondary, State=Disabled
+Type=Secondary, State=Focus
+Type=Link, State=Default
+Type=Link, State=Hover
+Type=Link, State=Active
+Type=Link, State=Disabled
+Type=Link, State=Focus
+
+# MEAMO/Product card Desktop
+Status=In stock, Image=Photo
+Status=Limited, Image=Photo
+Status=On request, Image=Photo
+Status=In stock, Image=Empty
+Status=Limited, Image=Empty
+Status=On request, Image=Empty
+
+# MEAMO/Product card Mobile
+Status=In stock, Image=Photo
+Status=Limited, Image=Photo
+Status=On request, Image=Photo
+Status=In stock, Image=Empty
+Status=Limited, Image=Empty
+Status=On request, Image=Empty
+
+# MEAMO/Input
+State=Default
+State=Focus
+State=Filled
+State=Error
+State=Success
+
+# MEAMO/Status
+Status=В наличии
+Status=Ограниченно
+Status= Под заказ
+Status=MEAMO Labs
+
+# MEAMO/Info card
+Theme=Light
+Theme=Tint
+
+# MEAMO/FAQ
+State=Closed
+State=Open
+
+# MEAMO/Upload
+State=Default
+State=Attached
+State=Error
+
+# MEAMO/Consent
+State=Unchecked
+State=Checked
+State=Error
+
+# MEAMO/Textarea
+State=Default
+State=Focus
+State=Filled
+State=Error
+State=Success
+
+# MEAMO/Select
+State=Default
+State=Focus
+State=Open
+State=Selected
+State=Disabled
+
+# MEAMO/Filter chip
+State=Default
+State=Selected
+State=Removable
+State=Disabled
+State=Focus
+
+# MEAMO/Compact upload
+State=Default
+State=Uploading
+State=Attached
+State=Error
+State=Unsupported
+State=Oversize
+State=TooMany
+
+# MEAMO/Form feedback
+State=Sending
+State=Error
+State=Success
+
+# MEAMO/List continuation
+State=Default
+State=Loading
+State=Error
+State=End
+
+# MEAMO/Compact info
+Type=Info
+Type=Step
+
+# MEAMO/ Article contents
+State=Closed
+State=Open
+State=Focus 
+
+# MEAMO/Collection navigation
+State=Start
+State=Middle
+State=End
+
+# MEAMO/Navigation tag
+State=Default
+State=Hover
+State=Focus
+State=Current
+
+# MEAMO/Catalog sort
+Order=Default, State=Closed
+Order=Default, State=Open
+Order=AZ, State=Closed
+Order=AZ, State=Open
+Order=ZA, State=Closed
+Order=ZA, State=Open

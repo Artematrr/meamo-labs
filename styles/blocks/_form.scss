@@ -1,0 +1,61 @@
+.form {
+	display: grid;
+
+	@include mobile {
+	}
+
+	&__row {
+	}
+
+	&__field {
+	}
+
+	&__label {
+	}
+
+	&__control,
+	&__input,
+	&__textarea {
+		&:focus-visible {
+		}
+
+		@include mobile {
+		}
+	}
+
+	&__textarea {
+		resize: vertical;
+	}
+
+	&__file {
+		&::file-selector-button {
+		}
+
+		@include hover {
+			&::file-selector-button {
+			}
+		}
+	}
+
+	&__checkbox {
+		@include mobile {
+		}
+	}
+
+	&__checkbox-input {
+		@include visually-hidden;
+
+		&:checked + .form__checkbox-control {
+			&::after {
+			}
+		}
+
+		&:focus-visible + .form__checkbox-control {
+		}
+	}
+
+	&__checkbox-control {
+		&::after {
+		}
+	}
+}

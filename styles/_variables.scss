@@ -1,0 +1,47 @@
+:root {
+	--current-color: currentColor;
+	--transparent: transparent;
+
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-paper: #f7f8fa;
+	--color-ink: #111c35;
+	--color-blue: #1d2c4e;
+	--color-hover: #465985;
+	--color-mist: #e9eff6;
+	--color-line: #ced5df;
+	--color-muted: #586477;
+	--color-success: #226247;
+	--color-danger: #b43f42;
+	--color-sand: #e8e3d8;
+
+	--font-family-base:
+		'GolosText', 'Arial', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-family-accent:
+		'Bitter', 'Arial', system-ui, -apple-system, 'Segoe UI', serif;
+
+	--border: 0px solid var(--transparent);
+	--radius-xs: 0px;
+	--radius-sm: 8px;
+	--radius-md: 16px;
+	--radius-lg: 24px;
+
+	--container-width: 1440px;
+	--container-padding-x: 80px;
+	--input-height: 56px;
+	--button-height: 48px;
+	--header-height: 154px;
+
+	--transition-duration: 0.2s;
+	--transition-duration-long: 0.35s;
+	--transition-timing-function: ease-in-out;
+
+	@include tablet {
+		--container-padding-x: 40px;
+	}
+
+	@include mobile {
+		--header-height: 152px;
+		--container-padding-x: 24px;
+	}
+}

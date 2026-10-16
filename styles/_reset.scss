@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1;
+}
+
+body {
+	min-height: 100%;
+	min-width: 300px;
+	line-height: 1.35;
+	text-rendering: optimizeLegibility;
+	font-synthesis: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+html {
+	height: 100%;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+html,
+:has(:target) {
+	scroll-behavior: smooth;
+}
+
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: var(--current-color);
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+address[class] {
+	font-style: normal;
+}
+
+fieldset[class] {
+	margin-left: 0;
+	padding: 0;
+	border: none;
+}
+
+textarea:not([rows]) {
+	min-height: 8em;
+}
+
+input[type='checkbox' i] {
+	margin: 3px;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+svg * {
+	transition-property: fill, stroke;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
