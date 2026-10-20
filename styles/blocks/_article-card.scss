@@ -1,0 +1,41 @@
+.article-card {
+	@include fluid-text(16, 16);
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	line-height: 1.5;
+	&__media {
+		display: block;
+		margin-bottom: 24px;
+	}
+	&__media img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		border-radius: var(--radius-sm);
+		object-fit: contain;
+	}
+	&__topic {
+		@include fluid-text(12, 12);
+		margin-bottom: 16px;
+		color: var(--color-hover);
+		font-weight: 500;
+		line-height: 16px;
+	}
+	&__title {
+		@include fluid-text(20, 20);
+		margin-bottom: 16px;
+		font-family: var(--font-family-base);
+		font-weight: 500;
+		line-height: 1.4;
+		letter-spacing: normal;
+		text-wrap: initial;
+	}
+	&__description {
+		margin-bottom: 24px;
+		color: var(--color-muted);
+	}
+	&__link {
+		margin-top: auto;
+	}
+}

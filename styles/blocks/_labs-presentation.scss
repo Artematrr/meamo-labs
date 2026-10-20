@@ -1,0 +1,85 @@
+.labs-presentation {
+	padding-block: 64px;
+	background-color: var(--color-ink);
+	color: var(--color-white);
+	@include mobile {
+		padding-block: 40px;
+	}
+	&__container {
+		display: grid;
+		grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+		gap: 64px;
+		@include tablet {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 32px;
+		}
+	}
+	&__copy {
+		@include fluid-text(16, 16);
+		line-height: 1.5;
+		@include tablet {
+			max-width: 600px;
+		}
+	}
+	&__logo {
+		width: 136px;
+		height: 50px;
+		object-fit: contain;
+	}
+	h2 {
+		@include fluid-text(48, 36);
+		margin-top: 16px;
+		color: inherit;
+		line-height: 1.1667;
+		text-wrap: initial;
+		@include mobile {
+			line-height: 1.2222;
+		}
+	}
+	&__copy p {
+		margin-top: 24px;
+	}
+	&__copy .button {
+		width: fit-content;
+		margin-top: 24px;
+		@include mobile {
+			width: 100%;
+		}
+	}
+	&__products {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+	}
+	&__product {
+		@include fluid-text(14, 14);
+		display: grid;
+		grid-template-rows: 1fr auto;
+		gap: 8px;
+		min-width: 0;
+		padding: 8px;
+		border-radius: var(--radius-md);
+		background-color: var(--color-white);
+		color: var(--color-blue);
+		line-height: 20px;
+	}
+	&__product img {
+		justify-self: center;
+		width: 100%;
+		max-width: 180px;
+		height: 148px;
+		object-fit: contain;
+		@include mobile {
+			height: 100px;
+		}
+	}
+	&__product {
+		@include hover {
+			outline: 2px solid var(--color-hover);
+			outline-offset: 2px;
+		}
+	}
+	:focus-visible {
+		outline-color: var(--color-white);
+	}
+}

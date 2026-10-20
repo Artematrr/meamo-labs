@@ -1,0 +1,35 @@
+.search {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	display: flex;
+	align-items: center;
+	min-width: 0;
+	min-height: var(--input-height);
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-white);
+	&:focus-within {
+		outline: 2px solid var(--color-hover);
+		outline-offset: 2px;
+	}
+	&__submit {
+		@include reset-button;
+		display: grid;
+		place-items: center;
+		align-self: stretch;
+		flex: 0 0 46px;
+		padding-left: 8px;
+		border-radius: var(--radius-sm);
+	}
+	&__field {
+		@include fluid-text(16, 16);
+		width: 100%;
+		min-width: 0;
+		min-height: 54px;
+		padding: 12px 16px 12px 0;
+		border: 0;
+		background-color: var(--transparent);
+		line-height: 24px;
+		outline: none;
+	}
+}

@@ -1,0 +1,9 @@
+.section-heading {
+	margin-bottom: 32px;
+	h2 {
+		text-wrap: initial;
+	}
+	@include mobile {
+		margin-bottom: 24px;
+	}
+}

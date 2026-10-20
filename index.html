@@ -4,34 +4,618 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="MEAMO">
-	<title>MEAMO</title>
-	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
+	<meta name="description"
+		content="MEAMO — поставщик корейской космецевтики для клиник, дистрибьюторов и практикующих специалистов.">
+	<title>MEAMO — корейская космецевтика для профессионалов</title>
+	<link rel="icon" href="/images/icons/meamo-logo-black.svg" type="image/svg+xml">
 	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
 	<link rel="stylesheet" href="/styles/css/styles.css">
+	<script src="/scripts/swiper-bundle.min.js" defer></script>
+	<script src="/scripts/main.js" defer></script>
 </head>
 
 <body>
 	<header class="header">
-		<div class="header__container container"></div>
+		<div class="header__container container">
+			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
+					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
+			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+				aria-expanded="false">Меню</button>
+			<div class="header__mobile-menu" id="header-menu">
+				<nav class="header__nav" aria-label="Основная навигация">
+					<a class="header__link" href="catalog.html">Каталог</a>
+					<a class="header__link" href="meamo-labs.html">MEAMO Labs</a>
+					<a class="header__link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link" href="about.html">О компании</a>
+					<a class="header__link" href="expert-center.html">Экспертный центр</a>
+					<a class="header__link" href="contacts.html">Контакты</a>
+				</nav>
+				<a class="header__request button" href="#request">Запросить условия</a>
+				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+			</div>
+			<form class="search" action="catalog.html" method="get" role="search">
+				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
+				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
+						alt="" width="32" height="32"></button>
+				<input class="search__field" id="catalog-search" type="search" name="q"
+					placeholder="Поиск по каталогу: название товара или бренда">
+			</form>
+		</div>
 	</header>
 
-	<main class="main">
-		<section>
+	<main>
+		<section class="hero-split hero-split--home" aria-labelledby="home-title">
+			<div class="hero-split__container container">
+				<div class="hero-split__copy">
+					<h1 id="home-title">MEAMO — надежный поставщик всех видов корейской космецевтики</h1>
+					<p class="hero-split__intro">Для клиник, дистрибьюторов и практикующих специалистов. Прямые закупки,
+						комплектация в Сеуле и сопровождение поставки.</p>
+					<div class="hero-split__actions">
+						<a class="button" href="catalog.html">Перейти в каталог</a>
+						<a class="button button--secondary" href="#request">Запросить условия</a>
+					</div>
+				</div>
+				<div class="hero-split__slider swiper" id="home-products" role="group" aria-roledescription="карусель" aria-label="Продукция MEAMO">
+					<div class="swiper-wrapper">
+						<div class="hero-split__media swiper-slide" aria-hidden="false">
+							<div class="hero-split__product hero-split__product--main"><img src="/images/products/Jeunetique%20Fine.jpg"
+								alt="Упаковка Jeunetique Fine" width="1000" height="1000" fetchpriority="high"></div>
+							<div class="hero-split__product"><img src="/images/products/Miracle%20L.jpg" alt="Флакон Miracle L"
+								width="800" height="800"></div>
+							<div class="hero-split__product"><img src="/images/products/Curenex.jpg" alt="Упаковка Curenex" width="1000"
+								height="1000"></div>
+						</div>
+						<div class="hero-split__media swiper-slide" aria-hidden="true" inert>
+							<div class="hero-split__product hero-split__product--main"><img src="/images/products/Miracle%20L.jpg" alt="Флакон Miracle L"
+								width="800" height="800"></div>
+							<div class="hero-split__product"><img src="/images/products/Curenex.jpg" alt="Упаковка Curenex" width="1000"
+								height="1000"></div>
+							<div class="hero-split__product"><img src="/images/products/Jeunetique%20Fine.jpg"
+								alt="Упаковка Jeunetique Fine" width="1000" height="1000"></div>
+						</div>
+						<div class="hero-split__media swiper-slide" aria-hidden="true" inert>
+							<div class="hero-split__product hero-split__product--main"><img src="/images/products/Curenex.jpg" alt="Упаковка Curenex" width="1000"
+								height="1000"></div>
+							<div class="hero-split__product"><img src="/images/products/Jeunetique%20Fine.jpg"
+								alt="Упаковка Jeunetique Fine" width="1000" height="1000"></div>
+							<div class="hero-split__product"><img src="/images/products/Miracle%20L.jpg" alt="Флакон Miracle L"
+								width="800" height="800"></div>
+						</div>
+					</div>
+				</div>
+				<div class="hero-split__controls" role="group" aria-label="Управление слайдами" aria-controls="home-products">
+					<button class="hero-split__control" type="button" data-direction="-1" aria-label="Предыдущий слайд">←</button>
+					<button class="hero-split__control" type="button" data-slide="0" aria-label="Слайд 1"
+						aria-pressed="true">1</button>
+					<button class="hero-split__control" type="button" data-slide="1" aria-label="Слайд 2"
+						aria-pressed="false">2</button>
+					<button class="hero-split__control" type="button" data-slide="2" aria-label="Слайд 3"
+						aria-pressed="false">3</button>
+					<button class="hero-split__control" type="button" data-direction="1" aria-label="Следующий слайд">→</button>
+				</div>
+				<p class="hero-split__status visually-hidden" role="status" aria-atomic="true">Слайд 1 из 3</p>
+			</div>
+		</section>
+
+		<div class="container">
+			<section class="grid" aria-label="Преимущества MEAMO">
+				<div class="card card--icon"><img class="card__icon" src="/images/icons/globe.svg" alt="" width="32"
+						height="32">
+					<h2 class="card__title">Напрямую</h2>
+					<p class="card__description">Закупки у производителей Южной Кореи.</p>
+				</div>
+				<div class="card card--icon"><img class="card__icon" src="/images/icons/warehouse.svg" alt="" width="32"
+						height="32">
+					<h2 class="card__title">Сеул</h2>
+					<p class="card__description">Собственный склад и комплектация заказов.</p>
+				</div>
+				<div class="card card--icon"><img class="card__icon" src="/images/icons/people.svg" alt="" width="32"
+						height="32">
+					<h2 class="card__title">10+ лет</h2>
+					<p class="card__description">Практический опыт команды.</p>
+				</div>
+				<div class="card card--icon"><img class="card__icon" src="/images/icons/box.svg" alt="" width="32" height="32">
+					<h2 class="card__title">B2B</h2>
+					<p class="card__description">Работа с профессиональными покупателями.</p>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="about-title">
+				<div class="section-heading">
+					<h2 id="about-title">Коротко о MEAMO</h2>
+				</div>
+				<div class="grid">
+					<div class="card card--text">
+						<h3 class="card__label">Что</h3>
+						<p>Эстетическая продукция оптом.</p>
+					</div>
+					<div class="card card--text">
+						<h3 class="card__label">Кому</h3>
+						<p>Клиникам, дистрибьюторам и практикующим специалистам.</p>
+					</div>
+					<div class="card card--text">
+						<h3 class="card__label">Откуда</h3>
+						<p>Прямые поставки из Южной Кореи.</p>
+					</div>
+					<div class="card card--text">
+						<h3 class="card__label">Где комплектуется</h3>
+						<p>На собственном складе MEAMO в Сеуле.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="audience-title">
+				<div class="section-heading">
+					<h2 id="audience-title">Кому подходит формат MEAMO</h2>
+				</div>
+				<div class="grid grid--three">
+					<div class="card card--icon card--white">
+						<picture class="card__icon">
+							<source media="(max-width: 768px)" srcset="/images/icons/people.svg"><img src="/images/icons/shield.svg"
+								alt="" width="32" height="32">
+						</picture>
+						<h3 class="card__title">Клиникам</h3>
+						<p class="card__description">Подбор ассортимента под закупочные задачи клиники.</p>
+					</div>
+					<div class="card card--icon card--white">
+						<picture class="card__icon">
+							<source media="(max-width: 768px)" srcset="/images/icons/people.svg"><img
+								src="/images/icons/warehouse.svg" alt="" width="32" height="32">
+						</picture>
+						<h3 class="card__title">Дистрибьюторам</h3>
+						<p class="card__description">Обсуждение объёмов и условий регулярных поставок.</p>
+					</div>
+					<div class="card card--icon card--white"><img class="card__icon" src="/images/icons/people.svg" alt=""
+							width="32" height="32">
+						<h3 class="card__title">Специалистам</h3>
+						<p class="card__description">Продукция и информация для профессиональной практики.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section--spacious" aria-labelledby="categories-title">
+				<div class="section-heading">
+					<h2 id="categories-title">Категории продукции</h2>
+				</div>
+				<div class="category-grid">
+					<a class="category-card" href="catalog.html?category=botulinum-toxins">
+						<div class="category-card__media"><span class="category-card__placeholder">Ожидается изображение</span>
+						</div>
+						<h3 class="category-card__title">Ботулинические токсины</h3>
+						<p class="category-card__caption">Перейти к продукции</p>
+					</a>
+					<a class="category-card" href="catalog.html?category=fillers">
+						<div class="category-card__media"><img src="/images/products/Jeunetique%20Fine.jpg" alt="" width="1000"
+								height="1000" loading="lazy"></div>
+						<h3 class="category-card__title">Филлеры и дермальные наполнители</h3>
+						<p class="category-card__caption">Перейти к продукции</p>
+					</a>
+					<a class="category-card" href="catalog.html?category=mesotherapy">
+						<div class="category-card__media"><img src="/images/products/Curenex.jpg" alt="" width="1000" height="1000"
+								loading="lazy"></div>
+						<h3 class="category-card__title">Мезопрепараты</h3>
+						<p class="category-card__caption">Перейти к продукции</p>
+					</a>
+					<a class="category-card" href="catalog.html?category=threads">
+						<div class="category-card__media"><span class="category-card__placeholder">Ожидается изображение</span>
+						</div>
+						<h3 class="category-card__title">Нити</h3>
+						<p class="category-card__caption">Перейти к продукции</p>
+					</a>
+					<a class="category-card" href="catalog.html?category=exosomes">
+						<div class="category-card__media"><img src="/images/products/Jeunetique%20Exo.jpg" alt="" width="1000"
+								height="1000" loading="lazy"></div>
+						<h3 class="category-card__title">Экзосомы</h3>
+						<p class="category-card__caption">Перейти к продукции</p>
+					</a>
+					<a class="category-card" href="catalog.html?category=cosmeceuticals">
+						<div class="category-card__media"><span class="category-card__placeholder">Ожидается изображение</span>
+						</div>
+						<h3 class="category-card__title">Космецевтика</h3>
+						<p class="category-card__caption">Перейти к продукции</p>
+					</a>
+					<a class="category-card" href="catalog.html?category=needles-cannulas">
+						<div class="category-card__media"><span class="category-card__placeholder">Ожидается изображение</span>
+						</div>
+						<h3 class="category-card__title">Иглы и канюли</h3>
+						<p class="category-card__caption">Перейти к продукции</p>
+					</a>
+					<a class="category-card" href="catalog.html">
+						<div class="category-card__media"><img src="/images/products/Beaux.jpg" alt="" width="1000" height="1000"
+								loading="lazy"></div>
+						<h3 class="category-card__title">Полный каталог</h3>
+						<p class="category-card__caption">Перейти в каталог</p>
+					</a>
+				</div>
+			</section>
+
+			<section class="request-promo" aria-labelledby="request-promo-title">
+				<div class="section-heading">
+					<h2 id="request-promo-title">Не нашли нужный продукт в каталоге?</h2>
+				</div>
+				<p class="request-promo__text">Пришлите название или фотографию упаковки. Отдел закупок проверит возможность
+					поставки.</p>
+				<a class="request-promo__action button" href="#request"
+					data-request-context="Поиск продукции вне каталога">Отправить список продукции</a>
+			</section>
+
+			<section class="products-list products-list--slider section" aria-labelledby="popular-title">
+				<div class="section-heading">
+					<h2 id="popular-title">Востребованные позиции</h2>
+				</div>
+				<div class="products-list__track swiper" id="popular-products" tabindex="0" role="region"
+					aria-label="Подборка продукции, прокручивается горизонтально">
+					<div class="products-list__items swiper-wrapper">
+						<article class="product-card swiper-slide">
+							<a class="product-card__media" href="product.html?product=jeunetique-exo"
+								aria-label="Подробнее о Jeunetique Exo"><img src="/images/products/Jeunetique%20Exo.jpg"
+									alt="Упаковка Jeunetique Exo" width="1000" height="1000" loading="lazy"></a>
+							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
+									class="product-card__badge">MEAMO Labs</span></div>
+							<p class="product-card__country">Южная Корея</p>
+							<h3 class="product-card__title"><a href="product.html?product=jeunetique-exo">Jeunetique Exo</a></h3>
+							<p class="product-card__category">Экзосомная продукция</p><a class="button" href="#request"
+								data-request-context="Jeunetique Exo — запрос условий">Запросить условия</a><a
+								class="product-card__details button button--link"
+								href="product.html?product=jeunetique-exo">Подробнее<span class="visually-hidden"> о Jeunetique
+									Exo</span></a>
+						</article>
+						<article class="product-card swiper-slide">
+							<a class="product-card__media" href="product.html?product=jeunetique-fine"
+								aria-label="Подробнее о Jeunetique Fine"><img src="/images/products/Jeunetique%20Fine.jpg"
+									alt="Упаковка Jeunetique Fine" width="1000" height="1000" loading="lazy"></a>
+							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
+									class="product-card__badge">MEAMO Labs</span></div>
+							<p class="product-card__country">Южная Корея</p>
+							<h3 class="product-card__title"><a href="product.html?product=jeunetique-fine">Jeunetique Fine</a></h3>
+							<p class="product-card__category">Филлеры</p><a class="button" href="#request"
+								data-request-context="Jeunetique Fine — запрос условий">Запросить условия</a><a
+								class="product-card__details button button--link"
+								href="product.html?product=jeunetique-fine">Подробнее<span class="visually-hidden"> о Jeunetique
+									Fine</span></a>
+						</article>
+						<article class="product-card swiper-slide">
+							<a class="product-card__media" href="product.html?product=jeunetique-deep"
+								aria-label="Подробнее о Jeunetique Deep"><img src="/images/products/Jeunetique%20Deep.jpg"
+									alt="Упаковка Jeunetique Deep" width="1000" height="1000" loading="lazy"></a>
+							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
+									class="product-card__badge">MEAMO Labs</span></div>
+							<p class="product-card__country">Южная Корея</p>
+							<h3 class="product-card__title"><a href="product.html?product=jeunetique-deep">Jeunetique Deep</a></h3>
+							<p class="product-card__category">Филлеры</p><a class="button" href="#request"
+								data-request-context="Jeunetique Deep — запрос условий">Запросить условия</a><a
+								class="product-card__details button button--link"
+								href="product.html?product=jeunetique-deep">Подробнее<span class="visually-hidden"> о Jeunetique
+									Deep</span></a>
+						</article>
+						<article class="product-card swiper-slide">
+							<a class="product-card__media" href="product.html?product=jeunetique-ultra"
+								aria-label="Подробнее о Jeunetique Ultra"><img src="/images/products/Jeunetique%20Ultra.jpg"
+									alt="Упаковка Jeunetique Ultra" width="1000" height="1000" loading="lazy"></a>
+							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
+									class="product-card__badge">MEAMO Labs</span></div>
+							<p class="product-card__country">Южная Корея</p>
+							<h3 class="product-card__title"><a href="product.html?product=jeunetique-ultra">Jeunetique Ultra</a></h3>
+							<p class="product-card__category">Филлеры</p><a class="button" href="#request"
+								data-request-context="Jeunetique Ultra — запрос условий">Запросить условия</a><a
+								class="product-card__details button button--link"
+								href="product.html?product=jeunetique-ultra">Подробнее<span class="visually-hidden"> о Jeunetique
+									Ultra</span></a>
+						</article>
+					</div>
+				</div>
+				<div class="products-list__controls" role="group" aria-label="Прокрутка востребованных позиций"><button
+						class="products-list__arrow" type="button" data-product-direction="-1" aria-label="Предыдущие товары"
+						aria-controls="popular-products">←</button><button class="products-list__arrow" type="button"
+						data-product-direction="1" aria-label="Следующие товары" aria-controls="popular-products">→</button></div>
+				<p class="products-list__hint">Листайте подборку</p>
+			</section>
+
+			<section class="section" aria-labelledby="why-title">
+				<div class="section-heading">
+					<h2 id="why-title">Почему MEAMO</h2>
+				</div>
+				<div class="grid grid--three">
+					<div class="card card--icon"><img class="card__icon" src="/images/icons/globe.svg" alt="" width="32"
+							height="32">
+						<h3 class="card__title">Прямые закупки</h3>
+						<p class="card__description">Продукция от производителей Южной Кореи.</p>
+					</div>
+					<div class="card card--icon"><img class="card__icon" src="/images/icons/warehouse.svg" alt="" width="32"
+							height="32">
+						<h3 class="card__title">Свой склад</h3>
+						<p class="card__description">Заказ комплектуется командой в Сеуле.</p>
+					</div>
+					<div class="card card--icon"><img class="card__icon" src="/images/icons/box.svg" alt="" width="32"
+							height="32">
+						<h3 class="card__title">Поиск продукции</h3>
+						<p class="card__description">Можно запросить позиции вне каталога.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<section class="supply-process" aria-labelledby="process-title">
+			<div class="container">
+				<div class="section-heading">
+					<h2 id="process-title">От запроса до поставки</h2>
+				</div>
+				<ol class="supply-process__steps">
+					<li class="supply-process__step"><span class="supply-process__number" aria-hidden="true">01</span>
+						<h3 class="supply-process__title">Запрос</h3>
+						<p>Список продукции и объём</p>
+					</li>
+					<li class="supply-process__step"><span class="supply-process__number" aria-hidden="true">02</span>
+						<h3 class="supply-process__title">Проверка</h3>
+						<p>Наличие и доступные документы</p>
+					</li>
+					<li class="supply-process__step"><span class="supply-process__number" aria-hidden="true">03</span>
+						<h3 class="supply-process__title">Расчёт</h3>
+						<p>Условия конкретной поставки</p>
+					</li>
+					<li class="supply-process__step"><span class="supply-process__number" aria-hidden="true">04</span>
+						<h3 class="supply-process__title">Комплектация</h3>
+						<p>Подготовка заказа в Сеуле</p>
+					</li>
+					<li class="supply-process__step"><span class="supply-process__number" aria-hidden="true">05</span>
+						<h3 class="supply-process__title">Поставка</h3>
+						<p>Сопровождение до получения</p>
+					</li>
+				</ol>
+				<div class="supply-process__actions"><a class="button" href="#request">Запросить условия</a><a
+						class="button button--secondary" href="catalog.html">Перейти в каталог</a></div>
+			</div>
+		</section>
+
+		<section class="labs-presentation" aria-labelledby="labs-title">
+			<div class="labs-presentation__container container">
+				<div class="labs-presentation__copy"><img class="labs-presentation__logo"
+						src="/images/icons/meamo-labs-logo-white.svg" alt="MEAMO Labs" width="136" height="50" loading="lazy">
+					<h2 id="labs-title">Своя линейка.<br>Разные<br>направления.</h2>
+					<p>Jeunetique, Beaux и Silhouette — продукция собственной линейки MEAMO. У каждой позиции есть отдельная
+						карточка и материалы.</p><a class="button button--secondary" href="meamo-labs.html">Подробнее о MEAMO
+						Labs</a>
+				</div>
+				<div class="labs-presentation__products">
+					<a class="labs-presentation__product" href="product.html?product=jeunetique-exo"><img
+							src="/images/products/Jeunetique%20Exo.jpg" alt="" width="1000" height="1000"
+							loading="lazy"><span>Jeunetique Exo</span></a>
+					<a class="labs-presentation__product" href="product.html?product=jeunetique-fine"><img
+							src="/images/products/Jeunetique%20Fine.jpg" alt="" width="1000" height="1000"
+							loading="lazy"><span>Jeunetique Fine</span></a>
+					<a class="labs-presentation__product" href="product.html?product=jeunetique-deep"><img
+							src="/images/products/Jeunetique%20Deep.jpg" alt="" width="1000" height="1000"
+							loading="lazy"><span>Jeunetique Deep</span></a>
+					<a class="labs-presentation__product" href="product.html?product=jeunetique-ultra"><img
+							src="/images/products/Jeunetique%20Ultra.jpg" alt="" width="1000" height="1000"
+							loading="lazy"><span>Jeunetique Ultra</span></a>
+				</div>
+			</div>
+		</section>
+
+		<div class="container">
+			<section class="section section--compact" aria-labelledby="experience-title">
+				<div class="section-heading">
+					<h2 id="experience-title">Опыт команды MEAMO</h2>
+				</div>
+				<div class="grid grid--two">
+					<div class="card card--text card--white"><img class="card__icon" src="/images/icons/people.svg" alt=""
+							width="32" height="32">
+						<h3 class="card__title">10+ лет</h3>
+						<p class="card__description">Практический опыт команды на корейском рынке.</p>
+					</div>
+					<div class="card card--text card--white"><img class="card__icon" src="/images/icons/box.svg" alt="" width="32"
+							height="32">
+						<h3 class="card__title">Выставки</h3>
+						<p class="card__description">Участие в отраслевых мероприятиях.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section--spacious" aria-labelledby="verification-title">
+				<div class="section-heading">
+					<h2 id="verification-title">Информация, которую можно проверить</h2>
+				</div>
+				<div class="grid grid--three">
+					<div class="card card--icon card--white"><img class="card__icon" src="/images/icons/document.svg" alt=""
+							width="32" height="32">
+						<h3 class="card__title">Документы</h3>
+						<p class="card__description">Запросите доступные документы на выбранную продукцию.</p>
+					</div>
+					<div class="card card--icon card--white"><img class="card__icon" src="/images/icons/globe.svg" alt=""
+							width="32" height="32">
+						<h3 class="card__title">Происхождение</h3>
+						<p class="card__description">Уточните производителя и страну происхождения.</p>
+					</div>
+					<div class="card card--icon card--white"><img class="card__icon" src="/images/icons/box.svg" alt="" width="32"
+							height="32">
+						<h3 class="card__title">Хранение и наличие</h3>
+						<p class="card__description">Менеджер подтвердит актуальную информацию по партии.</p>
+					</div>
+				</div>
+				<a class="section__action button button--secondary" href="#request"
+					data-request-context="Запрос документов по продукции">Запросить документы</a>
+			</section>
+
+			<section class="expert-center-block section section--spacious" aria-labelledby="expert-title">
+				<div class="section-heading">
+					<h2 id="expert-title">Экспертный центр</h2>
+				</div>
+				<div class="expert-center-block__grid grid grid--three">
+					<article class="article-card"><a class="article-card__media" href="article.html?topic=supplier"
+							aria-label="Как выбрать поставщика эстетической продукции"><img src="/images/Illustrations/logistics.jpg"
+								alt="" width="1200" height="675" loading="lazy"></a>
+						<p class="article-card__topic">Поставка</p>
+						<h3 class="article-card__title">Как выбрать поставщика эстетической продукции</h3>
+						<p class="article-card__description">Происхождение, документы, наличие и условия поставки — по пунктам.</p>
+						<a class="article-card__link button button--link" href="article.html?topic=supplier">Подробнее<span
+								class="visually-hidden"> о выборе поставщика</span></a>
+					</article>
+					<article class="article-card"><a class="article-card__media" href="article.html?topic=documents"
+							aria-label="Какие документы запросить перед поставкой"><img src="/images/Illustrations/documents.jpg"
+								alt="" width="1200" height="675" loading="lazy"></a>
+						<p class="article-card__topic">Документы</p>
+						<h3 class="article-card__title">Какие документы запросить перед поставкой</h3>
+						<p class="article-card__description">Какие документы уточнить у поставщика и как подготовить запрос на
+							материалы.</p><a class="article-card__link button button--link"
+							href="article.html?topic=documents">Подробнее<span class="visually-hidden"> о документах перед
+								поставкой</span></a>
+					</article>
+					<article class="article-card"><a class="article-card__media" href="article.html?topic=wholesale-request"
+							aria-label="Как подготовить оптовый запрос"><img src="/images/Illustrations/procurement.jpg" alt=""
+								width="1200" height="675" loading="lazy"></a>
+						<p class="article-card__topic">Работа с MEAMO</p>
+						<h3 class="article-card__title">Как подготовить оптовый запрос</h3>
+						<p class="article-card__description">Как составить список продукции, указать объёмы и подготовить данные для
+							расчёта.</p><a class="article-card__link button button--link"
+							href="article.html?topic=wholesale-request">Подробнее<span class="visually-hidden"> о подготовке оптового
+								запроса</span></a>
+					</article>
+				</div>
+				<a class="expert-center-block__all" href="expert-center.html">Все статьи <span aria-hidden="true">→</span></a>
+			</section>
+		</div>
+
+		<section class="faq" aria-labelledby="faq-title">
+			<div class="container">
+				<div class="section-heading">
+					<h2 id="faq-title">Частые вопросы</h2>
+				</div>
+				<div class="faq__items">
+					<div class="faq__item">
+						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-1" type="button" aria-expanded="true"
+								aria-controls="faq-answer-1">Как получить коммерческие условия?<span class="faq__indicator"
+									aria-hidden="true"></span></button></h3>
+						<div class="faq__answer" role="region" id="faq-answer-1" aria-labelledby="faq-question-1" aria-hidden="false">
+							<div class="faq__content">
+								<p>Укажите нужные позиции, желаемое количество и контакт для ответа. Менеджер проверит наличие и
+									подготовит предложение по вашему запросу.</p>
+							</div>
+						</div>
+					</div>
+					<div class="faq__item">
+						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-2" type="button" aria-expanded="false"
+								aria-controls="faq-answer-2">Можно ли запросить товар вне каталога?<span class="faq__indicator"
+									aria-hidden="true"></span></button></h3>
+						<div class="faq__answer" role="region" id="faq-answer-2" aria-labelledby="faq-question-2" aria-hidden="true" inert>
+							<div class="faq__content">
+								<p>Да, пришлите название или фотографию упаковки. Отдел закупок проверит возможность поставки.</p>
+							</div>
+						</div>
+					</div>
+					<div class="faq__item">
+						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-3" type="button" aria-expanded="false"
+								aria-controls="faq-answer-3">Как уточнить наличие и документы?<span class="faq__indicator"
+									aria-hidden="true"></span></button></h3>
+						<div class="faq__answer" role="region" id="faq-answer-3" aria-labelledby="faq-question-3" aria-hidden="true" inert>
+							<div class="faq__content">
+								<p>Укажите интересующий товар и нужные материалы в <a href="#request"
+										data-request-context="Уточнение наличия и документов">форме запроса</a>. Менеджер уточнит наличие и
+									доступные документы по выбранной продукции.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="compact-request" id="request" aria-labelledby="request-title" tabindex="-1">
+			<div class="compact-request__container container">
+				<div class="compact-request__copy">
+					<h2 id="request-title">Обсудим вашу поставку</h2>
+					<p class="compact-request__context" id="request-context">Подбор продукции для вашей практики</p>
+					<p class="compact-request__intro">Оставьте имя и контакт для ответа. Количество и комментарий можно добавить
+						по желанию.</p>
+				</div>
+				<form class="form form--compact" aria-labelledby="request-title" aria-describedby="request-status">
+					<input type="hidden" name="context" value="Подбор продукции для вашей практики">
+					<div class="form__row">
+						<div class="form__field"><label class="form__label" for="request-name">Имя</label><input class="form__input"
+								id="request-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться"></div>
+						<div class="form__field"><label class="form__label" for="request-contact">Email или телефон</label><input
+								class="form__input" id="request-contact" name="contact" type="text" autocomplete="on"
+								placeholder="Email или номер с кодом страны"></div>
+					</div>
+					<div class="form__field"><label class="form__label" for="request-message">Количество и
+							комментарий</label><textarea class="form__textarea" id="request-message" name="message" rows="4"
+							placeholder="Позиции, количество или ваш вопрос — необязательно"></textarea></div>
+					<div class="form__field">
+						<div class="form__attachment"><label class="form__file-label" for="request-file"><img
+									src="/images/icons/paperclip.svg" alt="" width="32" height="32"><span>Прикрепить файл или
+									фото</span><input class="form__file" id="request-file" name="attachment" type="file"
+									aria-describedby="request-file-hint"></label><button class="form__remove-file" type="button" hidden
+								aria-label="Удалить выбранный файл">×</button></div>
+						<p class="form__hint" id="request-file-hint">Можно приложить список продукции или фото упаковки.</p>
+						<p class="form__file-status visually-hidden" role="status" aria-atomic="true"></p>
+					</div>
+					<div class="form__consent"><input class="form__checkbox-input" id="request-consent" name="consent"
+							type="checkbox" value="yes"><label class="form__checkbox-label" for="request-consent">Даю <a
+								href="personal-data.html">согласие на обработку персональных данных</a> и принимаю <a
+								href="privacy.html">политику конфиденциальности</a></label></div>
+					<p class="form__status" id="request-status" role="status" aria-atomic="true">Отправка пока не подключена.
+						Введённые данные не отправляются.</p>
+					<button class="form__submit button" type="submit" aria-describedby="request-status">Отправить запрос
+						менеджеру</button>
+				</form>
+			</div>
 		</section>
 	</main>
 
 	<footer class="footer">
 		<div class="footer__container container">
+			<div class="footer__columns">
+				<div class="footer__brand"><a href="index.html" aria-label="MEAMO — главная"><img
+							src="/images/icons/meamo-logo-white.svg" alt="MEAMO" width="136" height="50" loading="lazy"></a>
+					<p>Эстетическая продукция из Южной Кореи для профессиональных покупателей.</p>
+				</div>
+				<nav class="footer__group" aria-labelledby="footer-catalog">
+					<h2 id="footer-catalog">Каталог</h2>
+					<ul class="footer__links">
+						<li><a href="meamo-labs.html">Meamo Labs</a></li>
+						<li><a href="catalog.html?category=mesotherapy">Мезотерапия</a></li>
+						<li><a href="catalog.html?category=fillers">Филлеры</a></li>
+						<li><a href="catalog.html?category=botulinum-toxins">Ботулотоксины</a></li>
+						<li><a href="catalog.html?category=lipolytics">Липолитики</a></li>
+						<li><a href="catalog.html?category=exosomes">Экзосомы</a></li>
+						<li><a href="catalog.html?category=anesthetics">Анестетики</a></li>
+						<li><a href="catalog.html?category=injections">Инъекции</a></li>
+						<li><a href="catalog.html?category=needles-cannulas">Иглы / канюли</a></li>
+						<li><a href="catalog.html?category=threads">Мезонити</a></li>
+						<li><a href="catalog.html?category=cosmeceuticals">Космецевтика</a></li>
+						<li><a href="catalog.html?category=placental-therapy">Плацентарная терапия</a></li>
+						<li><a href="catalog.html?category=apparatus-cosmetology">Аппаратная косметология</a></li>
+						<li><a href="catalog.html?category=equipment">Оборудование</a></li>
+					</ul>
+				</nav>
+				<nav class="footer__group" aria-labelledby="footer-company">
+					<h2 id="footer-company">Компания</h2>
+					<ul class="footer__links">
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="expert-center.html">Экспертный центр</a></li>
+						<li><a href="article.html">Хранение ботулотоксинов</a></li>
+						<li><a href="cooperation.html">Дистрибуция</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+						<li><a href="catalog.html">FAQ</a></li>
+						<li><a href="cooperation.html">Возврат и претензии</a></li>
+						<li><a href="cooperation.html">Оплата</a></li>
+						<li><a href="cooperation.html">Доставка</a></li>
+					</ul>
+				</nav>
+				<div class="footer__contacts">
+					<h2>Связь</h2>
+					<address><a href="mailto:support-ru@meamo.co">support-ru@meamo.co</a><a href="tel:+821028416857">+82
+							10-2841-6857</a><span>Сеул, Южная Корея</span></address>
+				</div>
+			</div>
+			<a class="footer__request button button--secondary" href="#request">Запросить условия</a>
+			<div class="footer__reviews">
+				<h2>Отзывы MEAMO на Trustpilot</h2>
+				<p>Раздел отзывов готовится к подключению.</p>
+			</div>
+			<div class="footer__legal"><span>© MEAMO</span><a href="privacy.html">Политика конфиденциальности</a><a
+					href="personal-data.html">Политика обработки персональных данных</a></div>
 		</div>
 	</footer>
-
-	<script src="/scripts/jquery-3.7.1.min.js"></script>
-	<script src="/scripts/jquery-ui.min.js"></script>
-	<script src="/scripts/jquery.mask.min.js"></script>
-	<script src="/scripts/micromodal.min.js"></script>
-	<script src="/scripts/swiper-bundle.min.js"></script>
-	<script src="/scripts/main.js"></script>
 </body>
 
 </html>

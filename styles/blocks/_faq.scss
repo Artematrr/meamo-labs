@@ -1,0 +1,100 @@
+.faq {
+	margin-top: 64px;
+	padding-block: 64px;
+	border-top: 1px solid var(--color-line);
+	@include mobile {
+		margin-top: 48px;
+		padding-block: 40px;
+	}
+	.section-heading {
+		margin-bottom: 24px;
+	}
+	&__items {
+		display: grid;
+		gap: 16px;
+	}
+	&__item {
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-sm);
+	}
+	&__heading {
+		font-family: var(--font-family-base);
+		letter-spacing: normal;
+		text-wrap: initial;
+	}
+	&__toggle {
+		@include reset-button;
+		@include fluid-text(20, 20);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		width: 100%;
+		padding: 24px;
+		border-radius: var(--radius-sm);
+		text-align: left;
+		font-weight: 500;
+		line-height: 1.4;
+		&:focus-visible {
+			outline-offset: -3px;
+		}
+		@include hover {
+			color: var(--color-hover);
+		}
+	}
+	&__indicator {
+		position: relative;
+		flex: 0 0 24px;
+		width: 24px;
+		height: 24px;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 11px;
+			left: 6px;
+			width: 12px;
+			height: 2px;
+			border-radius: 1px;
+			background-color: currentColor;
+		}
+		&::after {
+			transform: rotate(90deg);
+			transition: transform var(--transition-duration) ease, opacity var(--transition-duration) ease;
+			@media (prefers-reduced-motion: reduce) {
+				transition: none;
+			}
+		}
+	}
+	&__toggle[aria-expanded='true'] .faq__indicator::after {
+		transform: rotate(0deg) scaleX(0);
+		opacity: 0;
+	}
+	&__answer {
+		@include fluid-text(16, 16);
+		display: grid;
+		grid-template-rows: 0fr;
+		opacity: 0;
+		color: var(--color-muted);
+		line-height: 1.5;
+		transition: grid-template-rows var(--transition-duration) ease, opacity var(--transition-duration) ease;
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+		&[aria-hidden='false'] {
+			grid-template-rows: 1fr;
+			opacity: 1;
+		}
+	}
+	&__content {
+		min-height: 0;
+		overflow: hidden;
+		> p {
+			padding: 0 24px 24px;
+		}
+	}
+	&__answer a {
+		color: var(--color-blue);
+		text-decoration: underline;
+	}
+}

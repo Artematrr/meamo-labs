@@ -4,37 +4,67 @@
 	margin-inline: auto;
 	padding-inline: var(--container-padding-x);
 }
-
 .visually-hidden {
 	@include visually-hidden;
 }
-
 .hidden-mobile {
 	@include tablet {
 		display: none !important;
 	}
 }
-
 .visible-mobile {
 	@include tablet-above {
 		display: none !important;
 	}
 }
-
 .full-width {
 	@include full-width;
 }
-
 .full-width-mobile {
 	@include mobile {
 		@include full-width;
 	}
 }
-
 .reversed-mobile {
-	@include mobile {
-		> :last-child {
+	> :last-child {
+		@include mobile {
 			order: -1;
 		}
 	}
+}
+.section {
+	margin-block-start: 96px;
+	@include mobile {
+		margin-block-start: 64px;
+	}
+	&--spacious {
+		margin-block-start: 112px;
+		@include mobile {
+			margin-block-start: 80px;
+		}
+	}
+	&--compact {
+		margin-block-start: 48px;
+		@include mobile {
+			margin-block-start: 40px;
+		}
+	}
+	&__action {
+		width: fit-content;
+		min-width: 232px;
+		margin-top: 32px;
+		@include mobile {
+			width: 100%;
+			min-width: 0;
+		}
+	}
+}
+.grid + .section {
+	margin-block-start: 80px;
+	@include mobile {
+		margin-block-start: 56px;
+	}
+}
+main {
+	padding-block-end: 0;
 }

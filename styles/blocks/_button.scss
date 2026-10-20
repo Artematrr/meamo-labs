@@ -2,43 +2,50 @@
 	@include reset-button;
 	@include flex-center;
 	@include fluid-text(14, 14);
-
 	font-family: var(--font-family-base);
 	font-style: normal;
 	font-weight: 500;
 	line-height: 1.33;
-	letter-spacing: 0.3px;
+	letter-spacing: normal;
 	text-align: center;
 	padding: 8px 24px;
 	min-height: var(--button-height);
-	border: var(--border);
+	border: 1px solid var(--transparent);
 	border-radius: var(--radius-sm);
 	color: var(--color-white);
 	background-color: var(--color-blue);
-
 	@include hover {
 		background-color: var(--color-hover);
 	}
-
 	&:active {
 		background-color: var(--color-blue);
 	}
-
 	&:disabled {
 		background-color: var(--color-line);
 	}
-
 	&:focus-visible {
-		border: 3px solid var(--color-hover);
+		outline: 3px solid var(--color-hover);
 		background-color: var(--color-blue);
 	}
-
-	@include mobile {
-	}
-
 	&--secondary {
+		color: var(--color-blue);
+		background-color: var(--color-white);
+		border-color: var(--color-line);
+		@include hover {
+			background-color: var(--color-paper);
+			border-color: var(--color-hover);
+		}
+		&:active,
+		&:focus-visible {
+			background-color: var(--color-white);
+		}
 	}
-
 	&--link {
+		color: var(--color-blue);
+		background-color: var(--transparent);
+		@include hover {
+			text-decoration: underline;
+			background-color: var(--transparent);
+		}
 	}
 }

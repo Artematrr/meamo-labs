@@ -1,14 +1,11 @@
 .slider {
 	position: relative;
-
 	&__swiper {
 		overflow: hidden;
 	}
-
 	&__pagination {
 		.swiper-pagination-bullet {
 		}
-
 		.swiper-pagination-bullet-active {
 		}
 	}

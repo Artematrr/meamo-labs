@@ -1,8 +1,107 @@
 .footer {
-	&__container {
-		@include mobile {
+	@include fluid-text(14, 14);
+	padding-block: 64px 80px;
+	background-color: var(--color-ink);
+	color: var(--color-white);
+	line-height: 1.5;
+	@include mobile {
+		padding-block: 48px;
+	}
+	h2 {
+		@include fluid-text(20, 20);
+		font-family: var(--font-family-base);
+		font-weight: 500;
+		line-height: 1.4;
+		color: inherit;
+		letter-spacing: normal;
+		text-wrap: initial;
+	}
+	a:not(.button) {
+		@include hover {
+			text-decoration: underline;
 		}
 	}
-	@include mobile {
+	:focus-visible {
+		outline-color: var(--color-white);
+	}
+	&__columns {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 40px;
+		@include tablet {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 40px 24px;
+		}
+		@include mobile {
+			gap: 40px 24px;
+		}
+	}
+	&__brand img {
+		width: 136px;
+		height: 50px;
+	}
+	&__brand p {
+		margin-top: 16px;
+		@include tablet {
+			max-width: 360px;
+		}
+		@include mobile {
+			margin-top: 16px;
+		}
+	}
+	&__links {
+		display: grid;
+		gap: 4px;
+		margin-top: 12px;
+	}
+	&__links a {
+		display: inline-block;
+		line-height: 24px;
+	}
+	&__contacts address {
+		display: grid;
+		margin-top: 16px;
+		font-style: normal;
+		overflow-wrap: anywhere;
+		@include mobile {
+			gap: 16px;
+		}
+	}
+	&__request {
+		width: 232px;
+		margin-top: 40px;
+		@include mobile {
+			width: 100%;
+		}
+	}
+	&__reviews {
+		margin-top: 40px;
+		padding: 24px;
+		border-radius: var(--radius-sm);
+		background-color: var(--color-blue);
+	}
+	&__reviews p {
+		margin-top: 16px;
+	}
+	&__legal {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px 32px;
+		margin-top: 48px;
+		@include mobile {
+			display: grid;
+			gap: 12px;
+			margin-top: 56px;
+		}
+	}
+	&__brand {
+		@include tablet {
+			grid-column: 1 / -1;
+		}
+	}
+	&__contacts {
+		@include tablet {
+			grid-column: 1 / -1;
+		}
 	}
 }

@@ -1,10 +1,11 @@
 @use 'sass:math';
 
 @mixin fluid-text($max: 48, $min: 16) {
-	$layoutWidth: 1440;
+	$slope: math.div($max - $min, 1440 - 375);
+	$intercept: $min - $slope * 375;
 	font-size: clamp(
 		#{$min}px,
-		#{math.div($max, $layoutWidth) * 100}vw,
+		calc(#{$intercept}px + #{$slope * 100}vw),
 		#{$max}px
 	);
 }

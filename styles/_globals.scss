@@ -11,11 +11,11 @@ body {
 	color: var(--color-ink);
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.55px;
+	line-height: 1.55;
 	background-color: var(--color-white);
 	min-height: 100%;
-	overflow-x: hidden;
 	font-optical-sizing: auto;
+	overflow-wrap: anywhere;
 	scrollbar-color: var(--color-blue) var(--transparent);
 	scrollbar-width: thin;
 	overscroll-behavior: contain;
@@ -44,15 +44,12 @@ body {
 	background-color: var(--color-blue);
 }
 
-main {
-	overflow-x: clip;
-}
-
 a,
 button,
 input,
 textarea,
 svg * {
+	transition-property: color, background-color, border-color;
 	transition-duration: var(--transition-duration);
 	transition-timing-function: var(--transition-timing-function);
 }
@@ -109,7 +106,7 @@ textarea {
 	font-family: var(--font-family-accent);
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.12px;
+	line-height: 1.12;
 	letter-spacing: -1.6px;
 }
 
@@ -177,7 +174,7 @@ h4,
 	color: var(--color-ink);
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.55px;
+	line-height: 1.55;
 }
 
 .f-body {
@@ -187,7 +184,7 @@ h4,
 	color: var(--color-ink);
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.5px;
+	line-height: 1.5;
 }
 
 .f-small {
@@ -197,7 +194,7 @@ h4,
 	color: var(--color-ink);
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.42px;
+	line-height: 1.42;
 }
 
 .f-caption {
@@ -208,7 +205,6 @@ h4,
 	font-style: normal;
 	font-weight: 500;
 	line-height: 1.33;
-	line-height: 1.42px;
 }
 
 .background-dark {
@@ -217,4 +213,9 @@ h4,
 
 .background-light {
 	background-color: var(--color-paper);
+}
+
+:focus-visible {
+	outline: 3px solid var(--color-hover);
+	outline-offset: 4px;
 }

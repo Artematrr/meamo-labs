@@ -1,0 +1,79 @@
+.supply-process {
+	margin-top: 48px;
+	padding-block: 64px;
+	background-color: var(--color-paper);
+	@include mobile {
+		margin-top: 32px;
+		padding-block: 40px;
+	}
+	&__steps {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 24px;
+		@include tablet {
+			gap: 16px;
+		}
+		@include mobile {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 24px;
+		}
+	}
+	&__step {
+		min-width: 0;
+		padding: 24px;
+		@include tablet {
+			padding: 16px 0;
+		}
+		@include mobile {
+			display: grid;
+			grid-template-columns: 32px minmax(0, 1fr);
+			gap: 8px 16px;
+			padding: 16px;
+		}
+	}
+	&__number {
+		@include fluid-text(28, 20);
+		display: block;
+		margin-bottom: 24px;
+		color: var(--color-hover);
+		font-family: var(--font-family-accent);
+		font-weight: 500;
+		line-height: 1.28;
+		@include mobile {
+			grid-row: span 2;
+			margin: 0;
+		}
+	}
+	&__title {
+		@include fluid-text(20, 20);
+		margin-bottom: 16px;
+		font-family: var(--font-family-base);
+		font-weight: 500;
+		line-height: 1.4;
+		letter-spacing: normal;
+		text-wrap: initial;
+		@include mobile {
+			margin: 0;
+		}
+	}
+	&__step p {
+		@include fluid-text(14, 14);
+		color: var(--color-muted);
+		line-height: 1.42;
+	}
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		margin-top: 32px;
+		@include mobile {
+			display: grid;
+		}
+	}
+	&__actions .button {
+		min-width: 232px;
+		@include mobile {
+			min-width: 0;
+		}
+	}
+}
