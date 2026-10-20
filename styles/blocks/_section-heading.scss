@@ -3,6 +3,11 @@
 	h2 {
 		text-wrap: initial;
 	}
+	p {
+		max-width: 850px;
+		margin-top: 24px;
+		color: var(--color-muted);
+	}
 	@include mobile {
 		margin-bottom: 24px;
 	}

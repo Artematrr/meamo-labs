@@ -1,4 +1,38 @@
 .pagination {
-	@include mobile {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 24px;
+	&[hidden] {
+		display: none;
+	}
+	&--start {
+		justify-content: flex-start;
+		margin-top: 64px;
+		@include mobile {
+			margin-top: 80px;
+		}
+	}
+	&__button {
+		@include reset-button;
+		@include fluid-text(14, 14);
+		min-width: 40px;
+		min-height: 44px;
+		padding: 8px;
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-sm);
+		font-weight: 500;
+		&[aria-current='page'] {
+			background-color: var(--color-blue);
+			color: var(--color-white);
+		}
+		&:disabled {
+			opacity: 0.4;
+			cursor: default;
+		}
+		@include hover {
+			border-color: var(--color-hover);
+		}
 	}
 }

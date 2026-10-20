@@ -49,6 +49,24 @@
 			margin-block-start: 40px;
 		}
 	}
+	&--ending {
+		margin-bottom: 160px;
+		@include mobile {
+			margin-bottom: 80px;
+		}
+	}
+	&--lead {
+		margin-block-start: 64px;
+		@include mobile {
+			margin-block-start: 40px;
+		}
+	}
+	&--before-form {
+		margin-bottom: 64px;
+		@include mobile {
+			margin-bottom: 40px;
+		}
+	}
 	&__action {
 		width: fit-content;
 		min-width: 232px;

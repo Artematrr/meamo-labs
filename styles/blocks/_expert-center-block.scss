@@ -22,3 +22,28 @@
 		}
 	}
 }
+
+.expert-center-page {
+	&__topics {
+		margin-block: 64px 48px;
+		@include mobile {
+			margin-block: 48px 40px;
+		}
+	}
+	&__grid {
+		row-gap: 64px;
+		@include mobile {
+			row-gap: 80px;
+		}
+		.article-card[hidden] {
+			display: none;
+		}
+	}
+	&__empty {
+		padding-block: 32px;
+		p {
+			margin-block: 24px;
+			color: var(--color-muted);
+		}
+	}
+}

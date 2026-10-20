@@ -1,0 +1,53 @@
+.brand-presentation {
+	padding-block: 64px 48px;
+	background-color: var(--color-paper);
+	@include mobile {
+		padding-block: 40px 32px;
+	}
+	&__container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 600px);
+		gap: 48px;
+		margin-top: 48px;
+		@include tablet {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 32px;
+		}
+		@include mobile {
+			margin-top: 32px;
+		}
+	}
+	&__copy {
+		min-width: 0;
+	}
+	&__label {
+		@include fluid-text(12, 12);
+		margin-bottom: 24px;
+		color: var(--color-hover);
+		font-weight: 500;
+		line-height: 1.33;
+		text-transform: uppercase;
+	}
+	h1 {
+		@include fluid-text(48, 36);
+		line-height: 1.1667;
+		text-wrap: initial;
+		@include mobile {
+			line-height: 1.2222;
+		}
+	}
+	&__intro {
+		@include fluid-text(18, 18);
+		margin-top: 32px;
+		color: var(--color-muted);
+	}
+	.button {
+		width: fit-content;
+		min-width: 232px;
+		margin-top: 24px;
+		@include mobile {
+			width: 100%;
+			min-width: 0;
+		}
+	}
+}

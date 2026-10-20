@@ -1,0 +1,26 @@
+.topic-filter {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	&__button {
+		@include reset-button;
+		@include fluid-text(14, 14);
+		max-width: 100%;
+		min-height: 44px;
+		padding: 10px 16px;
+		border: 1px solid var(--color-line);
+		border-radius: 32px;
+		font-weight: 500;
+		line-height: 1.5;
+		text-align: left;
+		overflow-wrap: anywhere;
+		&[aria-pressed='true'] {
+			color: var(--color-white);
+			background-color: var(--color-blue);
+			border-color: var(--color-blue);
+		}
+		@include hover {
+			border-color: var(--color-hover);
+		}
+	}
+}

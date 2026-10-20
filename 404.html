@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Страница не найдена. Перейдите в каталог продукции MEAMO или вернитесь на главную.">
+	<title>Страница не найдена — MEAMO</title>
+	<link rel="icon" href="/images/icons/meamo-logo-black.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+	<script src="/scripts/swiper-bundle.min.js" defer></script>
+	<script src="/scripts/main.js" defer></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__container container">
+			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
+					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
+			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+				aria-expanded="false">Меню</button>
+			<div class="header__mobile-menu" id="header-menu">
+				<nav class="header__nav" aria-label="Основная навигация">
+					<a class="header__link" href="catalog.html">Каталог</a>
+					<a class="header__link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link" href="about.html">О компании</a>
+					<a class="header__link" href="expert-center.html">Экспертный центр</a>
+					<a class="header__link" href="contacts.html">Контакты</a>
+				</nav>
+				<a class="header__request button" href="cooperation.html#request">Запросить условия</a>
+				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+			</div>
+			<form class="search" action="catalog.html" method="get" role="search">
+				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
+				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
+						alt="" width="32" height="32"></button>
+				<input class="search__field" id="catalog-search" type="search" name="q"
+					placeholder="Поиск по каталогу: название товара или бренда">
+			</form>
+		</div>
+	</header>
+
+	<main>
+		<section class="error-page" aria-labelledby="error-title"><div class="error-page__container container">
+			<div class="error-page__copy"><p class="error-page__eyebrow">Страница не найдена</p><h1 id="error-title">Здесь пока пусто</h1><p class="error-page__description">Возможно, адрес изменился или в ссылке есть ошибка. Нужную продукцию можно найти в каталоге.</p><div class="error-page__actions"><a class="button" href="catalog.html">Перейти в каталог</a><a class="button button--secondary" href="index.html">Вернуться на главную</a></div></div>
+			<div class="error-page__decoration" aria-hidden="true"><span>404</span><p>вернёмся к нужному</p></div>
+		</div></section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__container container">
+			<div class="footer__columns">
+				<div class="footer__brand"><a href="index.html" aria-label="MEAMO — главная"><img
+							src="/images/icons/meamo-logo-white.svg" alt="MEAMO" width="136" height="50" loading="lazy"></a>
+					<p>Эстетическая продукция из Южной Кореи для профессиональных покупателей.</p>
+				</div>
+				<nav class="footer__group" aria-labelledby="footer-catalog">
+					<h2 id="footer-catalog">Каталог</h2>
+					<ul class="footer__links">
+						<li><a href="labs.html">Meamo Labs</a></li>
+						<li><a href="catalog.html?category=mesotherapy">Мезотерапия</a></li>
+						<li><a href="catalog.html?category=fillers">Филлеры</a></li>
+						<li><a href="catalog.html?category=botulinum-toxins">Ботулотоксины</a></li>
+						<li><a href="catalog.html?category=lipolytics">Липолитики</a></li>
+						<li><a href="catalog.html?category=exosomes">Экзосомы</a></li>
+						<li><a href="catalog.html?category=anesthetics">Анестетики</a></li>
+						<li><a href="catalog.html?category=injections">Инъекции</a></li>
+						<li><a href="catalog.html?category=needles-cannulas">Иглы / канюли</a></li>
+						<li><a href="catalog.html?category=threads">Мезонити</a></li>
+						<li><a href="catalog.html?category=cosmeceuticals">Космецевтика</a></li>
+						<li><a href="catalog.html?category=placental-therapy">Плацентарная терапия</a></li>
+						<li><a href="catalog.html?category=apparatus-cosmetology">Аппаратная косметология</a></li>
+						<li><a href="catalog.html?category=equipment">Оборудование</a></li>
+					</ul>
+				</nav>
+				<nav class="footer__group" aria-labelledby="footer-company">
+					<h2 id="footer-company">Компания</h2>
+					<ul class="footer__links">
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="expert-center.html">Экспертный центр</a></li>
+						<li><a href="article-storage.html">Хранение ботулотоксинов</a></li>
+						<li><a href="cooperation.html">Дистрибуция</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+						<li><a href="catalog.html">FAQ</a></li>
+						<li><a href="cooperation.html">Возврат и претензии</a></li>
+						<li><a href="cooperation.html">Оплата</a></li>
+						<li><a href="cooperation.html">Доставка</a></li>
+					</ul>
+				</nav>
+				<div class="footer__contacts">
+					<h2>Связь</h2>
+					<address><a href="mailto:support-ru@meamo.co">support-ru@meamo.co</a><a href="tel:+821028416857">+82 10-2841-6857</a><span>Сеул, Южная Корея</span></address>
+				</div>
+			</div>
+			<a class="footer__request button button--secondary" href="cooperation.html#request">Запросить условия</a>
+			<div class="footer__reviews">
+				<h2>Отзывы MEAMO на Trustpilot</h2>
+				<p>Раздел отзывов готовится к подключению.</p>
+			</div>
+			<div class="footer__legal"><span>© MEAMO</span><a href="privacy.html">Политика конфиденциальности</a><a
+					href="personal-data.html">Политика обработки персональных данных</a></div>
+		</div>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+.article-contents {
+	@include fluid-text(14, 14);
+	grid-column: 2;
+	grid-row: 1;
+	padding: 24px;
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-paper);
+	@include tablet {
+		grid-column: auto;
+		grid-row: auto;
+	}
+	&__toggle {
+		@include reset-button;
+		@include fluid-text(20, 20);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		width: 100%;
+		min-height: 44px;
+		font-weight: 500;
+		line-height: 1.4;
+		text-align: left;
+	}
+	ol {
+		display: grid;
+		gap: 24px;
+		margin-top: 24px;
+		padding-left: 24px;
+		list-style: decimal-leading-zero;
+		&[hidden] {
+			display: none;
+		}
+	}
+	a {
+		display: block;
+		padding-block: 8px;
+		@include hover {
+			text-decoration: underline;
+		}
+	}
+}

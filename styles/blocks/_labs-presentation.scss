@@ -62,6 +62,9 @@
 		background-color: var(--color-white);
 		color: var(--color-blue);
 		line-height: 20px;
+		&--rounded {
+			border-radius: var(--radius-lg);
+		}
 	}
 	&__product img {
 		justify-self: center;
@@ -81,5 +84,35 @@
 	}
 	:focus-visible {
 		outline-color: var(--color-white);
+	}
+	&__breadcrumbs {
+		margin-bottom: 32px;
+	}
+	&--hero {
+		h1 {
+			@include fluid-text(48, 36);
+			margin-top: 40px;
+			color: inherit;
+			line-height: 1.1667;
+			text-wrap: initial;
+			@include mobile {
+				margin-top: 24px;
+				line-height: 1.2222;
+			}
+		}
+		.labs-presentation__copy p {
+			margin-top: 40px;
+			@include mobile {
+				margin-top: 24px;
+			}
+		}
+		.labs-presentation__copy .button {
+			width: 280px;
+			margin-top: 40px;
+			@include mobile {
+				width: 100%;
+				margin-top: 24px;
+			}
+		}
 	}
 }

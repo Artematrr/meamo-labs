@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Продукция из Южной Кореи для профессиональных покупателей. Подбор ассортимента и запрос условий поставки.">
+	<title>Каталог продукции — MEAMO</title>
+	<link rel="icon" href="/images/icons/meamo-logo-black.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+	<script src="/scripts/swiper-bundle.min.js" defer></script>
+	<script src="/scripts/main.js" defer></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__container container">
+			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
+					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
+			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+				aria-expanded="false">Меню</button>
+			<div class="header__mobile-menu" id="header-menu">
+				<nav class="header__nav" aria-label="Основная навигация">
+					<a class="header__link" href="catalog.html">Каталог</a>
+					<a class="header__link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link" href="about.html">О компании</a>
+					<a class="header__link" href="expert-center.html">Экспертный центр</a>
+					<a class="header__link" href="contacts.html">Контакты</a>
+				</nav>
+				<a class="header__request button" href="index.html#request">Запросить условия</a>
+				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+			</div>
+			<form class="search" action="catalog.html" method="get" role="search">
+				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
+				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
+						alt="" width="32" height="32"></button>
+				<input class="search__field" id="catalog-search" type="search" name="q"
+					placeholder="Поиск по каталогу: название товара или бренда">
+			</form>
+		</div>
+	</header>
+
+	<main>
+<div class="container">
+<section class="intro" aria-labelledby="catalog-title"><nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li aria-current="page">Каталог</li></ol></nav><h1 id="catalog-title">Каталог продукции</h1><p>Эстетическая продукция из Южной Кореи для профессиональных покупателей.</p></section>
+<section class="catalog-categories" aria-labelledby="categories-title"><h2 class="catalog-categories__title" id="categories-title">Категории каталога</h2><nav class="catalog-categories__links" aria-label="Категории каталога">
+<a class="catalog-categories__link" href="catalog.html" aria-current="page">Все товары <span aria-hidden="true">→</span></a><a class="catalog-categories__link" href="catalog.html?category=fillers">Филлеры <span aria-hidden="true">→</span></a><a class="catalog-categories__link" href="catalog.html?category=mesotherapy">Мезотерапия <span aria-hidden="true">→</span></a><a class="catalog-categories__link" href="catalog.html?category=botulinum-toxins">Ботулотоксины <span aria-hidden="true">→</span></a><a class="catalog-categories__link" href="catalog.html?category=exosomes">Экзосомы <span aria-hidden="true">→</span></a><a class="catalog-categories__link" href="labs.html">MEAMO Labs <span aria-hidden="true">→</span></a></nav>
+<p class="catalog-categories__caption">Подборки ботулотоксинов · отдельные страницы</p><nav class="catalog-categories__seo-links" aria-label="Подборки ботулотоксинов"><a href="meditoxin.html">Meditoxin ↗</a><a href="nabota.html">Nabota ↗</a><a href="botulax.html">Botulax ↗</a></nav></section>
+<div class="catalog" id="catalog"><div class="catalog__sidebar">
+<button class="catalog__open-filters button button--secondary" type="button" aria-controls="catalog-filters" aria-haspopup="dialog" aria-expanded="false">Фильтры <img src="/images/icons/filter.svg" width="20" height="20" alt=""></button>
+<dialog class="catalog-filter" id="catalog-filters" aria-labelledby="filters-title" open><div class="catalog-filter__header"><h2 id="filters-title">Фильтры</h2><button class="catalog-filter__close" type="button" aria-label="Закрыть фильтры">×</button></div><form class="catalog-filter__form"><div class="catalog-filter__body"><details class="catalog-filter__group" open><summary class="catalog-filter__toggle">Категория</summary><div class="catalog-filter__options"><label class="catalog-filter__option"><input type="checkbox" name="category" value="fillers" data-label="Филлеры" data-group-label="Категория"><span>Филлеры</span></label><label class="catalog-filter__option"><input type="checkbox" name="category" value="mesotherapy" data-label="Мезотерапия" data-group-label="Категория"><span>Мезотерапия</span></label><label class="catalog-filter__option"><input type="checkbox" name="category" value="botulinum-toxins" data-label="Ботулотоксины" data-group-label="Категория"><span>Ботулотоксины</span></label><label class="catalog-filter__option"><input type="checkbox" name="category" value="exosomes" data-label="Экзосомы" data-group-label="Категория"><span>Экзосомы</span></label></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Бренд</summary><div class="catalog-filter__options"><label class="catalog-filter__option"><input type="checkbox" name="brand" value="jeunetique" data-label="Jeunetique" data-group-label="Бренд"><span>Jeunetique</span></label><label class="catalog-filter__option"><input type="checkbox" name="brand" value="rejeunesse" data-label="Rejeunesse" data-group-label="Бренд"><span>Rejeunesse</span></label></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Наличие</summary><div class="catalog-filter__options"><label class="catalog-filter__option"><input type="checkbox" name="availability" value="in-stock" data-label="В наличии" data-group-label="Наличие"><span>В наличии</span></label><label class="catalog-filter__option"><input type="checkbox" name="availability" value="on-request" data-label="Под заказ" data-group-label="Наличие"><span>Под заказ</span></label><label class="catalog-filter__option"><input type="checkbox" name="availability" value="limited" data-label="Ограничено" data-group-label="Наличие"><span>Ограничено</span></label><label class="catalog-filter__option"><input type="checkbox" name="availability" value="unknown" data-label="Уточняется" data-group-label="Наличие"><span>Уточняется</span></label></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Страна</summary><div class="catalog-filter__options"><label class="catalog-filter__option"><input type="checkbox" name="country" value="korea" data-label="Южная Корея" data-group-label="Страна"><span>Южная Корея</span></label></div></details><h3 class="catalog-filter__subtitle">Дополнительные параметры</h3><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Объём / вес</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Комплектация</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Тип продукта</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Действующее вещество</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Наличие лидокаина</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Концентрация лидокаина</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Назначение</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Проблема кожи</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Область применения</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Тип кожи</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details><details class="catalog-filter__group"><summary class="catalog-filter__toggle">Возраст</summary><div class="catalog-filter__options"><p class="catalog-filter__hint">Параметры уточняются по выбранному товару.</p></div></details></div><div class="catalog-filter__actions"><button class="catalog-filter__apply button" type="submit">Применить</button><button class="button button--secondary" type="reset">Сбросить фильтры</button></div></form></dialog></div>
+<section class="catalog__results" aria-labelledby="results-count"><div class="catalog-toolbar"><h2 class="catalog-toolbar__count" id="results-count" tabindex="-1" role="status" aria-live="polite">Найдено 11 товаров</h2><label class="catalog-toolbar__sort" for="catalog-sort"><span>Сортировка</span><select id="catalog-sort"><option value="default">По умолчанию</option><option value="asc">По названию А–Я</option><option value="desc">По названию Я–А</option></select></label><div class="catalog-toolbar__views" role="group" aria-label="Вид товаров"><button class="button" type="button" data-catalog-view="grid" aria-pressed="true" aria-controls="catalog-items">▦ Сетка</button><button class="button button--secondary" type="button" data-catalog-view="list" aria-pressed="false" aria-controls="catalog-items">☷ Список</button></div></div>
+<div class="catalog__chips" aria-label="Выбранные фильтры" hidden></div>
+<div class="catalog-grid" id="catalog-items"><article class="product-card" data-category="fillers" data-brand="" data-country="korea" data-availability="unknown">
+ <a class="product-card__media" href="product-beaux.html" aria-label="Подробнее о Beaux"><img src="/images/products/Beaux.jpg" alt="Упаковка Beaux" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span class="product-card__badge">MEAMO Labs</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-beaux.html">Beaux</a></h3>
+ <p class="product-card__category">Филлеры</p>
+ <a class="button" href="index.html#request" data-request-context="Beaux — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-beaux.html">Подробнее<span class="visually-hidden"> о Beaux</span></a>
+ </article><article class="product-card" data-category="mesotherapy" data-brand="" data-country="korea" data-availability="unknown">
+ <a class="product-card__media" href="product-curenex.html" aria-label="Подробнее о Curenex"><img src="/images/products/Curenex.jpg" alt="Упаковка Curenex" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-curenex.html">Curenex</a></h3>
+ <p class="product-card__category">Мезотерапия</p>
+ <a class="button" href="index.html#request" data-request-context="Curenex — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-curenex.html">Подробнее<span class="visually-hidden"> о Curenex</span></a>
+ </article><article class="product-card" data-category="mesotherapy" data-brand="" data-country="korea" data-availability="unknown">
+ <a class="product-card__media" href="product-hyaron.html" aria-label="Подробнее о Hyaron"><img src="/images/products/Hyaron.jpg" alt="Упаковка Hyaron" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-hyaron.html">Hyaron</a></h3>
+ <p class="product-card__category">Мезотерапия</p>
+ <a class="button" href="index.html#request" data-request-context="Hyaron — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-hyaron.html">Подробнее<span class="visually-hidden"> о Hyaron</span></a>
+ </article><article class="product-card" data-category="fillers" data-brand="jeunetique" data-country="korea" data-availability="unknown">
+ <a class="product-card__media" href="product-jeunetique-deep.html" aria-label="Подробнее о Jeunetique Deep"><img src="/images/products/Jeunetique%20Deep.jpg" alt="Упаковка Jeunetique Deep" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span class="product-card__badge">MEAMO Labs</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-jeunetique-deep.html">Jeunetique Deep</a></h3>
+ <p class="product-card__category">Филлеры</p>
+ <a class="button" href="index.html#request" data-request-context="Jeunetique Deep — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-jeunetique-deep.html">Подробнее<span class="visually-hidden"> о Jeunetique Deep</span></a>
+ </article><article class="product-card" data-category="exosomes" data-brand="jeunetique" data-country="korea" data-availability="unknown">
+ <a class="product-card__media" href="product-jeunetique-exo.html" aria-label="Подробнее о Jeunetique Exo"><img src="/images/products/Jeunetique%20Exo.jpg" alt="Упаковка Jeunetique Exo" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span class="product-card__badge">MEAMO Labs</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-jeunetique-exo.html">Jeunetique Exo</a></h3>
+ <p class="product-card__category">Экзосомная продукция</p>
+ <a class="button" href="index.html#request" data-request-context="Jeunetique Exo — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-jeunetique-exo.html">Подробнее<span class="visually-hidden"> о Jeunetique Exo</span></a>
+ </article><article class="product-card" data-category="fillers" data-brand="jeunetique" data-country="korea" data-availability="unknown">
+ <a class="product-card__media" href="product.html" aria-label="Подробнее о Jeunetique Fine"><img src="/images/products/Jeunetique%20Fine.jpg" alt="Упаковка Jeunetique Fine" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span class="product-card__badge">MEAMO Labs</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product.html">Jeunetique Fine</a></h3>
+ <p class="product-card__category">Филлеры</p>
+ <a class="button" href="product.html#request" data-request-context="Jeunetique Fine — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product.html">Подробнее<span class="visually-hidden"> о Jeunetique Fine</span></a>
+ </article><article class="product-card" data-category="fillers" data-brand="jeunetique" data-country="korea" data-availability="unknown">
+ <a class="product-card__media" href="product-jeunetique-ultra.html" aria-label="Подробнее о Jeunetique Ultra"><img src="/images/products/Jeunetique%20Ultra.jpg" alt="Упаковка Jeunetique Ultra" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span class="product-card__badge">MEAMO Labs</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-jeunetique-ultra.html">Jeunetique Ultra</a></h3>
+ <p class="product-card__category">Филлеры</p>
+ <a class="button" href="index.html#request" data-request-context="Jeunetique Ultra — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-jeunetique-ultra.html">Подробнее<span class="visually-hidden"> о Jeunetique Ultra</span></a>
+ </article><article class="product-card" data-category="mesotherapy" data-brand="" data-country="korea" data-availability="unknown">
+ <a class="product-card__media" href="product-miracle-l.html" aria-label="Подробнее о Miracle L"><img src="/images/products/Miracle%20L.jpg" alt="Упаковка Miracle L" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-miracle-l.html">Miracle L</a></h3>
+ <p class="product-card__category">Мезотерапия</p>
+ <a class="button" href="index.html#request" data-request-context="Miracle L — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-miracle-l.html">Подробнее<span class="visually-hidden"> о Miracle L</span></a>
+ </article><article class="product-card" data-category="unknown" data-brand="rejeunesse" data-country="korea" data-availability="unknown" hidden>
+ <a class="product-card__media" href="product-rejeunesse-shape.html" aria-label="Подробнее о Rejeunesse Shape"><img src="/images/products/Rejeunesse%20Shape.jpg" alt="Упаковка Rejeunesse Shape" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-rejeunesse-shape.html">Rejeunesse Shape</a></h3>
+ <p class="product-card__category">Категория уточняется</p>
+ <a class="button" href="index.html#request" data-request-context="Rejeunesse Shape — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-rejeunesse-shape.html">Подробнее<span class="visually-hidden"> о Rejeunesse Shape</span></a>
+ </article><article class="product-card" data-category="unknown" data-brand="" data-country="korea" data-availability="unknown" hidden>
+ <a class="product-card__media" href="product-yvoire-classic.html" aria-label="Подробнее о Yvoire Classic"><img src="/images/products/Yvoire%20Classic.jpg" alt="Упаковка Yvoire Classic" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-yvoire-classic.html">Yvoire Classic</a></h3>
+ <p class="product-card__category">Категория уточняется</p>
+ <a class="button" href="index.html#request" data-request-context="Yvoire Classic — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-yvoire-classic.html">Подробнее<span class="visually-hidden"> о Yvoire Classic</span></a>
+ </article><article class="product-card" data-category="unknown" data-brand="" data-country="korea" data-availability="unknown" hidden>
+ <a class="product-card__media" href="product-silhouette-body-contouring-serum.html" aria-label="Подробнее о Silhouette Body Contouring Serum"><img src="/images/products/Silhouette%20Body%20Contouring%20Serum.jpg" alt="Упаковка Silhouette Body Contouring Serum" width="1000" height="1000" loading="lazy"></a>
+ <div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span class="product-card__badge">MEAMO Labs</span></div>
+ <p class="product-card__country">Южная Корея</p><h3 class="product-card__title"><a href="product-silhouette-body-contouring-serum.html">Silhouette Body Contouring Serum</a></h3>
+ <p class="product-card__category">Категория уточняется</p>
+ <a class="button" href="index.html#request" data-request-context="Silhouette Body Contouring Serum — запрос условий">Запросить условия</a><a class="product-card__details button button--link" href="product-silhouette-body-contouring-serum.html">Подробнее<span class="visually-hidden"> о Silhouette Body Contouring Serum</span></a>
+ </article></div>
+<div class="catalog__empty" hidden><h3>По фильтру ничего не найдено</h3><p>Попробуйте изменить категорию, бренд или статус наличия.</p><button class="button button--secondary" type="button" data-clear-filters>Сбросить фильтры</button><a class="button" href="index.html#request">Отправить запрос менеджеру</a></div>
+<nav class="pagination" aria-label="Страницы каталога"><button class="pagination__button" type="button" data-page="prev" aria-label="Предыдущая страница" disabled>‹</button><button class="pagination__button" type="button" data-page="1" aria-current="page">1</button><button class="pagination__button" type="button" data-page="2">2</button><button class="pagination__button" type="button" data-page="next" aria-label="Следующая страница">›</button></nav></section></div>
+<section class="section section--compact" aria-labelledby="conditions-title"><div class="section-heading"><h2 id="conditions-title">Условия для вашей поставки</h2><p>Наличие, минимальное количество, комплектация и стоимость подтверждаются менеджером под конкретную поставку.</p></div></section></div>
+<section class="faq" aria-labelledby="faq-title"><div class="container"><div class="section-heading"><h2 id="faq-title">Частые вопросы</h2></div><div class="faq__items"><div class="faq__item"><h3 class="faq__heading"><button class="faq__toggle" id="faq-question-1" type="button" aria-expanded="false" aria-controls="faq-answer-1">Как получить коммерческие условия?<span class="faq__indicator" aria-hidden="true"></span></button></h3><div class="faq__answer" role="region" id="faq-answer-1" aria-labelledby="faq-question-1" aria-hidden="true" inert><div class="faq__content"><p>Укажите нужные позиции, желаемое количество и контакт для ответа в <a href="index.html#request">форме запроса</a>. Менеджер проверит наличие и подготовит предложение.</p></div></div></div><div class="faq__item"><h3 class="faq__heading"><button class="faq__toggle" id="faq-question-2" type="button" aria-expanded="false" aria-controls="faq-answer-2">Можно ли запросить товар вне каталога?<span class="faq__indicator" aria-hidden="true"></span></button></h3><div class="faq__answer" role="region" id="faq-answer-2" aria-labelledby="faq-question-2" aria-hidden="true" inert><div class="faq__content"><p>Да, пришлите название или фотографию упаковки. Отдел закупок проверит возможность поставки.</p></div></div></div><div class="faq__item"><h3 class="faq__heading"><button class="faq__toggle" id="faq-question-3" type="button" aria-expanded="false" aria-controls="faq-answer-3">Как уточнить наличие и документы?<span class="faq__indicator" aria-hidden="true"></span></button></h3><div class="faq__answer" role="region" id="faq-answer-3" aria-labelledby="faq-question-3" aria-hidden="true" inert><div class="faq__content"><p>Обратитесь к менеджеру с названием товара и перечнем нужных материалов. Наличие и документы уточняются по конкретной продукции.</p></div></div></div></div></div></section><div class="container"><section class="section section--compact" aria-labelledby="assortment-title"><div class="section-heading"><h2 id="assortment-title">Как работать с ассортиментом</h2><p>Начните с категории и бренда. Сопоставьте форму выпуска, комплектацию и документы, затем отправьте список позиций и объём менеджеру.</p></div></section><section class="section" aria-labelledby="compare-title"><div class="section-heading"><h2 id="compare-title">Что сравнивать перед закупкой</h2></div><table class="info-table"><caption class="visually-hidden">Параметры условий поставки</caption><tbody><tr><th scope="row">Наличие</th><td>Подтверждается по выбранной позиции и объёму.</td></tr><tr><th scope="row">MOQ</th><td>Минимальное количество уточняет менеджер.</td></tr><tr><th scope="row">Комплектация</th><td>Состав упаковки и форма выпуска.</td></tr><tr><th scope="row">Документы</th><td>Доступные материалы по конкретной продукции.</td></tr><tr><th scope="row">Цена</th><td>Индивидуальный расчёт для вашей поставки.</td></tr></tbody></table></section><section class="expert-center-block section section--spacious section--ending" aria-labelledby="expert-title">
+				<div class="section-heading">
+					<h2 id="expert-title">Материалы по закупке</h2>
+				</div>
+				<div class="expert-center-block__grid grid grid--three">
+					<article class="article-card"><a class="article-card__media" href="article-supplier.html"
+							aria-label="Как выбрать поставщика эстетической продукции"><img src="/images/Illustrations/logistics.jpg"
+								alt="" width="1200" height="675" loading="lazy"></a>
+						<p class="article-card__topic">Поставка</p>
+						<h3 class="article-card__title">Как выбрать поставщика эстетической продукции</h3>
+						<p class="article-card__description">Происхождение, документы, наличие и условия поставки — по пунктам.</p>
+						<a class="article-card__link button button--link" href="article-supplier.html">Подробнее<span
+								class="visually-hidden"> о выборе поставщика</span></a>
+					</article>
+					<article class="article-card"><a class="article-card__media" href="article-documents.html"
+							aria-label="Какие документы запросить перед поставкой"><img src="/images/Illustrations/documents.jpg"
+								alt="" width="1200" height="675" loading="lazy"></a>
+						<p class="article-card__topic">Документы</p>
+						<h3 class="article-card__title">Какие документы запросить перед поставкой</h3>
+						<p class="article-card__description">Какие документы уточнить у поставщика и как подготовить запрос на
+							материалы.</p><a class="article-card__link button button--link"
+							href="article-documents.html">Подробнее<span class="visually-hidden"> о документах перед
+								поставкой</span></a>
+					</article>
+					<article class="article-card"><a class="article-card__media" href="article.html"
+							aria-label="Как подготовить оптовый запрос"><img src="/images/Illustrations/procurement.jpg" alt=""
+								width="1200" height="675" loading="lazy"></a>
+						<p class="article-card__topic">Работа с MEAMO</p>
+						<h3 class="article-card__title">Как подготовить оптовый запрос</h3>
+						<p class="article-card__description">Как составить список продукции, указать объёмы и подготовить данные для
+							расчёта.</p><a class="article-card__link button button--link"
+							href="article.html">Подробнее<span class="visually-hidden"> о подготовке оптового
+								запроса</span></a>
+					</article>
+				</div>
+				<a class="expert-center-block__all" href="expert-center.html">Все статьи <span aria-hidden="true">→</span></a>
+			</section></div>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__container container">
+			<div class="footer__columns">
+				<div class="footer__brand"><a href="index.html" aria-label="MEAMO — главная"><img
+							src="/images/icons/meamo-logo-white.svg" alt="MEAMO" width="136" height="50" loading="lazy"></a>
+					<p>Эстетическая продукция из Южной Кореи для профессиональных покупателей.</p>
+				</div>
+				<nav class="footer__group" aria-labelledby="footer-catalog">
+					<h2 id="footer-catalog">Каталог</h2>
+					<ul class="footer__links">
+						<li><a href="labs.html">Meamo Labs</a></li>
+						<li><a href="catalog.html?category=mesotherapy">Мезотерапия</a></li>
+						<li><a href="catalog.html?category=fillers">Филлеры</a></li>
+						<li><a href="catalog.html?category=botulinum-toxins">Ботулотоксины</a></li>
+						<li><a href="catalog.html?category=lipolytics">Липолитики</a></li>
+						<li><a href="catalog.html?category=exosomes">Экзосомы</a></li>
+						<li><a href="catalog.html?category=anesthetics">Анестетики</a></li>
+						<li><a href="catalog.html?category=injections">Инъекции</a></li>
+						<li><a href="catalog.html?category=needles-cannulas">Иглы / канюли</a></li>
+						<li><a href="catalog.html?category=threads">Мезонити</a></li>
+						<li><a href="catalog.html?category=cosmeceuticals">Космецевтика</a></li>
+						<li><a href="catalog.html?category=placental-therapy">Плацентарная терапия</a></li>
+						<li><a href="catalog.html?category=apparatus-cosmetology">Аппаратная косметология</a></li>
+						<li><a href="catalog.html?category=equipment">Оборудование</a></li>
+					</ul>
+				</nav>
+				<nav class="footer__group" aria-labelledby="footer-company">
+					<h2 id="footer-company">Компания</h2>
+					<ul class="footer__links">
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="expert-center.html">Экспертный центр</a></li>
+						<li><a href="article-storage.html">Хранение ботулотоксинов</a></li>
+						<li><a href="cooperation.html">Дистрибуция</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+						<li><a href="catalog.html">FAQ</a></li>
+						<li><a href="cooperation.html">Возврат и претензии</a></li>
+						<li><a href="cooperation.html">Оплата</a></li>
+						<li><a href="cooperation.html">Доставка</a></li>
+					</ul>
+				</nav>
+				<div class="footer__contacts">
+					<h2>Связь</h2>
+					<address><a href="mailto:support-ru@meamo.co">support-ru@meamo.co</a><a href="tel:+821028416857">+82
+							10-2841-6857</a><span>Сеул, Южная Корея</span></address>
+				</div>
+			</div>
+			<a class="footer__request button button--secondary" href="index.html#request">Запросить условия</a>
+			<div class="footer__reviews">
+				<h2>Отзывы MEAMO на Trustpilot</h2>
+				<p>Раздел отзывов готовится к подключению.</p>
+			</div>
+			<div class="footer__legal"><span>© MEAMO</span><a href="privacy.html">Политика конфиденциальности</a><a
+					href="personal-data.html">Политика обработки персональных данных</a></div>
+		</div>
+	</footer>
+</body>
+
+</html>

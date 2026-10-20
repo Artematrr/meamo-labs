@@ -1,0 +1,27 @@
+.intro {
+	padding-top: 48px;
+	@include mobile {
+		padding-top: 32px;
+	}
+	h1 {
+		@include fluid-text(40, 28);
+		margin-top: 32px;
+		line-height: 1.2;
+		@include mobile {
+			margin-top: 24px;
+		}
+	}
+	> p {
+		margin-top: 24px;
+		color: var(--color-muted);
+	}
+	&--article {
+		h1 {
+			max-width: 1120px;
+			text-wrap: initial;
+		}
+		> p {
+			max-width: 845px;
+		}
+	}
+}

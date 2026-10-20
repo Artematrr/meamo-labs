@@ -1,0 +1,109 @@
+.info-table {
+	@include fluid-text(14, 14);
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	tbody {
+		@include mobile {
+			display: block;
+		}
+	}
+	tr {
+		&:nth-child(odd) {
+			background-color: var(--color-paper);
+		}
+		@include mobile {
+			display: grid;
+			gap: 8px;
+			padding: 16px;
+		}
+	}
+	th,
+	td {
+		padding: 16px;
+		vertical-align: top;
+		@include mobile {
+			padding: 0;
+		}
+	}
+	th {
+		@include fluid-text(16, 16);
+		width: 24%;
+		font-weight: 500;
+		@include mobile {
+			width: auto;
+		}
+	}
+	td {
+		color: var(--color-muted);
+	}
+	&--specifications {
+		th {
+			width: 31%;
+			color: var(--color-muted);
+			font-weight: 400;
+			@include mobile {
+				width: auto;
+			}
+		}
+		td {
+			@include fluid-text(16, 16);
+			color: var(--color-ink);
+		}
+	}
+	&--editorial {
+		@include fluid-text(16, 16);
+		border: 16px solid var(--color-paper);
+		background-color: var(--color-white);
+		@include mobile {
+			display: block;
+		}
+		caption {
+			@include fluid-text(20, 20);
+			padding: 16px 16px 0;
+			background-color: var(--color-paper);
+			font-weight: 500;
+			line-height: 1.4;
+			text-align: left;
+			@include mobile {
+				display: block;
+				padding: 0 0 16px;
+			}
+		}
+		thead {
+			@include mobile {
+				@include visually-hidden;
+			}
+		}
+		tr,
+		tr:nth-child(odd) {
+			background-color: var(--color-white);
+			@include mobile {
+				gap: 24px;
+			}
+		}
+		th {
+			width: 33.333%;
+			font-weight: 400;
+			@include mobile {
+				width: auto;
+			}
+		}
+		thead th {
+			@include fluid-text(14, 14);
+			padding: 0 16px;
+			background-color: var(--color-paper);
+		}
+		[data-label]::before {
+			display: none;
+			@include mobile {
+				@include fluid-text(12, 12);
+				content: attr(data-label);
+				display: block;
+				margin-bottom: 8px;
+				color: var(--color-hover);
+			}
+		}
+	}
+}

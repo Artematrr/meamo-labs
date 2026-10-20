@@ -1,0 +1,19 @@
+.editorial-metadata {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px 24px;
+	margin: 32px 0 0;
+	@include mobile {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	dt {
+		@include fluid-text(12, 12);
+		color: var(--color-muted);
+		line-height: 1.4;
+	}
+	dd {
+		@include fluid-text(16, 16);
+		margin: 8px 0 0;
+		line-height: 1.5;
+	}
+}

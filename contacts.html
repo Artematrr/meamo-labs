@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Связь с командой MEAMO по вопросам продукции, документов и оптовых поставок.">
+	<title>Контакты — MEAMO</title>
+	<link rel="icon" href="/images/icons/meamo-logo-black.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+	<script src="/scripts/swiper-bundle.min.js" defer></script>
+	<script src="/scripts/main.js" defer></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__container container">
+			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
+					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
+			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+				aria-expanded="false">Меню</button>
+			<div class="header__mobile-menu" id="header-menu">
+				<nav class="header__nav" aria-label="Основная навигация">
+					<a class="header__link" href="catalog.html">Каталог</a>
+					<a class="header__link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link" href="about.html">О компании</a>
+					<a class="header__link" href="expert-center.html">Экспертный центр</a>
+					<a class="header__link" href="contacts.html" aria-current="page">Контакты</a>
+				</nav>
+				<a class="header__request button" href="#request">Запросить условия</a>
+				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+			</div>
+			<form class="search" action="catalog.html" method="get" role="search">
+				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
+				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
+						alt="" width="32" height="32"></button>
+				<input class="search__field" id="catalog-search" type="search" name="q"
+					placeholder="Поиск по каталогу: название товара или бренда">
+			</form>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			<section class="intro" aria-labelledby="contacts-title">
+				<nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li aria-current="page">Контакты</li></ol></nav>
+				<h1 id="contacts-title">Свяжитесь с MEAMO</h1><p>Свяжитесь с нами по вопросам ассортимента, документов и оптовых поставок.</p>
+			</section>
+			<section class="contacts-channels section section--spacious" aria-labelledby="channels-title">
+				<div class="section-heading"><h2 id="channels-title">Будем на связи</h2></div>
+				<div class="grid grid--two">
+					<dl class="contacts-channels__direct">
+						<div class="contacts-channels__contact"><img src="/images/icons/mail.svg" alt="" width="32" height="32"><dt>Email</dt><dd><a href="mailto:support-ru@meamo.co">support-ru@meamo.co</a></dd></div>
+						<div class="contacts-channels__contact"><img src="/images/icons/phone.svg" alt="" width="32" height="32"><dt>Телефон</dt><dd><a href="tel:+821028416857">+82 10-2841-6857</a></dd></div>
+					</dl>
+					<div class="contacts-channels__messengers"><h3>Напишите в мессенджер</h3><p>Запрос по продукции и условиям поставки.</p><div class="contacts-channels__actions"><button class="button button--secondary" type="button" disabled aria-describedby="messenger-status"><img src="/images/icons/telegram.svg" alt="" width="24" height="24">Telegram</button><button class="button button--secondary" type="button" disabled aria-describedby="messenger-status"><img src="/images/icons/whatsapp.svg" alt="" width="24" height="24">WhatsApp</button></div><p id="messenger-status">Ссылки ожидают подтверждения.</p></div>
+				</div>
+				<p class="contacts-channels__hours">Пн–Пт 9:00–18:00 · время Южной Кореи</p>
+			</section>
+			<section class="contacts-map section--before-form" aria-labelledby="map-title"><div class="contacts-map__surface"><h2 id="map-title">Карта</h2><p>Место для интерактивной карты.</p></div><h3 class="contacts-map__city">Сеул, Южная Корея</h3><p class="contacts-map__address">Sungdong-gu, 02633, Seoul, Korea</p></section>
+		</div>
+<section class="wholesale-request" id="request" aria-labelledby="request-title" tabindex="-1"><div class="container"><p class="wholesale-request__context">Оптовый запрос</p><h2 id="request-title">Отправьте оптовый запрос</h2><p class="wholesale-request__intro">Оставьте имя и один контакт: email или телефон. Позиции и количество можно уточнить в сообщении.</p><form class="form form--wholesale" aria-labelledby="request-title" aria-describedby="request-status"><input type="hidden" name="context" value="Оптовый запрос"><fieldset class="form__group"><legend class="form__legend">Как с вами связаться</legend><div class="form__row form__row--three"><div class="form__field"><label class="form__label" for="request-name">Имя</label><input class="form__input" id="request-name" name="name" type="text" autocomplete="name" placeholder="Ваше имя"></div><div class="form__field"><label class="form__label" for="request-email">Email</label><input class="form__input" id="request-email" name="email" type="email" autocomplete="email" placeholder="name@company.ru"></div><div class="form__field"><label class="form__label" for="request-phone">Телефон</label><input class="form__input" id="request-phone" name="phone" type="tel" autocomplete="tel" placeholder="Номер с кодом страны"></div></div><p class="form__hint">Достаточно одного способа связи</p></fieldset><fieldset class="form__group"><legend class="form__legend">Дополнительные сведения</legend><div class="form__row form__row--three"><div class="form__field"><label class="form__label" for="request-company">Компания</label><input class="form__input" id="request-company" name="company" type="text" autocomplete="organization" placeholder="Название клиники или компании"></div><div class="form__field"><label class="form__label" for="request-location">Страна / город</label><input class="form__input" id="request-location" name="location" type="text" autocomplete="address-level2" placeholder="Город получения"></div><div class="form__field"><label class="form__label" for="request-products">Список продукции</label><input class="form__input" id="request-products" name="products" type="text" autocomplete="off" placeholder="Название и количество"></div></div><div class="form__field"><label class="form__label" for="request-message">Комментарий</label><textarea class="form__textarea" id="request-message" name="message" rows="4" placeholder="Укажите позиции и количество. Менеджер проверит наличие и сообщит условия поставки."></textarea></div></fieldset><div class="form__field">
+						<div class="form__attachment"><label class="form__file-label" for="request-file"><img
+									src="/images/icons/paperclip.svg" alt="" width="32" height="32"><span>Прикрепить файл или
+									фото</span><input class="form__file" id="request-file" name="attachment" type="file"
+									aria-describedby="request-file-hint"></label><button class="form__remove-file" type="button" hidden
+								aria-label="Удалить выбранный файл">×</button></div>
+						<p class="form__hint" id="request-file-hint">Можно приложить список продукции или фото упаковки.</p>
+						<p class="form__file-status visually-hidden" role="status" aria-atomic="true"></p>
+					</div><div class="form__consent"><input class="form__checkbox-input" id="request-consent" name="consent"
+							type="checkbox" value="yes"><label class="form__checkbox-label" for="request-consent">Даю <a
+								href="personal-data.html">согласие на обработку персональных данных</a> и принимаю <a
+								href="privacy.html">политику конфиденциальности</a></label></div>
+					<p class="form__status" id="request-status" role="status" aria-atomic="true">Отправка пока не подключена.
+						Введённые данные не отправляются.</p>
+					<button class="form__submit button" type="submit" aria-describedby="request-status">Отправить запрос
+						менеджеру</button>
+				</form></div></section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__container container">
+			<div class="footer__columns">
+				<div class="footer__brand"><a href="index.html" aria-label="MEAMO — главная"><img
+							src="/images/icons/meamo-logo-white.svg" alt="MEAMO" width="136" height="50" loading="lazy"></a>
+					<p>Эстетическая продукция из Южной Кореи для профессиональных покупателей.</p>
+				</div>
+				<nav class="footer__group" aria-labelledby="footer-catalog">
+					<h2 id="footer-catalog">Каталог</h2>
+					<ul class="footer__links">
+						<li><a href="labs.html">Meamo Labs</a></li>
+						<li><a href="catalog.html?category=mesotherapy">Мезотерапия</a></li>
+						<li><a href="catalog.html?category=fillers">Филлеры</a></li>
+						<li><a href="catalog.html?category=botulinum-toxins">Ботулотоксины</a></li>
+						<li><a href="catalog.html?category=lipolytics">Липолитики</a></li>
+						<li><a href="catalog.html?category=exosomes">Экзосомы</a></li>
+						<li><a href="catalog.html?category=anesthetics">Анестетики</a></li>
+						<li><a href="catalog.html?category=injections">Инъекции</a></li>
+						<li><a href="catalog.html?category=needles-cannulas">Иглы / канюли</a></li>
+						<li><a href="catalog.html?category=threads">Мезонити</a></li>
+						<li><a href="catalog.html?category=cosmeceuticals">Космецевтика</a></li>
+						<li><a href="catalog.html?category=placental-therapy">Плацентарная терапия</a></li>
+						<li><a href="catalog.html?category=apparatus-cosmetology">Аппаратная косметология</a></li>
+						<li><a href="catalog.html?category=equipment">Оборудование</a></li>
+					</ul>
+				</nav>
+				<nav class="footer__group" aria-labelledby="footer-company">
+					<h2 id="footer-company">Компания</h2>
+					<ul class="footer__links">
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="expert-center.html">Экспертный центр</a></li>
+						<li><a href="article-storage.html">Хранение ботулотоксинов</a></li>
+						<li><a href="cooperation.html">Дистрибуция</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+						<li><a href="catalog.html">FAQ</a></li>
+						<li><a href="cooperation.html">Возврат и претензии</a></li>
+						<li><a href="cooperation.html">Оплата</a></li>
+						<li><a href="cooperation.html">Доставка</a></li>
+					</ul>
+				</nav>
+				<div class="footer__contacts">
+					<h2>Связь</h2>
+					<address><a href="mailto:support-ru@meamo.co">support-ru@meamo.co</a><a href="tel:+821028416857">+82 10-2841-6857</a><span>Сеул, Южная Корея</span></address>
+				</div>
+			</div>
+			<a class="footer__request button button--secondary" href="#request">Запросить условия</a>
+			<div class="footer__reviews">
+				<h2>Отзывы MEAMO на Trustpilot</h2>
+				<p>Раздел отзывов готовится к подключению.</p>
+			</div>
+			<div class="footer__legal"><span>© MEAMO</span><a href="privacy.html">Политика конфиденциальности</a><a
+					href="personal-data.html">Политика обработки персональных данных</a></div>
+		</div>
+	</footer>
+</body>
+
+</html>

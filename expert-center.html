@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Материалы MEAMO о продукции, документах и организации оптовой поставки.">
+	<title>Экспертный центр — MEAMO</title>
+	<link rel="icon" href="/images/icons/meamo-logo-black.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+	<script src="/scripts/swiper-bundle.min.js" defer></script>
+	<script src="/scripts/main.js" defer></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__container container">
+			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
+					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
+			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+				aria-expanded="false">Меню</button>
+			<div class="header__mobile-menu" id="header-menu">
+				<nav class="header__nav" aria-label="Основная навигация">
+					<a class="header__link" href="catalog.html">Каталог</a>
+					<a class="header__link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link" href="about.html">О компании</a>
+					<a class="header__link" href="expert-center.html" aria-current="page">Экспертный центр</a>
+					<a class="header__link" href="contacts.html">Контакты</a>
+				</nav>
+				<a class="header__request button" href="cooperation.html#request">Запросить условия</a>
+				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+			</div>
+			<form class="search" action="catalog.html" method="get" role="search">
+				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
+				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
+						alt="" width="32" height="32"></button>
+				<input class="search__field" id="catalog-search" type="search" name="q"
+					placeholder="Поиск по каталогу: название товара или бренда">
+			</form>
+		</div>
+	</header>
+
+	<main>
+		<div class="expert-center-page container">
+			<section class="intro" aria-labelledby="expert-page-title"><nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li aria-current="page">Экспертный центр</li></ol></nav><h1 id="expert-page-title">Экспертный центр</h1><p>Материалы о продукции, документах и организации оптовой поставки.</p></section>
+			<div class="expert-center-page__topics topic-filter" role="group" aria-label="Темы материалов">
+				<button class="topic-filter__button" type="button" data-topic="all" aria-pressed="true" aria-controls="expert-articles">Все материалы</button>
+				<button class="topic-filter__button" type="button" data-topic="supply" aria-pressed="false" aria-controls="expert-articles">Поставка</button>
+				<button class="topic-filter__button" type="button" data-topic="products" aria-pressed="false" aria-controls="expert-articles">Продукция</button>
+				<button class="topic-filter__button" type="button" data-topic="documents" aria-pressed="false" aria-controls="expert-articles">Документы</button>
+				<button class="topic-filter__button" type="button" data-topic="work" aria-pressed="false" aria-controls="expert-articles">Работа с MEAMO</button>
+			</div>
+			<p class="expert-center-page__status visually-hidden" role="status" aria-atomic="true"></p>
+			<div class="expert-center-page__grid grid grid--three" id="expert-articles">
+				<article class="article-card" data-topic="supply"><a class="article-card__media" href="article-supplier.html" aria-label="Как выбрать поставщика эстетической продукции"><img src="/images/Illustrations/procurement.jpg" alt="" width="1200" height="675" loading="lazy"></a><p class="article-card__topic">Поставка</p><h2 class="article-card__title">Как выбрать поставщика эстетической продукции</h2><p class="article-card__description">Какие сведения о компании и поставке уточнить перед закупкой.</p><a class="article-card__link button button--link" href="article-supplier.html">Подробнее<span class="visually-hidden">: Как выбрать поставщика эстетической продукции</span></a></article>
+				<article class="article-card" data-topic="documents"><a class="article-card__media" href="article-documents.html" aria-label="Какие документы запросить перед поставкой"><img src="/images/Illustrations/documents.jpg" alt="" width="1200" height="675" loading="lazy"></a><p class="article-card__topic">Документы</p><h2 class="article-card__title">Какие документы запросить перед поставкой</h2><p class="article-card__description">Как связать доступные материалы с нужной продукцией.</p><a class="article-card__link button button--link" href="article-documents.html">Подробнее<span class="visually-hidden">: Какие документы запросить перед поставкой</span></a></article>
+				<article class="article-card" data-topic="work"><a class="article-card__media" href="article.html" aria-label="Как подготовить оптовый запрос"><img src="/images/Illustrations/logistics.jpg" alt="" width="1200" height="675" loading="lazy"></a><p class="article-card__topic">Работа с MEAMO</p><h2 class="article-card__title">Как подготовить оптовый запрос</h2><p class="article-card__description">Названия, количество и вопросы для предметного обсуждения.</p><a class="article-card__link button button--link" href="article.html">Подробнее<span class="visually-hidden">: Как подготовить оптовый запрос</span></a></article>
+				<article class="article-card" data-topic="products"><a class="article-card__media" href="article-packaging.html" aria-label="Как уточнить комплектность продукции"><img src="/images/products/Jeunetique Deep.jpg" alt="" width="1200" height="675" loading="lazy"></a><p class="article-card__topic">Продукция</p><h2 class="article-card__title">Как уточнить комплектность продукции</h2><p class="article-card__description">Что проверить по упаковке и обозначению варианта.</p><a class="article-card__link button button--link" href="article-packaging.html">Подробнее<span class="visually-hidden">: Как уточнить комплектность продукции</span></a></article>
+				<article class="article-card" data-topic="work"><a class="article-card__media" href="article-outside-catalog.html" aria-label="Товар вне каталога: что указать в запросе"><img src="/images/products/Miracle L.jpg" alt="" width="1200" height="675" loading="lazy"></a><p class="article-card__topic">Работа с MEAMO</p><h2 class="article-card__title">Товар вне каталога: что указать в запросе</h2><p class="article-card__description">Фотография и название помогут уточнить нужную позицию.</p><a class="article-card__link button button--link" href="article-outside-catalog.html">Подробнее<span class="visually-hidden">: Товар вне каталога: что указать в запросе</span></a></article>
+				<article class="article-card" data-topic="supply"><a class="article-card__media" href="article-supplier-offer.html" aria-label="Что сравнивать в предложении поставщика"><img src="/images/products/Curenex.jpg" alt="" width="1200" height="675" loading="lazy"></a><p class="article-card__topic">Поставка</p><h2 class="article-card__title">Что сравнивать в предложении поставщика</h2><p class="article-card__description">Соберите параметры и открытые вопросы в одном месте.</p><a class="article-card__link button button--link" href="article-supplier-offer.html">Подробнее<span class="visually-hidden">: Что сравнивать в предложении поставщика</span></a></article>
+			</div>
+			<div class="expert-center-page__empty" hidden><h2>По этой теме пока нет материалов</h2><p>Выберите другую тему или откройте все материалы.</p><button class="button button--secondary" type="button" data-all-topics>Все материалы</button></div>
+			<nav class="pagination pagination--start" aria-label="Страницы материалов"><button class="pagination__button" type="button" disabled aria-label="Предыдущая страница">‹</button><button class="pagination__button" type="button" aria-current="page" aria-label="Страница 1">1</button><button class="pagination__button" type="button" disabled aria-label="Следующая страница">›</button></nav>
+		</div>
+		<section class="request-promo request-promo--experts" aria-labelledby="expert-request-title"><div class="container"><div class="section-heading"><h2 id="expert-request-title">Остались вопросы по поставке?</h2></div><p class="request-promo__text">Уточните детали по интересующей продукции у команды MEAMO.</p><a class="request-promo__action button" href="contacts.html?request=supply#request">Отправить запрос менеджеру</a></div></section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__container container">
+			<div class="footer__columns">
+				<div class="footer__brand"><a href="index.html" aria-label="MEAMO — главная"><img
+							src="/images/icons/meamo-logo-white.svg" alt="MEAMO" width="136" height="50" loading="lazy"></a>
+					<p>Эстетическая продукция из Южной Кореи для профессиональных покупателей.</p>
+				</div>
+				<nav class="footer__group" aria-labelledby="footer-catalog">
+					<h2 id="footer-catalog">Каталог</h2>
+					<ul class="footer__links">
+						<li><a href="labs.html">Meamo Labs</a></li>
+						<li><a href="catalog.html?category=mesotherapy">Мезотерапия</a></li>
+						<li><a href="catalog.html?category=fillers">Филлеры</a></li>
+						<li><a href="catalog.html?category=botulinum-toxins">Ботулотоксины</a></li>
+						<li><a href="catalog.html?category=lipolytics">Липолитики</a></li>
+						<li><a href="catalog.html?category=exosomes">Экзосомы</a></li>
+						<li><a href="catalog.html?category=anesthetics">Анестетики</a></li>
+						<li><a href="catalog.html?category=injections">Инъекции</a></li>
+						<li><a href="catalog.html?category=needles-cannulas">Иглы / канюли</a></li>
+						<li><a href="catalog.html?category=threads">Мезонити</a></li>
+						<li><a href="catalog.html?category=cosmeceuticals">Космецевтика</a></li>
+						<li><a href="catalog.html?category=placental-therapy">Плацентарная терапия</a></li>
+						<li><a href="catalog.html?category=apparatus-cosmetology">Аппаратная косметология</a></li>
+						<li><a href="catalog.html?category=equipment">Оборудование</a></li>
+					</ul>
+				</nav>
+				<nav class="footer__group" aria-labelledby="footer-company">
+					<h2 id="footer-company">Компания</h2>
+					<ul class="footer__links">
+						<li><a href="about.html">О нас</a></li>
+						<li><a href="expert-center.html">Экспертный центр</a></li>
+						<li><a href="article-storage.html">Хранение ботулотоксинов</a></li>
+						<li><a href="cooperation.html">Дистрибуция</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+						<li><a href="catalog.html">FAQ</a></li>
+						<li><a href="cooperation.html">Возврат и претензии</a></li>
+						<li><a href="cooperation.html">Оплата</a></li>
+						<li><a href="cooperation.html">Доставка</a></li>
+					</ul>
+				</nav>
+				<div class="footer__contacts">
+					<h2>Связь</h2>
+					<address><a href="mailto:support-ru@meamo.co">support-ru@meamo.co</a><a href="tel:+821028416857">+82 10-2841-6857</a><span>Сеул, Южная Корея</span></address>
+				</div>
+			</div>
+			<a class="footer__request button button--secondary" href="cooperation.html#request">Запросить условия</a>
+			<div class="footer__reviews">
+				<h2>Отзывы MEAMO на Trustpilot</h2>
+				<p>Раздел отзывов готовится к подключению.</p>
+			</div>
+			<div class="footer__legal"><span>© MEAMO</span><a href="privacy.html">Политика конфиденциальности</a><a
+					href="personal-data.html">Политика обработки персональных данных</a></div>
+		</div>
+	</footer>
+</body>
+
+</html>

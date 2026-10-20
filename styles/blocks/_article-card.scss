@@ -38,4 +38,27 @@
 	&__link {
 		margin-top: auto;
 	}
+	&--feature {
+		.article-card__media {
+			display: grid;
+			grid-template-rows: minmax(0, 1fr);
+			place-items: center;
+			aspect-ratio: 1.6;
+			overflow: hidden;
+			margin-bottom: 48px;
+			@include mobile {
+				margin-bottom: 24px;
+			}
+		}
+		.article-card__media img {
+			aspect-ratio: 1;
+			border-radius: 0;
+		}
+		.article-card__description {
+			margin-block: 24px 48px;
+			@include mobile {
+				margin-block: 8px 24px;
+			}
+		}
+	}
 }

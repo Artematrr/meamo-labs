@@ -78,4 +78,66 @@
 			line-height: 1.42857;
 		}
 	}
+	&--icon-side {
+		@include fluid-text(14, 14);
+		display: grid;
+		grid-template-columns: 24px minmax(0, 1fr);
+		gap: 8px 16px;
+		padding: 24px;
+		border-radius: var(--radius-sm);
+		background-color: var(--color-paper);
+		line-height: 1.42;
+		.card__icon {
+			grid-row: span 2;
+			width: 24px;
+			height: 24px;
+		}
+		.card__title {
+			text-decoration: underline;
+			@include hover {
+				color: var(--color-hover);
+			}
+		}
+	}
+	&--text.card--feature {
+		@include fluid-text(16, 16);
+		display: block;
+		padding: 24px;
+		border: 0;
+		border-radius: var(--radius-lg);
+		line-height: 1.5;
+		.card__title {
+			@include fluid-text(28, 28);
+			margin: 0;
+			font-family: var(--font-family-accent);
+			line-height: 1.28;
+			letter-spacing: -0.3px;
+		}
+		.card__description {
+			margin-top: 16px;
+			line-height: 1.5;
+		}
+	}
+	&__number {
+		@include fluid-text(20, 20);
+		grid-row: span 2;
+		color: var(--color-hover);
+		font-weight: 500;
+		line-height: 1.4;
+	}
+	&--centered-icon .card__icon {
+		margin-inline: auto;
+		@include mobile {
+			margin-inline: 0;
+		}
+	}
+	&--enum {
+		@include fluid-text(14, 14);
+		display: grid;
+		grid-template-columns: 32px minmax(0, 1fr);
+		gap: 8px 16px;
+		padding: 16px;
+		border-radius: var(--radius-sm);
+		background-color: var(--color-paper);
+	}
 }

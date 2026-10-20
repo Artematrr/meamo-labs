@@ -54,9 +54,6 @@
 		grid-template-rows: repeat(2, 200px);
 		gap: 16px;
 		touch-action: pan-y pinch-zoom;
-		@include tablet {
-			grid-template-columns: minmax(0, 19fr) minmax(0, 11fr);
-		}
 		@include mobile {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 			grid-template-rows: 200px 96px;
@@ -127,6 +124,89 @@
 			@include mobile {
 				line-height: 1.25;
 				letter-spacing: -0.5px;
+			}
+		}
+	}
+	&__eyebrow {
+		@include fluid-text(12, 12);
+		margin-bottom: 24px;
+		color: var(--color-hover);
+		font-weight: 500;
+		line-height: 1.33;
+		text-transform: uppercase;
+	}
+	&__illustration {
+		min-width: 0;
+		align-self: center;
+	}
+	&__illustration img {
+		width: 100%;
+		height: 416px;
+		object-fit: cover;
+		@include mobile {
+			height: 292px;
+		}
+	}
+	&--wholesale {
+		margin-bottom: 32px;
+		background-color: var(--color-paper);
+		@include mobile {
+			margin-bottom: 24px;
+		}
+		.hero-split__container {
+			align-items: start;
+			@include mobile {
+				gap: 32px;
+				padding-block: 40px;
+			}
+		}
+		h1 {
+			@include fluid-text(48, 36);
+			line-height: 1.1667;
+			text-wrap: initial;
+			@include mobile {
+				line-height: 1.2222;
+			}
+		}
+		.hero-split__actions {
+			margin-top: 24px;
+		}
+	}
+	&__title-wide {
+		@include mobile {
+			display: none;
+		}
+	}
+	&__title-short {
+		display: none;
+		@include mobile {
+			display: inline;
+		}
+	}
+	&--about {
+		background-color: var(--color-paper);
+		.hero-split__container {
+			align-items: start;
+			@include mobile {
+				gap: 48px;
+				padding-block: 40px;
+			}
+		}
+		h1 {
+			@include fluid-text(48, 36);
+			line-height: 1.1667;
+			text-wrap: initial;
+			@include mobile {
+				line-height: 1.2222;
+			}
+		}
+		.hero-split__actions {
+			margin-top: 24px;
+		}
+		.hero-split__illustration img {
+			border-radius: var(--radius-md);
+			@include mobile {
+				height: 260px;
 			}
 		}
 	}

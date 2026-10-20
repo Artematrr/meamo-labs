@@ -1,0 +1,79 @@
+.error-page {
+	padding-block: 80px;
+	background-color: var(--color-paper);
+	@include mobile {
+		padding-block: 48px;
+	}
+	&__container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+		gap: 48px;
+		@include tablet {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		@include mobile {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 24px;
+		}
+	}
+	&__copy {
+		min-width: 0;
+	}
+	&__eyebrow {
+		@include fluid-text(12, 12);
+		margin-bottom: 24px;
+		color: var(--color-hover);
+		font-weight: 500;
+		line-height: 1.4;
+		text-transform: uppercase;
+	}
+	h1 {
+		@include fluid-text(48, 36);
+		line-height: 1.17;
+		text-wrap: initial;
+	}
+	&__description {
+		@include fluid-text(16, 16);
+		margin-top: 24px;
+		color: var(--color-muted);
+		line-height: 1.5;
+	}
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		margin-top: 24px;
+		@include mobile {
+			display: grid;
+		}
+		.button {
+			min-width: 264px;
+			@include mobile {
+				min-width: 0;
+			}
+		}
+	}
+	&__decoration {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+		min-height: 340px;
+		padding: 32px;
+		border-radius: var(--radius-md);
+		background-color: var(--color-mist);
+		color: var(--color-blue);
+		@include mobile {
+			min-height: 240px;
+		}
+		span {
+			@include fluid-text(160, 112);
+			line-height: 1.2;
+		}
+		p {
+			@include fluid-text(14, 14);
+			color: var(--color-hover);
+		}
+	}
+}

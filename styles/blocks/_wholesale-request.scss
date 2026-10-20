@@ -1,0 +1,20 @@
+.wholesale-request {
+	padding-block: 64px;
+	background-color: var(--color-mist);
+	@include mobile {
+		padding-block: 40px;
+	}
+	&__context {
+		@include fluid-text(12, 12);
+		margin-bottom: 24px;
+		color: var(--color-hover);
+		font-weight: 500;
+		line-height: 1.33;
+		text-transform: uppercase;
+	}
+	&__intro {
+		max-width: 850px;
+		margin-block: 24px 32px;
+		color: var(--color-muted);
+	}
+}

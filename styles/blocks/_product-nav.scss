@@ -1,0 +1,21 @@
+.product-nav {
+	@include fluid-text(14, 14);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 24px;
+	font-weight: 500;
+	line-height: 1.4;
+	@include mobile {
+		column-gap: 20px;
+	}
+	a {
+		padding-block: 12px;
+		border-bottom: 2px solid var(--transparent);
+		&[aria-current='location'] {
+			border-color: var(--color-blue);
+		}
+		@include hover {
+			border-color: var(--color-hover);
+		}
+	}
+}

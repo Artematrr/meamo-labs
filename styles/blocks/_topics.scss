@@ -1,0 +1,50 @@
+.topics {
+	&__list {
+		display: grid;
+		gap: 32px;
+		@include mobile {
+			gap: 24px;
+		}
+	}
+	&__item {
+		@include fluid-text(16, 16);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px 32px;
+		padding: 24px;
+		border-radius: var(--radius-md);
+		background-color: var(--color-paper);
+		line-height: 1.5;
+		@include mobile {
+			flex-direction: column;
+			align-items: stretch;
+		}
+		&--plain {
+			border-radius: 0;
+		}
+	}
+	&__copy {
+		min-width: 0;
+	}
+	&__title {
+		@include fluid-text(20, 20);
+		font-family: var(--font-family-base);
+		font-weight: 500;
+		line-height: 1.4;
+		letter-spacing: normal;
+		text-wrap: initial;
+	}
+	&__description {
+		margin-top: 8px;
+		color: var(--color-muted);
+	}
+	&__action {
+		flex: 0 0 328px;
+		@include mobile {
+			flex-basis: auto;
+			width: 100%;
+			padding-inline: 12px;
+		}
+	}
+}
