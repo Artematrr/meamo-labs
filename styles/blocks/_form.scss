@@ -152,6 +152,9 @@
 	}
 	&__status {
 		color: var(--color-muted);
+		&[hidden] {
+			display: none;
+		}
 	}
 	&__submit {
 		justify-self: start;

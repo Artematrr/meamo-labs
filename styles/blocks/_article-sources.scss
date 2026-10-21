@@ -14,4 +14,37 @@
 		margin-top: 16px;
 		color: var(--color-muted);
 	}
+	&__list {
+		display: grid;
+		gap: 16px;
+		margin-top: 16px;
+		padding: 0;
+		list-style: none;
+	}
+	&__item {
+		padding: 16px;
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-sm);
+		background-color: var(--color-white);
+		h3 {
+			@include fluid-text(16, 16);
+			font-family: var(--font-family-base);
+			font-weight: 500;
+			line-height: 1.5;
+			letter-spacing: normal;
+			text-wrap: initial;
+		}
+		p {
+			margin-top: 8px;
+		}
+		a {
+			display: inline-block;
+			margin-top: 8px;
+			color: var(--color-blue);
+			font-weight: 500;
+			@include hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }

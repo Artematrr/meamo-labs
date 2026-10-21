@@ -1,4 +1,10 @@
+main:has(> .error-page) {
+	display: flex;
+	flex-direction: column;
+}
+
 .error-page {
+	flex: 1;
 	padding-block: 80px;
 	background-color: var(--color-paper);
 	@include mobile {

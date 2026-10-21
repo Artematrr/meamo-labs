@@ -155,9 +155,14 @@ if (request) {
 
 	const updateFile = () => {
 		const file = fileInput.files[0];
+		const error = file && (file.size > 10 * 1024 * 1024
+			? 'Выберите файл до 10 МБ.'
+			: !/\.(pdf|xlsx|xls|csv|jpe?g|png)$/i.test(file.name)
+				? 'Выберите файл PDF, XLSX, XLS, CSV, JPG, JPEG или PNG.' : '');
+		fileInput.setCustomValidity(error || '');
 		fileLabel.textContent = file ? file.name : 'Прикрепить файл или фото';
 		removeFile.hidden = !file;
-		fileStatus.textContent = file ? `Выбран файл: ${file.name}. Он ещё не отправлен.` : 'Выбранный файл удалён.';
+		fileStatus.textContent = error || (file ? `Выбран файл: ${file.name}.` : 'Выбранный файл удалён.');
 	};
 	fileInput.addEventListener('change', updateFile);
 	removeFile.addEventListener('click', () => {
@@ -165,9 +170,19 @@ if (request) {
 		updateFile();
 		fileInput.focus();
 	});
+	form.addEventListener('input', () => {
+		form.elements.namedItem('name').setCustomValidity('');
+		if (form.elements.namedItem('email')) form.elements.namedItem('email').setCustomValidity('');
+	});
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
-		status.textContent = 'Отправка пока недоступна: обработчик не подключён. Все заполненные поля и выбранный файл сохранены.';
+		const name = form.elements.namedItem('name');
+		name.setCustomValidity(name.value.trim() ? '' : 'Укажите имя.');
+		const email = form.elements.namedItem('email');
+		if (email) email.setCustomValidity(email.value.trim() || form.elements.namedItem('phone').value.trim() ? '' : 'Укажите email или телефон.');
+		if (!form.reportValidity()) return;
+		status.hidden = false;
+		status.textContent = 'Не удалось отправить запрос. Попробуйте позже — заполненные поля и выбранный файл сохранены.';
 		status.tabIndex = -1;
 		status.focus();
 	});
@@ -185,29 +200,30 @@ if (expertCenter) {
 	let page = 1;
 	const updateArticles = () => {
 		const matching = articles.filter((article) => selectedTopic === 'all' || article.dataset.topic === selectedTopic);
-		const pages = Math.ceil(matching.length / 6);
+		const pages = Math.ceil(matching.length / 2);
 		articles.forEach((article) => {
 			const index = matching.indexOf(article);
-			article.hidden = index < (page - 1) * 6 || index >= page * 6;
+			article.hidden = index < (page - 1) * 2 || index >= page * 2;
 		});
 		empty.hidden = matching.length > 0;
 		status.textContent = `Материалов по выбранной теме: ${matching.length}.`;
 		pagination.hidden = pages === 0;
 		pagination.replaceChildren();
-		const addPageButton = (text, label, target, disabled = false) => {
+		const addPageButton = (text, label, target, unavailable = false) => {
 			const button = document.createElement('button');
 			button.type = 'button';
 			button.className = 'pagination__button';
 			button.textContent = text;
 			button.setAttribute('aria-label', label);
 			button.dataset.page = target;
-			button.disabled = disabled;
+			if (unavailable) button.setAttribute('aria-disabled', 'true');
 			if (text === String(page)) button.setAttribute('aria-current', 'page');
 			pagination.append(button);
 		};
-		addPageButton('‹', 'Предыдущая страница', page - 1, page === 1);
-		for (let number = 1; number <= pages; number++) addPageButton(String(number), `Страница ${number}`, number);
-		addPageButton('›', 'Следующая страница', page + 1, page === pages);
+		for (let number = 1; number <= pages; number++) {
+			addPageButton(String(number), `Страница ${number}`, number);
+		}
+		if (selectedTopic === 'all') addPageButton('...', 'Другие страницы', '', true);
 	};
 	topics.addEventListener('click', (event) => {
 		const button = event.target.closest('.topic-filter__button');
@@ -224,7 +240,7 @@ if (expertCenter) {
 	});
 	pagination.addEventListener('click', (event) => {
 		const button = event.target.closest('[data-page]');
-		if (!button) return;
+		if (!button || button.getAttribute('aria-disabled') === 'true') return;
 		page = Number(button.dataset.page);
 		updateArticles();
 		pagination.querySelector('[aria-current="page"]').focus();
@@ -429,12 +445,11 @@ if (productNav) {
 
 const articleContents = document.querySelector('.article-contents');
 if (articleContents) {
-	const toggle = articleContents.querySelector('.article-contents__toggle');
-	const links = document.getElementById(toggle.getAttribute('aria-controls'));
-	toggle.addEventListener('click', () => {
-		const expanded = toggle.getAttribute('aria-expanded') === 'true';
-		toggle.setAttribute('aria-expanded', String(!expanded));
-		toggle.querySelector('span').textContent = expanded ? '+' : '−';
-		links.hidden = expanded;
+	const links = [...articleContents.querySelectorAll('a')];
+	const updateContents = () => links.forEach((link) => {
+		if (link.hash === (window.location.hash || links[0].hash)) link.setAttribute('aria-current', 'location');
+		else link.removeAttribute('aria-current');
 	});
+	window.addEventListener('hashchange', updateContents);
+	updateContents();
 }

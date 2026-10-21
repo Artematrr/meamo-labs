@@ -6,6 +6,8 @@ html {
 
 body {
 	@include fluid-text(18, 16);
+	display: flex;
+	flex-direction: column;
 
 	font-family: var(--font-family-base);
 	color: var(--color-ink);
@@ -13,7 +15,7 @@ body {
 	font-weight: 400;
 	line-height: 1.55;
 	background-color: var(--color-white);
-	min-height: 100%;
+	min-height: 100dvh;
 	font-optical-sizing: auto;
 	overflow-wrap: anywhere;
 	scrollbar-color: var(--color-blue) var(--transparent);

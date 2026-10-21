@@ -1,4 +1,5 @@
 .footer {
+	flex-shrink: 0;
 	@include fluid-text(14, 14);
 	padding-block: 64px 80px;
 	background-color: var(--color-ink);

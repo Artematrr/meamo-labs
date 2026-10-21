@@ -84,10 +84,12 @@
 		> ol {
 			list-style: decimal;
 		}
-		li {
+		> ul > li,
+		> ol > li {
 			padding-left: 8px;
 		}
-		li + li {
+		> ul > li + li,
+		> ol > li + li {
 			margin-top: 16px;
 		}
 		> p a {
