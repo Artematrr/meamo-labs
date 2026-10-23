@@ -47,7 +47,7 @@
 	&__controls {
 		display: flex;
 		gap: 16px;
-		margin-top: 32px;
+		// margin-top: 32px;
 		@include mobile {
 			display: none;
 		}

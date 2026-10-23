@@ -34,6 +34,10 @@
 	&__description {
 		margin-bottom: 24px;
 		color: var(--color-muted);
+		min-height: 72px;
+		@include mobile {
+			margin-bottom: 16px;
+		}
 	}
 	&__link {
 		margin-top: auto;

@@ -20,6 +20,10 @@
 		flex: 0 0 46px;
 		padding-left: 8px;
 		border-radius: var(--radius-sm);
+		img {
+			width: 24px;
+			height: 24px;
+		}
 	}
 	&__field {
 		@include fluid-text(16, 16);

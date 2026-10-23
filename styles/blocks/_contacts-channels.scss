@@ -28,6 +28,9 @@
 		img {
 			grid-row: span 2;
 			align-self: center;
+			width: 32px;
+			height: 24px;
+			object-fit: contain;
 		}
 		dt {
 			@include fluid-text(14, 14);

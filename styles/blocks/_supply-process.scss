@@ -9,13 +9,10 @@
 	&__steps {
 		display: grid;
 		grid-template-columns: repeat(5, minmax(0, 1fr));
-		gap: 24px;
-		@include tablet {
-			gap: 16px;
-		}
+		gap: 16px;
 		@include mobile {
 			grid-template-columns: minmax(0, 1fr);
-			gap: 24px;
+			gap: 8px;
 		}
 	}
 	&__step {
@@ -34,11 +31,11 @@
 	&__number {
 		@include fluid-text(28, 20);
 		display: block;
-		margin-bottom: 24px;
+		margin-bottom: 16px;
 		color: var(--color-hover);
 		font-family: var(--font-family-accent);
 		font-weight: 500;
-		line-height: 1.28;
+		line-height: 1.4;
 		@include mobile {
 			grid-row: span 2;
 			margin: 0;
@@ -68,6 +65,7 @@
 		margin-top: 32px;
 		@include mobile {
 			display: grid;
+			margin-top: 24px;
 		}
 	}
 	&__actions .button {

@@ -7,8 +7,9 @@
 		min-height: 48px;
 		margin-top: 48px;
 		font-weight: 500;
+		padding-block: 12px;
 		@include mobile {
-			margin-top: 32px;
+			// margin-top: 24px;
 		}
 	}
 	&__all {

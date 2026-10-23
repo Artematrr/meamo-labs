@@ -46,7 +46,7 @@
 		min-width: 0;
 	}
 	&__label {
-		line-height: 20px;
+		line-height: 1.42;
 	}
 	&__input,
 	&__textarea {
@@ -58,7 +58,7 @@
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-sm);
 		background-color: var(--color-white);
-		line-height: 24px;
+		line-height: 1.5;
 		&:focus-visible {
 			outline-offset: -3px;
 		}
@@ -86,7 +86,7 @@
 		min-height: 48px;
 		padding-block: 8px;
 		color: var(--color-blue);
-		line-height: 20px;
+		line-height: 1.42;
 		cursor: pointer;
 	}
 	&__file-label:has(:focus-visible) {
@@ -96,6 +96,9 @@
 	}
 	&__file-label img {
 		flex: 0 0 32px;
+		width: 32px;
+		height: 24px;
+		object-fit: contain;
 	}
 	&__file {
 		position: absolute;
@@ -144,7 +147,7 @@
 	}
 	&__checkbox-label {
 		color: var(--color-muted);
-		line-height: 20px;
+		line-height: 1.42;
 		cursor: pointer;
 	}
 	&__checkbox-label a {

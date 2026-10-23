@@ -40,13 +40,13 @@
 	&--spacious {
 		margin-block-start: 112px;
 		@include mobile {
-			margin-block-start: 80px;
+			margin-block-start: 72px;
 		}
 	}
 	&--compact {
 		margin-block-start: 48px;
 		@include mobile {
-			margin-block-start: 40px;
+			margin-block-start: 32px;
 		}
 	}
 	&--ending {
@@ -67,6 +67,12 @@
 			margin-bottom: 40px;
 		}
 	}
+	&--huge {
+		margin-block-start: 128px;
+		@include mobile {
+			margin-block-start: 82px;
+		}
+	}
 	&__action {
 		width: fit-content;
 		min-width: 232px;
@@ -74,6 +80,7 @@
 		@include mobile {
 			width: 100%;
 			min-width: 0;
+			margin-top: 24px;
 		}
 	}
 }
@@ -82,8 +89,4 @@
 	@include mobile {
 		margin-block-start: 56px;
 	}
-}
-main {
-	flex: 1;
-	padding-block-end: 0;
 }

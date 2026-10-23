@@ -36,7 +36,7 @@
 			<form class="search" action="catalog.html" method="get" role="search">
 				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
 				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
-						alt="" width="32" height="32"></button>
+						alt="" width="24" height="24"></button>
 				<input class="search__field" id="catalog-search" type="search" name="q"
 					placeholder="Поиск по каталогу: название товара или бренда">
 			</form>
@@ -53,8 +53,8 @@
 				<div class="section-heading"><h2 id="channels-title">Будем на связи</h2></div>
 				<div class="grid grid--two">
 					<dl class="contacts-channels__direct">
-						<div class="contacts-channels__contact"><img src="/images/icons/mail.svg" alt="" width="32" height="32"><dt>Email</dt><dd><a href="mailto:support-ru@meamo.co">support-ru@meamo.co</a></dd></div>
-						<div class="contacts-channels__contact"><img src="/images/icons/phone.svg" alt="" width="32" height="32"><dt>Телефон</dt><dd><a href="tel:+821028416857">+82 10-2841-6857</a></dd></div>
+						<div class="contacts-channels__contact"><img src="/images/icons/mail.svg" alt="" width="32" height="24"><dt>Email</dt><dd><a href="mailto:support-ru@meamo.co">support-ru@meamo.co</a></dd></div>
+						<div class="contacts-channels__contact"><img src="/images/icons/phone.svg" alt="" width="32" height="24"><dt>Телефон</dt><dd><a href="tel:+821028416857">+82 10-2841-6857</a></dd></div>
 					</dl>
 					<div class="contacts-channels__messengers"><h3>Напишите в мессенджер</h3><p>Запрос по продукции и условиям поставки.</p><div class="contacts-channels__actions"><a class="button button--secondary" href="https://t.me/+821028416857" target="_blank" rel="noopener noreferrer"><img src="/images/icons/telegram.svg" alt="" width="24" height="24">Telegram</a><a class="button button--secondary" href="https://wa.me/821028416857" target="_blank" rel="noopener noreferrer"><img src="/images/icons/whatsapp.svg" alt="" width="24" height="24">WhatsApp</a></div></div>
 				</div>
@@ -64,7 +64,7 @@
 		</div>
 <section class="wholesale-request" id="request" aria-labelledby="request-title" tabindex="-1"><div class="container"><p class="wholesale-request__context">Оптовый запрос</p><h2 id="request-title">Отправьте оптовый запрос</h2><p class="wholesale-request__intro">Оставьте имя и один контакт: email или телефон. Позиции и количество можно уточнить в сообщении.</p><form class="form form--wholesale" aria-labelledby="request-title" aria-describedby="request-required request-status"><input type="hidden" name="context" value="Оптовый запрос"><fieldset class="form__group"><legend class="form__legend">Как с вами связаться</legend><div class="form__row form__row--three"><div class="form__field"><label class="form__label" for="request-name">Имя *</label><input class="form__input" id="request-name" name="name" type="text" required autocomplete="name" placeholder="Ваше имя"></div><div class="form__field"><label class="form__label" for="request-email">Email *</label><input class="form__input" id="request-email" name="email" type="email" autocomplete="email" placeholder="name@company.ru"></div><div class="form__field"><label class="form__label" for="request-phone">Телефон *</label><input class="form__input" id="request-phone" name="phone" type="tel" autocomplete="tel" placeholder="Номер с кодом страны"></div></div><p class="form__hint">* Достаточно одного способа связи: email или телефон</p></fieldset><fieldset class="form__group"><legend class="form__legend">Дополнительные сведения</legend><div class="form__row form__row--three"><div class="form__field"><label class="form__label" for="request-company">Компания</label><input class="form__input" id="request-company" name="company" type="text" autocomplete="organization" placeholder="Название клиники или компании"></div><div class="form__field"><label class="form__label" for="request-location">Страна / город</label><input class="form__input" id="request-location" name="location" type="text" autocomplete="address-level2" placeholder="Город получения"></div><div class="form__field"><label class="form__label" for="request-products">Список продукции</label><input class="form__input" id="request-products" name="products" type="text" autocomplete="off" placeholder="Название и количество"></div></div><div class="form__field"><label class="form__label" for="request-message">Комментарий</label><textarea class="form__textarea" id="request-message" name="message" rows="4" placeholder="Укажите позиции и количество. Менеджер проверит наличие и сообщит условия поставки."></textarea></div></fieldset><div class="form__field">
 						<div class="form__attachment"><label class="form__file-label" for="request-file"><img
-									src="/images/icons/paperclip.svg" alt="" width="32" height="32"><span>Прикрепить файл или
+									src="/images/icons/paperclip.svg" alt="" width="32" height="24"><span>Прикрепить файл или
 									фото</span><input class="form__file" id="request-file" name="attachment" type="file" accept=".pdf,.xlsx,.xls,.csv,.jpg,.jpeg,.png"
 									aria-describedby="request-file-hint"></label><button class="form__remove-file" type="button" hidden
 								aria-label="Удалить выбранный файл">×</button></div>
@@ -129,7 +129,7 @@
 			<a class="footer__request button button--secondary" href="#request">Запросить условия</a>
 			<div class="footer__reviews">
 				<h2>Отзывы MEAMO на Trustpilot</h2>
-				<p>Раздел отзывов готовится к подключению.</p>
+				<a class="footer__reviews-link button button--secondary" href="/" rel="noopener noreferrer">Читать отзывы</a>
 			</div>
 			<div class="footer__legal"><span>© MEAMO</span><a href="privacy.html">Политика конфиденциальности</a><a
 					href="personal-data.html">Политика обработки персональных данных</a></div>

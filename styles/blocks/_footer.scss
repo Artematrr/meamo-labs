@@ -31,7 +31,7 @@
 		gap: 40px;
 		@include tablet {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 40px 24px;
+			gap: 32px 24px;
 		}
 	}
 	&__brand img {
@@ -55,11 +55,11 @@
 	}
 	&__contacts address {
 		display: grid;
-		margin-top: 16px;
+		margin-top: 24px;
 		font-style: normal;
 		overflow-wrap: anywhere;
 		@include mobile {
-			gap: 16px;
+			gap: 12px;
 		}
 	}
 	&__request {
@@ -75,8 +75,13 @@
 		border-radius: var(--radius-sm);
 		background-color: var(--color-blue);
 	}
-	&__reviews p {
+	&__reviews-link {
+		width: 232px;
+		max-width: 100%;
 		margin-top: 16px;
+		@include mobile {
+			width: 100%;
+		}
 	}
 	&__legal {
 		display: flex;
@@ -86,7 +91,7 @@
 		@include mobile {
 			display: grid;
 			gap: 12px;
-			margin-top: 56px;
+			margin-top: 40px;
 		}
 	}
 	&__brand {

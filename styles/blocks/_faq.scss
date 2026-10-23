@@ -3,11 +3,11 @@
 	padding-block: 64px;
 	border-top: 1px solid var(--color-line);
 	@include mobile {
-		margin-top: 48px;
+		margin-top: 40px;
 		padding-block: 40px;
 	}
 	.section-heading {
-		margin-bottom: 24px;
+		margin-bottom: 16px;
 	}
 	&__items {
 		display: grid;
@@ -44,15 +44,15 @@
 	}
 	&__indicator {
 		position: relative;
-		flex: 0 0 24px;
-		width: 24px;
-		height: 24px;
+		align-self: stretch;
+		flex: 0 0 32px;
+		width: 32px;
 		&::before,
 		&::after {
 			content: '';
 			position: absolute;
-			top: 11px;
-			left: 6px;
+			top: calc(50% - 1px);
+			left: 10px;
 			width: 12px;
 			height: 2px;
 			border-radius: 1px;
@@ -60,7 +60,9 @@
 		}
 		&::after {
 			transform: rotate(90deg);
-			transition: transform var(--transition-duration) ease, opacity var(--transition-duration) ease;
+			transition:
+				transform var(--transition-duration) ease,
+				opacity var(--transition-duration) ease;
 			@media (prefers-reduced-motion: reduce) {
 				transition: none;
 			}
@@ -70,6 +72,9 @@
 		transform: rotate(0deg) scaleX(0);
 		opacity: 0;
 	}
+	&__toggle[aria-expanded='true'] {
+		padding-bottom: 16px;
+	}
 	&__answer {
 		@include fluid-text(16, 16);
 		display: grid;
@@ -77,7 +82,9 @@
 		opacity: 0;
 		color: var(--color-muted);
 		line-height: 1.5;
-		transition: grid-template-rows var(--transition-duration) ease, opacity var(--transition-duration) ease;
+		transition:
+			grid-template-rows var(--transition-duration) ease,
+			opacity var(--transition-duration) ease;
 		@media (prefers-reduced-motion: reduce) {
 			transition: none;
 		}
