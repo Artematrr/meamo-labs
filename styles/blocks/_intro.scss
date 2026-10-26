@@ -1,18 +1,21 @@
 .intro {
-	padding-top: 48px;
+	padding-block: 48px;
 	@include mobile {
-		padding-top: 32px;
+		padding-block: 32px;
 	}
 	h1 {
 		@include fluid-text(40, 28);
 		margin-top: 32px;
 		line-height: 1.2;
+		letter-spacing: -0.6px;
 		@include mobile {
 			margin-top: 24px;
+			line-height: 1.28;
+			letter-spacing: -0.3px;
 		}
 	}
-	> p {
-		margin-top: 24px;
+	> .container > p {
+		margin-top: 16px;
 		color: var(--color-muted);
 	}
 	&--article {
@@ -20,7 +23,7 @@
 			max-width: 1120px;
 			text-wrap: initial;
 		}
-		> p {
+		> .container > p {
 			max-width: 845px;
 		}
 	}

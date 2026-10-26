@@ -21,6 +21,7 @@
 			align-items: stretch;
 		}
 		&--plain {
+			align-items: flex-start;
 			border-radius: 0;
 		}
 	}

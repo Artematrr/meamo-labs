@@ -107,6 +107,16 @@ textarea {
 	}
 }
 
+h1,
+h2,
+h3,
+h4 {
+	margin-block-start: unset;
+	margin-block-end: unset;
+	margin-inline-start: unset;
+	margin-inline-end: unset;
+}
+
 .f-display {
 	@include fluid-text(64, 64);
 

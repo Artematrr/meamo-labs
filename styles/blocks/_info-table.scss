@@ -32,6 +32,8 @@
 		width: 24%;
 		font-weight: 500;
 		@include mobile {
+			@include fluid-text(14, 14);
+			line-height: 1.42;
 			width: auto;
 		}
 	}
@@ -43,6 +45,10 @@
 			width: 31%;
 			color: var(--color-muted);
 			font-weight: 400;
+			b {
+				color: var(--color-ink);
+				font-weight: 500;
+			}
 			@include mobile {
 				width: auto;
 			}
@@ -56,8 +62,10 @@
 		@include fluid-text(16, 16);
 		border: 16px solid var(--color-paper);
 		background-color: var(--color-white);
+		border-top: 0;
 		@include mobile {
 			display: block;
+			border-top: 16px solid var(--color-paper);
 		}
 		caption {
 			@include fluid-text(20, 20);
@@ -68,7 +76,8 @@
 			text-align: left;
 			@include mobile {
 				display: block;
-				padding: 0 0 16px;
+				// padding: 0 0 16px;
+				padding: 0;
 			}
 		}
 		thead {
@@ -80,7 +89,7 @@
 		tr:nth-child(odd) {
 			background-color: var(--color-white);
 			@include mobile {
-				gap: 24px;
+				gap: 16px;
 			}
 		}
 		th {
@@ -103,7 +112,15 @@
 				display: block;
 				margin-bottom: 8px;
 				color: var(--color-hover);
+				line-height: 1.33;
+				letter-spacing: 0.3px;
 			}
+		}
+	}
+	&--large {
+		@include fluid-text(18, 16);
+		th {
+			@include fluid-text(20, 18);
 		}
 	}
 }

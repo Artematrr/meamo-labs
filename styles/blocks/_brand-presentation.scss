@@ -1,20 +1,21 @@
 .brand-presentation {
-	padding-block: 64px 48px;
+	padding-block: 48px;
 	background-color: var(--color-paper);
 	@include mobile {
-		padding-block: 40px 32px;
+		padding-block: 32px;
+	}
+	&__breadcrumbs {
+		min-height: 44px;
 	}
 	&__container {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(0, 600px);
 		gap: 48px;
-		margin-top: 48px;
+		margin-top: 32px;
 		@include tablet {
 			grid-template-columns: minmax(0, 1fr);
-			gap: 32px;
-		}
-		@include mobile {
-			margin-top: 32px;
+			gap: 24px;
+			margin-top: 24px;
 		}
 	}
 	&__copy {
@@ -38,7 +39,7 @@
 	}
 	&__intro {
 		@include fluid-text(18, 18);
-		margin-top: 32px;
+		margin-top: 24px;
 		color: var(--color-muted);
 	}
 	.button {

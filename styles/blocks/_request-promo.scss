@@ -21,11 +21,11 @@
 		}
 	}
 	&--experts {
-		margin-top: 80px;
+		margin-top: 0;
 		padding-block: 48px;
 		background-color: var(--color-paper);
 		@include mobile {
-			margin-top: 24px;
+			margin-top: 0;
 			padding-block: 32px;
 		}
 		.section-heading {

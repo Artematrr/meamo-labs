@@ -1,9 +1,9 @@
 .catalog-categories {
 	@include fluid-text(14, 14);
-	margin-top: 80px;
+	margin-top: 24px;
 	line-height: 1.42;
 	@include mobile {
-		margin-top: 48px;
+		margin-top: 12px;
 	}
 	&__title {
 		@include fluid-text(14, 14);

@@ -17,6 +17,7 @@
 		margin-block: 16px;
 		line-height: 1.28;
 		text-wrap: initial;
+		letter-spacing: -0.3px; 
 	}
 	&__related {
 		@include fluid-text(16, 16);
@@ -34,7 +35,13 @@
 			width: 100%;
 		}
 		p + .button {
-			margin-top: 24px;
+			margin-top: 16px;
 		}
+	}
+	.button {
+		width: 100%;
+	}
+	&__brand-card .button {
+		margin-top: 16px;
 	}
 }

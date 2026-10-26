@@ -76,6 +76,8 @@
 	}
 	&__group {
 		border-bottom: 1px solid var(--color-line);
+		margin-top: 8px;
+		padding-bottom: 12px;
 	}
 	&__toggle {
 		display: flex;
@@ -83,7 +85,7 @@
 		justify-content: space-between;
 		gap: 16px;
 		min-height: 44px;
-		padding-block: 10px;
+		padding-block: 12px;
 		list-style: none;
 		font-weight: 500;
 		cursor: pointer;
@@ -107,7 +109,7 @@
 	&__options {
 		display: grid;
 		gap: 8px;
-		padding-block: 8px 16px;
+		padding-top: 8px;
 	}
 	&__option {
 		display: flex;
@@ -127,15 +129,16 @@
 		background-color: var(--color-white);
 		&:checked {
 			border-color: var(--color-blue);
-			background: var(--color-blue) url('/images/icons/check-mark.svg') center / 20px no-repeat;
+			background: var(--color-blue) url('/images/icons/check-mark.svg') center /
+				20px no-repeat;
 		}
 	}
 	&__subtitle {
 		@include fluid-text(14, 14);
-		margin-top: 16px;
+		margin-top: 8px;
 		font-family: var(--font-family-base);
 		font-weight: 500;
-		line-height: 1.4;
+		line-height: 1.42;
 		letter-spacing: normal;
 	}
 	&__hint {

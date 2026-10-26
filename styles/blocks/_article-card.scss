@@ -4,6 +4,7 @@
 	flex-direction: column;
 	min-width: 0;
 	line-height: 1.5;
+	padding-bottom: 24px;
 	&__media {
 		display: block;
 		margin-bottom: 24px;
@@ -21,6 +22,7 @@
 		color: var(--color-hover);
 		font-weight: 500;
 		line-height: 16px;
+		letter-spacing: 0.3px;
 	}
 	&__title {
 		@include fluid-text(20, 20);
@@ -30,9 +32,10 @@
 		line-height: 1.4;
 		letter-spacing: normal;
 		text-wrap: initial;
+		min-height: 2.8em;
 	}
 	&__description {
-		margin-bottom: 24px;
+		margin-bottom: 16px;
 		color: var(--color-muted);
 		min-height: 72px;
 		@include mobile {
@@ -49,9 +52,9 @@
 			place-items: center;
 			aspect-ratio: 1.6;
 			overflow: hidden;
-			margin-bottom: 48px;
+			margin-bottom: 24px;
 			@include mobile {
-				margin-bottom: 24px;
+				height: 185px;
 			}
 		}
 		.article-card__media img {
@@ -59,9 +62,9 @@
 			border-radius: 0;
 		}
 		.article-card__description {
-			margin-block: 24px 48px;
+			margin-block: 24px;
 			@include mobile {
-				margin-block: 8px 24px;
+				margin-block: 8px;
 			}
 		}
 	}

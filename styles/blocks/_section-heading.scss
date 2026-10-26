@@ -4,11 +4,20 @@
 		text-wrap: initial;
 	}
 	p {
-		max-width: 850px;
-		margin-top: 24px;
+		@include fluid-text(16, 16);
+		max-width: 800px;
+		margin-top: 16px;
 		color: var(--color-muted);
 	}
 	@include mobile {
 		margin-bottom: 24px;
+	}
+	&--large {
+		p {
+			@include fluid-text(18, 18);
+			max-width: 800px;
+			margin-top: 16px;
+			color: var(--color-muted);
+		}
 	}
 }

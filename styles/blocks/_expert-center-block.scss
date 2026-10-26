@@ -5,12 +5,9 @@
 		align-items: center;
 		gap: 8px;
 		min-height: 48px;
-		margin-top: 48px;
+		margin-top: 32px;
 		font-weight: 500;
 		padding-block: 12px;
-		@include mobile {
-			// margin-top: 24px;
-		}
 	}
 	&__all {
 		@include hover {
@@ -19,32 +16,7 @@
 	}
 	&__grid {
 		@include mobile {
-			gap: 48px;
-		}
-	}
-}
-
-.expert-center-page {
-	&__topics {
-		margin-block: 64px 48px;
-		@include mobile {
-			margin-block: 48px 40px;
-		}
-	}
-	&__grid {
-		row-gap: 64px;
-		@include mobile {
-			row-gap: 80px;
-		}
-		.article-card[hidden] {
-			display: none;
-		}
-	}
-	&__empty {
-		padding-block: 32px;
-		p {
-			margin-block: 24px;
-			color: var(--color-muted);
+			gap: 24px;
 		}
 	}
 }

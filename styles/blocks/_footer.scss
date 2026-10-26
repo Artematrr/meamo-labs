@@ -55,10 +55,11 @@
 	}
 	&__contacts address {
 		display: grid;
-		margin-top: 24px;
+		margin-top: 16px;
 		font-style: normal;
 		overflow-wrap: anywhere;
 		@include mobile {
+			margin-top: 24px;
 			gap: 12px;
 		}
 	}

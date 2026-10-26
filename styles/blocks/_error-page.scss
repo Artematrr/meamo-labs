@@ -74,8 +74,9 @@ main:has(> .error-page) {
 			min-height: 240px;
 		}
 		span {
-			@include fluid-text(160, 112);
-			line-height: 1.2;
+			@include fluid-text(152, 112);
+			line-height: 1.12;
+			letter-spacing: -1.6px;
 		}
 		p {
 			@include fluid-text(14, 14);

@@ -84,7 +84,7 @@
 		}
 	}
 }
-.grid + .section {
+section:has(> .grid) + .section {
 	margin-block-start: 80px;
 	@include mobile {
 		margin-block-start: 56px;

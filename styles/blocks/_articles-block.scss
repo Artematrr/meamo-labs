@@ -1,0 +1,11 @@
+.articles-block {
+	@include mobile {
+		margin-top: 134px;
+	}
+
+	.grid {
+		@include mobile {
+			gap: 32px;
+		}
+	}
+}

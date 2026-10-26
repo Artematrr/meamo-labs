@@ -6,7 +6,7 @@
 	}
 	&__context {
 		@include fluid-text(12, 12);
-		margin-bottom: 24px;
+		margin-bottom: 16px;
 		color: var(--color-hover);
 		font-weight: 500;
 		line-height: 1.33;
@@ -14,7 +14,7 @@
 	}
 	&__intro {
 		max-width: 850px;
-		margin-block: 24px 32px;
+		margin-block: 16px 24px;
 		color: var(--color-muted);
 	}
 }

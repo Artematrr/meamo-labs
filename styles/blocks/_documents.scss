@@ -1,3 +1,8 @@
 .documents {
 	scroll-margin-top: 16px;
+	.grid {
+		@include mobile {
+			gap: 24px;
+		}
+	}
 }

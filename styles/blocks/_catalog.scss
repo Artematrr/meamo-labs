@@ -1,15 +1,24 @@
 .catalog {
-	display: grid;
-	grid-template-columns: 288px minmax(0, 1fr);
-	align-items: start;
-	gap: 32px;
-	margin-top: 48px;
-	@include desktop {
-		grid-template-columns: minmax(0, 1fr);
-	}
+	margin-top: 50px;
 	@include mobile {
-		gap: 40px;
 		margin-top: 24px;
+	}
+	.pagination {
+		@include mobile {
+			justify-content: flex-start;
+		}
+	}
+	&__container {
+		display: grid;
+		grid-template-columns: 288px minmax(0, 1fr);
+		align-items: start;
+		gap: 32px;
+		@include desktop {
+			grid-template-columns: minmax(0, 1fr);
+		}
+		@include mobile {
+			gap: 40px;
+		}
 	}
 	&__sidebar,
 	&__results {

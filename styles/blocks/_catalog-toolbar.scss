@@ -6,7 +6,7 @@
 	margin-bottom: 24px;
 	@include mobile {
 		grid-template-columns: minmax(0, 1fr);
-		gap: 24px;
+		gap: 12px;
 	}
 	&__count {
 		@include fluid-text(20, 20);
@@ -25,7 +25,7 @@
 		@include fluid-text(16, 16);
 		width: 100%;
 		min-height: 56px;
-		padding: 12px 16px;
+		padding: 16px;
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-sm);
 		background-color: var(--color-white);

@@ -17,10 +17,10 @@
 	}
 	&__lead {
 		@include fluid-text(16, 16);
-		margin-top: 96px;
+		margin-top: 48px;
 		line-height: 1.5;
 		@include mobile {
-			margin-top: 64px;
+			margin-top: 32px;
 		}
 	}
 	&__cover {
@@ -34,9 +34,9 @@
 	}
 	&__layout {
 		display: grid;
-		grid-template-columns: minmax(0, 845px) minmax(0, 1fr);
+		grid-template-columns: minmax(0, 845px) minmax(280px, 1fr);
 		grid-template-rows: auto 1fr;
-		gap: 24px 32px;
+		gap: 24px 24px;
 		margin-top: 32px;
 		align-items: start;
 		@include tablet {
@@ -49,7 +49,7 @@
 		grid-column: 1;
 		grid-row: 1 / span 2;
 		min-width: 0;
-		line-height: 1.55;
+		line-height: 1.555;
 		@include tablet {
 			grid-column: auto;
 			grid-row: auto;
@@ -59,12 +59,16 @@
 		> ul,
 		> ol {
 			max-width: 704px;
+			@include tablet {
+				max-width: unset;
+			}
 		}
 		> h2 {
 			@include fluid-text(28, 28);
 			line-height: 1.28;
 			scroll-margin-top: 16px;
 			text-wrap: initial;
+			letter-spacing: -0.3px;
 		}
 		> p,
 		> ul,
@@ -104,13 +108,15 @@
 			height: auto;
 			aspect-ratio: 16 / 9;
 			object-fit: contain;
+			height: 360px;
 			@include mobile {
 				aspect-ratio: 1;
+				height: 240px;
 			}
 		}
 		figcaption {
 			@include fluid-text(14, 14);
-			margin-top: 16px;
+			margin-top: 24px;
 			color: var(--color-muted);
 			line-height: 1.5;
 		}

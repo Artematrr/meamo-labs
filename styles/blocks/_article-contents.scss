@@ -8,30 +8,88 @@
 		grid-column: auto;
 		grid-row: auto;
 	}
+	@include mobile {
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-sm);
+	}
 	&__title {
 		@include fluid-text(20, 20);
 		font-family: var(--font-family-base);
 		font-weight: 500;
 		line-height: 1.4;
 		letter-spacing: normal;
+		@include mobile {
+			display: none;
+		}
+	}
+	&__mobile-heading {
+		display: none;
+		@include mobile {
+			display: block;
+		}
+	}
+	&__toggle {
+		@include reset-button;
+		@include fluid-text(20, 20);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		width: 100%;
+		min-height: 44px;
+		color: var(--color-ink);
+		font-family: var(--font-family-base);
+		font-weight: 500;
+		line-height: 1.4;
+		text-align: left;
+	}
+	&__indicator {
+		display: grid;
+		place-items: center;
+		align-self: stretch;
+		flex: 0 0 32px;
+		width: 32px;
 	}
 	ol {
+		@include fluid-text(16, 14);
 		display: grid;
-		gap: 24px;
-		margin-top: 24px;
-		padding-left: 20px;
+		gap: 16px;
+		margin-top: 16px;
+		padding-left: 18px;
 		list-style: decimal;
+		&[hidden] {
+			display: none;
+		}
+		@include mobile {
+			padding-left: 0;
+			list-style: none;
+			counter-reset: article-contents;
+			line-height: 1.42857;
+		}
 	}
 	li {
 		color: var(--color-muted);
+		@include mobile {
+			counter-increment: article-contents;
+			color: var(--color-blue);
+		}
 		&:has([aria-current='location']) {
 			color: var(--color-blue);
 			text-decoration: underline;
+			@include mobile {
+				text-decoration: none;
+			}
 		}
 	}
 	a {
 		display: block;
-		padding-block: 8px;
+		padding-block: 10px;
+		&::before {
+			@include mobile {
+				content: counter(article-contents, decimal-leading-zero);
+				margin-right: 8px;
+			}
+		}
 		@include hover {
 			text-decoration: underline;
 		}
