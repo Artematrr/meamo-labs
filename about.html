@@ -15,29 +15,29 @@
 </head>
 
 <body>
-	<header class="header">
+	<header class="header js-header">
 		<div class="header__container container">
 			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
 					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
-			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+			<button class="header__menu-toggle button button--secondary js-menu-toggle" type="button" aria-controls="header-menu"
 				aria-expanded="false">Меню</button>
-			<div class="header__mobile-menu" id="header-menu">
+			<div class="header__mobile-menu js-menu" id="header-menu">
 				<nav class="header__nav" aria-label="Основная навигация">
-					<a class="header__link" href="catalog.html">Каталог</a>
-					<a class="header__link" href="labs.html">MEAMO Labs</a>
-					<a class="header__link" href="cooperation.html">Сотрудничество</a>
-					<a class="header__link" href="about.html" aria-current="page">О компании</a>
-					<a class="header__link" href="expert-center.html">Экспертный центр</a>
-					<a class="header__link" href="contacts.html">Контакты</a>
+					<a class="header__link js-menu-link" href="catalog.html">Каталог</a>
+					<a class="header__link js-menu-link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link js-menu-link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link js-menu-link" href="about.html" aria-current="page">О компании</a>
+					<a class="header__link js-menu-link" href="expert-center.html">Экспертный центр</a>
+					<a class="header__link js-menu-link" href="contacts.html">Контакты</a>
 				</nav>
-				<a class="header__request button" href="cooperation.html#request">Запросить условия</a>
-				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+				<a class="header__request button js-menu-link" href="cooperation.html#request">Запросить условия</a>
+				<button class="header__menu-close button button--link js-menu-close" type="button">Закрыть меню ×</button>
 			</div>
-			<form class="search" action="catalog.html" method="get" role="search">
+			<form class="search js-search-form" action="catalog.html" method="get" role="search">
 				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
 				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
 						alt="" width="24" height="24"></button>
-				<input class="search__field" id="catalog-search" type="search" name="q"
+				<input class="search__field js-search-input" id="catalog-search" type="search" name="q"
 					placeholder="Поиск по каталогу: название товара или бренда">
 			</form>
 		</div>

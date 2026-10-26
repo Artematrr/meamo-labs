@@ -14,29 +14,29 @@
 </head>
 
 <body>
-	<header class="header">
+	<header class="header js-header">
 		<div class="header__container container">
 			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
 					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
-			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+			<button class="header__menu-toggle button button--secondary js-menu-toggle" type="button" aria-controls="header-menu"
 				aria-expanded="false">Меню</button>
-			<div class="header__mobile-menu" id="header-menu">
+			<div class="header__mobile-menu js-menu" id="header-menu">
 				<nav class="header__nav" aria-label="Основная навигация">
-					<a class="header__link" href="catalog.html">Каталог</a>
-					<a class="header__link" href="labs.html">MEAMO Labs</a>
-					<a class="header__link" href="cooperation.html">Сотрудничество</a>
-					<a class="header__link" href="about.html">О компании</a>
-					<a class="header__link" href="expert-center.html">Экспертный центр</a>
-					<a class="header__link" href="contacts.html" aria-current="page">Контакты</a>
+					<a class="header__link js-menu-link" href="catalog.html">Каталог</a>
+					<a class="header__link js-menu-link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link js-menu-link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link js-menu-link" href="about.html">О компании</a>
+					<a class="header__link js-menu-link" href="expert-center.html">Экспертный центр</a>
+					<a class="header__link js-menu-link" href="contacts.html" aria-current="page">Контакты</a>
 				</nav>
-				<a class="header__request button" href="#request">Запросить условия</a>
-				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+				<a class="header__request button js-menu-link js-request-link" href="#request">Запросить условия</a>
+				<button class="header__menu-close button button--link js-menu-close" type="button">Закрыть меню ×</button>
 			</div>
-			<form class="search" action="catalog.html" method="get" role="search">
+			<form class="search js-search-form" action="catalog.html" method="get" role="search">
 				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
 				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
 						alt="" width="24" height="24"></button>
-				<input class="search__field" id="catalog-search" type="search" name="q"
+				<input class="search__field js-search-input" id="catalog-search" type="search" name="q"
 					placeholder="Поиск по каталогу: название товара или бренда">
 			</form>
 		</div>
@@ -97,13 +97,13 @@
 			</div>
 		</section>
 
-		<section class="wholesale-request" id="request" aria-labelledby="request-title" tabindex="-1">
+		<section class="wholesale-request js-request js-wholesale-request" id="request" aria-labelledby="request-title" tabindex="-1">
 			<div class="container">
-				<p class="wholesale-request__context">Оптовый запрос</p>
+				<p class="wholesale-request__context js-request-context">Оптовый запрос</p>
 				<h2 id="request-title">Отправьте оптовый запрос</h2>
 				<p class="wholesale-request__intro">Оставьте имя и один контакт: email или телефон. Позиции и количество можно
 					уточнить в&nbsp;сообщении.</p>
-				<form class="form form--wholesale" aria-labelledby="request-title"
+				<form class="form form--wholesale js-request-form" aria-labelledby="request-title"
 					aria-describedby="request-required request-status"><input type="hidden" name="context" value="Оптовый запрос">
 					<fieldset class="form__group">
 						<legend class="form__legend">Как с вами связаться</legend>
@@ -140,19 +140,19 @@
 					</fieldset>
 					<div class="form__field">
 						<div class="form__attachment"><label class="form__file-label" for="request-file"><img
-									src="/images/icons/paperclip.svg" alt="" width="32" height="24"><span>Прикрепить файл или
-									фото</span><input class="form__file" id="request-file" name="attachment" type="file"
+									src="/images/icons/paperclip.svg" alt="" width="32" height="24"><span class="js-request-file-label">Прикрепить файл или
+									фото</span><input class="form__file js-request-file" id="request-file" name="attachment" type="file"
 									accept=".pdf,.xlsx,.xls,.csv,.jpg,.jpeg,.png" aria-describedby="request-file-hint"></label><button
-								class="form__remove-file" type="button" hidden aria-label="Удалить выбранный файл">×</button></div>
+								class="form__remove-file js-request-remove-file" type="button" hidden aria-label="Удалить выбранный файл">×</button></div>
 						<p class="form__hint" id="request-file-hint">Один файл до 10 МБ: PDF, XLSX, XLS, CSV, JPG, JPEG или PNG.</p>
-						<p class="form__file-status visually-hidden" role="status" aria-atomic="true"></p>
+						<p class="form__file-status visually-hidden js-request-file-status" role="status" aria-atomic="true"></p>
 					</div>
 					<div class="form__consent"><input class="form__checkbox-input" id="request-consent" name="consent"
 							type="checkbox" value="yes"><label class="form__checkbox-label" for="request-consent">Даю <a
 								href="personal-data.html">согласие на обработку персональных данных</a> и принимаю <a
 								href="privacy.html">политику конфиденциальности</a></label></div>
 					<p class="form__hint" id="request-required" hidden>* Обязательные поля. Вложение и сообщение — по желанию.</p>
-					<p class="form__status" id="request-status" role="status" aria-atomic="true" hidden></p>
+					<p class="form__status js-request-status" id="request-status" role="status" aria-atomic="true" hidden></p>
 					<button class="form__submit button" type="submit" aria-describedby="request-required request-status">Отправить
 						запрос
 						менеджеру</button>
@@ -207,7 +207,7 @@
 							10-2841-6857</a><span>Сеул, Южная Корея</span></address>
 				</div>
 			</div>
-			<a class="footer__request button button--secondary" href="#request">Запросить условия</a>
+			<a class="footer__request button button--secondary js-request-link" href="#request">Запросить условия</a>
 			<div class="footer__reviews">
 				<h2>Отзывы MEAMO на Trustpilot</h2>
 				<a class="footer__reviews-link button button--secondary" href="/" rel="noopener noreferrer">Читать отзывы</a>

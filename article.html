@@ -15,29 +15,29 @@
 </head>
 
 <body>
-	<header class="header">
+	<header class="header js-header">
 		<div class="header__container container">
 			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
 					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
-			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+			<button class="header__menu-toggle button button--secondary js-menu-toggle" type="button" aria-controls="header-menu"
 				aria-expanded="false">Меню</button>
-			<div class="header__mobile-menu" id="header-menu">
+			<div class="header__mobile-menu js-menu" id="header-menu">
 				<nav class="header__nav" aria-label="Основная навигация">
-					<a class="header__link" href="catalog.html">Каталог</a>
-					<a class="header__link" href="labs.html">MEAMO Labs</a>
-					<a class="header__link" href="cooperation.html">Сотрудничество</a>
-					<a class="header__link" href="about.html">О компании</a>
-					<a class="header__link" href="expert-center.html">Экспертный центр</a>
-					<a class="header__link" href="contacts.html">Контакты</a>
+					<a class="header__link js-menu-link" href="catalog.html">Каталог</a>
+					<a class="header__link js-menu-link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link js-menu-link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link js-menu-link" href="about.html">О компании</a>
+					<a class="header__link js-menu-link" href="expert-center.html">Экспертный центр</a>
+					<a class="header__link js-menu-link" href="contacts.html">Контакты</a>
 				</nav>
-				<a class="header__request button" href="cooperation.html#request">Запросить условия</a>
-				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+				<a class="header__request button js-menu-link" href="cooperation.html#request">Запросить условия</a>
+				<button class="header__menu-close button button--link js-menu-close" type="button">Закрыть меню ×</button>
 			</div>
-			<form class="search" action="catalog.html" method="get" role="search">
+			<form class="search js-search-form" action="catalog.html" method="get" role="search">
 				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
 				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
 						alt="" width="24" height="24"></button>
-				<input class="search__field" id="catalog-search" type="search" name="q"
+				<input class="search__field js-search-input" id="catalog-search" type="search" name="q"
 					placeholder="Поиск по каталогу: название товара или бренда">
 			</form>
 		</div>
@@ -91,18 +91,18 @@
 							alt="Иллюстрация списка продукции с упаковкой и флаконом" width="1200" height="675" fetchpriority="high">
 					</figure>
 					<div class="article-body__layout">
-						<nav class="article-contents" aria-label="Содержание статьи">
+						<nav class="article-contents js-article-contents" aria-label="Содержание статьи">
 							<h2 class="article-contents__title">Содержание</h2>
 							<h2 class="article-contents__mobile-heading">
-								<button class="article-contents__toggle" type="button" aria-expanded="true" aria-controls="article-contents-links">
-									<span>В этой статье</span><span class="article-contents__indicator" aria-hidden="true">−</span>
+								<button class="article-contents__toggle js-article-contents-toggle" type="button" aria-expanded="true" aria-controls="article-contents-links">
+									<span>В этой статье</span><span class="article-contents__indicator js-article-contents-indicator" aria-hidden="true">−</span>
 								</button>
 							</h2>
-							<ol id="article-contents-links">
-								<li><a href="#positions" aria-current="location">Уточните, какие позиции вас интересуют</a></li>
-								<li><a href="#details">Соберите сведения в одном месте</a></li>
-								<li><a href="#questions">Отдельно запишите открытые вопросы</a></li>
-								<li><a href="#before-sending">Проверьте запрос перед отправкой</a></li>
+							<ol id="article-contents-links" class="js-article-contents-list">
+								<li><a href="#positions" aria-current="location" class="js-article-contents-link">Уточните, какие позиции вас интересуют</a></li>
+								<li><a href="#details" class="js-article-contents-link">Соберите сведения в одном месте</a></li>
+								<li><a href="#questions" class="js-article-contents-link">Отдельно запишите открытые вопросы</a></li>
+								<li><a href="#before-sending" class="js-article-contents-link">Проверьте запрос перед отправкой</a></li>
 							</ol>
 						</nav>
 						<div class="article-body__text">
@@ -239,17 +239,17 @@
 
 			</section>
 		</article>
-		<section class="faq" aria-labelledby="faq-title">
+		<section class="faq js-faq" aria-labelledby="faq-title">
 			<div class="container">
 				<div class="section-heading">
 					<h2 id="faq-title">Частые вопросы</h2>
 				</div>
 				<div class="faq__items">
-					<div class="faq__item">
-						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-1" type="button" aria-expanded="false"
+					<div class="faq__item js-faq-item">
+						<h3 class="faq__heading"><button class="faq__toggle js-faq-toggle" id="faq-question-1" type="button" aria-expanded="false"
 								aria-controls="faq-answer-1">Можно ли отправить фотографию вместо названия?<span class="faq__indicator"
 									aria-hidden="true"></span></button></h3>
-						<div class="faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" aria-hidden="true"
+						<div class="faq__answer js-faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" aria-hidden="true"
 							inert>
 							<div class="faq__content">
 								<p>Да, приложите фотографию упаковки и укажите, какие сведения хотите уточнить. Название и вариант
@@ -257,11 +257,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="faq__item">
-						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-2" type="button" aria-expanded="false"
+					<div class="faq__item js-faq-item">
+						<h3 class="faq__heading"><button class="faq__toggle js-faq-toggle" id="faq-question-2" type="button" aria-expanded="false"
 								aria-controls="faq-answer-2">Что написать, если количество пока неизвестно?<span class="faq__indicator"
 									aria-hidden="true"></span></button></h3>
-						<div class="faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" aria-hidden="true"
+						<div class="faq__answer js-faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" aria-hidden="true"
 							inert>
 							<div class="faq__content">
 								<p>Обозначьте количество как открытый вопрос и поясните задачу в комментарии. Не объединяйте разные
@@ -269,11 +269,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="faq__item">
-						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-3" type="button" aria-expanded="false"
+					<div class="faq__item js-faq-item">
+						<h3 class="faq__heading"><button class="faq__toggle js-faq-toggle" id="faq-question-3" type="button" aria-expanded="false"
 								aria-controls="faq-answer-3">Как понять, что запрос отправлен?<span class="faq__indicator"
 									aria-hidden="true"></span></button></h3>
-						<div class="faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" aria-hidden="true"
+						<div class="faq__answer js-faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" aria-hidden="true"
 							inert>
 							<div class="faq__content">
 								<p>После успешной отправки в форме появится подтверждение. Если появилось сообщение об ошибке, запрос не
@@ -291,60 +291,60 @@
 					<h2 id="products-title">Перейти к продукции</h2>
 				</div>
 				<div class="products-list__grid">
-					<article class="product-card" id="jeunetique-exo" tabindex="-1">
+					<article class="product-card js-product-card" id="jeunetique-exo" tabindex="-1">
 						<a class="product-card__media" href="product-jeunetique-exo.html"
 							aria-label="Подробнее о Jeunetique Exo"><img src="/images/products/Jeunetique%20Exo.jpg"
 								alt="Упаковка Jeunetique Exo" width="1000" height="1000" loading="lazy"></a>
 						<div class="product-card__content">
 							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
-									class="product-card__badge">MEAMO Labs</span></div>
+									class="product-card__badge js-product-badge">MEAMO Labs</span></div>
 							<p class="product-card__country">Южная Корея</p>
-							<h3 class="product-card__title"><a href="product-jeunetique-exo.html">Jeunetique Exo</a></h3>
+							<h3 class="product-card__title js-product-title"><a href="product-jeunetique-exo.html">Jeunetique Exo</a></h3>
 							<p class="product-card__category">Экзосомная продукция</p>
 							<a class="button" href="brand.html#request">Запросить условия</a><a
 								class="product-card__details button button--link" href="product-jeunetique-exo.html">Подробнее<span
 									class="visually-hidden"> о Jeunetique Exo</span></a>
 						</div>
 					</article>
-					<article class="product-card" id="jeunetique-fine" tabindex="-1">
+					<article class="product-card js-product-card" id="jeunetique-fine" tabindex="-1">
 						<a class="product-card__media" href="product.html" aria-label="Подробнее о Jeunetique Fine"><img
 								src="/images/products/Jeunetique%20Fine.jpg" alt="Упаковка Jeunetique Fine" width="1000" height="1000"
 								loading="lazy"></a>
 						<div class="product-card__content">
 							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
-									class="product-card__badge">MEAMO Labs</span></div>
+									class="product-card__badge js-product-badge">MEAMO Labs</span></div>
 							<p class="product-card__country">Южная Корея</p>
-							<h3 class="product-card__title"><a href="product.html">Jeunetique Fine</a></h3>
+							<h3 class="product-card__title js-product-title"><a href="product.html">Jeunetique Fine</a></h3>
 							<p class="product-card__category">Филлеры</p>
 							<a class="button" href="product.html#request">Запросить условия</a><a
 								class="product-card__details button button--link" href="product.html">Подробнее<span
 									class="visually-hidden"> о Jeunetique Fine</span></a>
 						</div>
 					</article>
-					<article class="product-card" id="jeunetique-deep" tabindex="-1">
+					<article class="product-card js-product-card" id="jeunetique-deep" tabindex="-1">
 						<a class="product-card__media" href="product-jeunetique-deep.html"
 							aria-label="Подробнее о Jeunetique Deep"><img src="/images/products/Jeunetique%20Deep.jpg"
 								alt="Упаковка Jeunetique Deep" width="1000" height="1000" loading="lazy"></a>
 						<div class="product-card__content">
 							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
-									class="product-card__badge">MEAMO Labs</span></div>
+									class="product-card__badge js-product-badge">MEAMO Labs</span></div>
 							<p class="product-card__country">Южная Корея</p>
-							<h3 class="product-card__title"><a href="product-jeunetique-deep.html">Jeunetique Deep</a></h3>
+							<h3 class="product-card__title js-product-title"><a href="product-jeunetique-deep.html">Jeunetique Deep</a></h3>
 							<p class="product-card__category">Филлеры</p>
 							<a class="button" href="brand.html#request">Запросить условия</a><a
 								class="product-card__details button button--link" href="product-jeunetique-deep.html">Подробнее<span
 									class="visually-hidden"> о Jeunetique Deep</span></a>
 						</div>
 					</article>
-					<article class="product-card" id="jeunetique-ultra" tabindex="-1">
+					<article class="product-card js-product-card" id="jeunetique-ultra" tabindex="-1">
 						<a class="product-card__media" href="product-jeunetique-ultra.html"
 							aria-label="Подробнее о Jeunetique Ultra"><img src="/images/products/Jeunetique%20Ultra.jpg"
 								alt="Упаковка Jeunetique Ultra" width="1000" height="1000" loading="lazy"></a>
 						<div class="product-card__content">
 							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
-									class="product-card__badge">MEAMO Labs</span></div>
+									class="product-card__badge js-product-badge">MEAMO Labs</span></div>
 							<p class="product-card__country">Южная Корея</p>
-							<h3 class="product-card__title"><a href="product-jeunetique-ultra.html">Jeunetique Ultra</a></h3>
+							<h3 class="product-card__title js-product-title"><a href="product-jeunetique-ultra.html">Jeunetique Ultra</a></h3>
 							<p class="product-card__category">Филлеры</p>
 							<a class="button" href="brand.html#request">Запросить условия</a><a
 								class="product-card__details button button--link" href="product-jeunetique-ultra.html">Подробнее<span

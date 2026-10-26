@@ -14,29 +14,29 @@
 </head>
 
 <body>
-	<header class="header">
+	<header class="header js-header">
 		<div class="header__container container">
 			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
 					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
-			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+			<button class="header__menu-toggle button button--secondary js-menu-toggle" type="button" aria-controls="header-menu"
 				aria-expanded="false">Меню</button>
-			<div class="header__mobile-menu" id="header-menu">
+			<div class="header__mobile-menu js-menu" id="header-menu">
 				<nav class="header__nav" aria-label="Основная навигация">
-					<a class="header__link" href="catalog.html">Каталог</a>
-					<a class="header__link" href="labs.html">MEAMO Labs</a>
-					<a class="header__link" href="cooperation.html">Сотрудничество</a>
-					<a class="header__link" href="about.html">О компании</a>
-					<a class="header__link" href="expert-center.html" aria-current="page">Экспертный центр</a>
-					<a class="header__link" href="contacts.html">Контакты</a>
+					<a class="header__link js-menu-link" href="catalog.html">Каталог</a>
+					<a class="header__link js-menu-link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link js-menu-link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link js-menu-link" href="about.html">О компании</a>
+					<a class="header__link js-menu-link" href="expert-center.html" aria-current="page">Экспертный центр</a>
+					<a class="header__link js-menu-link" href="contacts.html">Контакты</a>
 				</nav>
-				<a class="header__request button" href="cooperation.html#request">Запросить условия</a>
-				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+				<a class="header__request button js-menu-link" href="cooperation.html#request">Запросить условия</a>
+				<button class="header__menu-close button button--link js-menu-close" type="button">Закрыть меню ×</button>
 			</div>
-			<form class="search" action="catalog.html" method="get" role="search">
+			<form class="search js-search-form" action="catalog.html" method="get" role="search">
 				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
 				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
 						alt="" width="24" height="24"></button>
-				<input class="search__field" id="catalog-search" type="search" name="q"
+				<input class="search__field js-search-input" id="catalog-search" type="search" name="q"
 					placeholder="Поиск по каталогу: название товара или бренда">
 			</form>
 		</div>
@@ -55,23 +55,23 @@
 				<p>Материалы о продукции, документах и организации оптовой поставки.</p>
 			</div>
 		</section>
-		<section class="expert-center-page" aria-label="Материалы экспертного центра">
+		<section class="expert-center-page js-expert-center" aria-label="Материалы экспертного центра">
 			<div class="container">
-				<div class="expert-center-page__topics topic-filter" role="group" aria-label="Темы материалов">
-					<button class="topic-filter__button" type="button" data-topic="all" aria-pressed="true"
+				<div class="expert-center-page__topics topic-filter js-topics" role="group" aria-label="Темы материалов">
+					<button class="topic-filter__button js-topic-button" type="button" data-topic="all" aria-pressed="true"
 						aria-controls="expert-articles">Все материалы</button>
-					<button class="topic-filter__button" type="button" data-topic="supply" aria-pressed="false"
+					<button class="topic-filter__button js-topic-button" type="button" data-topic="supply" aria-pressed="false"
 						aria-controls="expert-articles">Поставка</button>
-					<button class="topic-filter__button" type="button" data-topic="products" aria-pressed="false"
+					<button class="topic-filter__button js-topic-button" type="button" data-topic="products" aria-pressed="false"
 						aria-controls="expert-articles">Продукция</button>
-					<button class="topic-filter__button" type="button" data-topic="documents" aria-pressed="false"
+					<button class="topic-filter__button js-topic-button" type="button" data-topic="documents" aria-pressed="false"
 						aria-controls="expert-articles">Документы</button>
-					<button class="topic-filter__button" type="button" data-topic="work" aria-pressed="false"
+					<button class="topic-filter__button js-topic-button" type="button" data-topic="work" aria-pressed="false"
 						aria-controls="expert-articles">Работа с MEAMO</button>
 				</div>
-				<p class="expert-center-page__status visually-hidden" role="status" aria-atomic="true"></p>
+				<p class="expert-center-page__status visually-hidden js-expert-status" role="status" aria-atomic="true"></p>
 				<div class="expert-center-page__grid grid grid--three" id="expert-articles">
-					<article class="article-card" data-topic="supply"><a class="article-card__media" href="article-supplier.html"
+					<article class="article-card js-expert-article" data-topic="supply"><a class="article-card__media" href="article-supplier.html"
 							aria-label="Как выбрать поставщика эстетической продукции"><img
 								src="/images/Illustrations/procurement.jpg" alt="" width="1200" height="675" loading="lazy"></a>
 						<p class="article-card__topic">Поставка</p>
@@ -80,7 +80,7 @@
 							class="article-card__link button button--link" href="article-supplier.html">Подробнее<span
 								class="visually-hidden">: Как выбрать поставщика эстетической продукции</span></a>
 					</article>
-					<article class="article-card" data-topic="documents"><a class="article-card__media"
+					<article class="article-card js-expert-article" data-topic="documents"><a class="article-card__media"
 							href="article-documents.html" aria-label="Какие документы запросить перед поставкой"><img
 								src="/images/Illustrations/documents.jpg" alt="" width="1200" height="675" loading="lazy"></a>
 						<p class="article-card__topic">Документы</p>
@@ -89,7 +89,7 @@
 							class="article-card__link button button--link" href="article-documents.html">Подробнее<span
 								class="visually-hidden">: Какие документы запросить перед поставкой</span></a>
 					</article>
-					<article class="article-card" data-topic="work"><a class="article-card__media" href="article.html"
+					<article class="article-card js-expert-article" data-topic="work"><a class="article-card__media" href="article.html"
 							aria-label="Как подготовить оптовый запрос"><img src="/images/Illustrations/logistics.jpg" alt=""
 								width="1200" height="675" loading="lazy"></a>
 						<p class="article-card__topic">Работа с MEAMO</p>
@@ -98,7 +98,7 @@
 							class="article-card__link button button--link" href="article.html">Подробнее<span
 								class="visually-hidden">: Как подготовить оптовый запрос</span></a>
 					</article>
-					<article class="article-card" data-topic="products"><a class="article-card__media"
+					<article class="article-card js-expert-article" data-topic="products"><a class="article-card__media"
 							href="article-packaging.html" aria-label="Как уточнить комплектность продукции"><img
 								src="/images/products/Jeunetique Deep.jpg" alt="" width="1200" height="675" loading="lazy"></a>
 						<p class="article-card__topic">Продукция</p>
@@ -107,7 +107,7 @@
 							class="article-card__link button button--link" href="article-packaging.html">Подробнее<span
 								class="visually-hidden">: Как уточнить комплектность продукции</span></a>
 					</article>
-					<article class="article-card" data-topic="work"><a class="article-card__media"
+					<article class="article-card js-expert-article" data-topic="work"><a class="article-card__media"
 							href="article-outside-catalog.html" aria-label="Товар вне каталога: что указать в запросе"><img
 								src="/images/products/Miracle L.jpg" alt="" width="1200" height="675" loading="lazy"></a>
 						<p class="article-card__topic">Работа с MEAMO</p>
@@ -116,7 +116,7 @@
 							class="article-card__link button button--link" href="article-outside-catalog.html">Подробнее<span
 								class="visually-hidden">: Товар вне каталога: что указать в запросе</span></a>
 					</article>
-					<article class="article-card" data-topic="supply"><a class="article-card__media"
+					<article class="article-card js-expert-article" data-topic="supply"><a class="article-card__media"
 							href="article-supplier-offer.html" aria-label="Что сравнивать в предложении поставщика"><img
 								src="/images/products/Curenex.jpg" alt="" width="1200" height="675" loading="lazy"></a>
 						<p class="article-card__topic">Поставка</p>
@@ -125,7 +125,7 @@
 							class="article-card__link button button--link" href="article-supplier-offer.html">Подробнее<span
 								class="visually-hidden">: Что сравнивать в предложении поставщика</span></a>
 					</article>
-					<article class="article-card" data-topic="products" hidden>
+					<article class="article-card js-expert-article" data-topic="products" hidden>
 						<a class="article-card__media" href="article.html#positions" aria-label="Как указать название и вариант продукции">
 							<img src="/images/products/Jeunetique%20Fine.jpg" alt="" width="1000" height="1000" loading="lazy">
 						</a>
@@ -135,16 +135,16 @@
 						<a class="article-card__link button button--link" href="article.html#positions">Подробнее<span class="visually-hidden">: Как указать название и вариант продукции</span></a>
 					</article>
 				</div>
-				<div class="expert-center-page__empty" hidden>
+				<div class="expert-center-page__empty js-expert-empty" hidden>
 					<h2>По этой теме пока нет материалов</h2>
-					<p>Выберите другую тему или откройте все материалы.</p><button class="button button--secondary" type="button"
+					<p>Выберите другую тему или откройте все материалы.</p><button class="button button--secondary js-topics-reset" type="button"
 						data-all-topics>Все материалы</button>
 				</div>
-				<nav class="pagination pagination--start" aria-label="Страницы материалов">
-					<button class="pagination__button" type="button" data-page="prev" aria-label="Предыдущая страница" disabled>‹</button>
-					<button class="pagination__button" type="button" data-page="1" aria-current="page" aria-label="Страница 1">1</button>
-					<button class="pagination__button" type="button" data-page="2" aria-label="Страница 2">2</button>
-					<button class="pagination__button" type="button" data-page="next" aria-label="Следующая страница">›</button>
+				<nav class="pagination pagination--start js-pagination" aria-label="Страницы материалов">
+					<button class="pagination__button js-pagination-button" type="button" data-page="prev" aria-label="Предыдущая страница" disabled>‹</button>
+					<button class="pagination__button js-pagination-button" type="button" data-page="1" aria-current="page" aria-label="Страница 1">1</button>
+					<button class="pagination__button js-pagination-button" type="button" data-page="2" aria-label="Страница 2">2</button>
+					<button class="pagination__button js-pagination-button" type="button" data-page="next" aria-label="Следующая страница">›</button>
 				</nav>
 			</div>
 		</section>

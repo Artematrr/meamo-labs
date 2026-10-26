@@ -1,9 +1,9 @@
-const header = document.querySelector('.header')
+const header = document.querySelector('.js-header')
 if (header) {
-	const toggle = header.querySelector('.header__menu-toggle')
-	const menu = header.querySelector('.header__mobile-menu')
+	const toggle = header.querySelector('.js-menu-toggle')
+	const menu = header.querySelector('.js-menu')
 	const compact = window.matchMedia('(max-width: 1280px)')
-	const search = header.querySelector('.search__field')
+	const search = header.querySelector('.js-search-input')
 	const updateSearch = () => {
 		search.placeholder = compact.matches
 			? 'Поиск по каталогу'
@@ -23,14 +23,14 @@ if (header) {
 		} else {
 			header.classList.add('header--menu-open')
 			toggle.setAttribute('aria-expanded', 'true')
-			menu.querySelector('a').focus()
+			menu.querySelector('.js-menu-link').focus()
 		}
 	})
 	menu
-		.querySelector('.header__menu-close')
+		.querySelector('.js-menu-close')
 		.addEventListener('click', () => closeMenu())
 	menu.addEventListener('click', event => {
-		if (event.target.closest('a') && compact.matches) closeMenu()
+		if (event.target.closest('.js-menu-link') && compact.matches) closeMenu()
 	})
 	header.addEventListener('keydown', event => {
 		if (
@@ -52,10 +52,10 @@ if (header) {
 }
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
-const hero = document.querySelector('.hero-split--home')
+const hero = document.querySelector('.js-home-hero')
 if (hero) {
-	const numbers = [...hero.querySelectorAll('[data-slide]')]
-	const status = hero.querySelector('.hero-split__status')
+	const numbers = [...hero.querySelectorAll('.js-hero-slide')]
+	const status = hero.querySelector('.js-hero-status')
 	const updateHero = function () {
 		numbers.forEach((button, index) =>
 			button.setAttribute('aria-pressed', String(index === this.realIndex)),
@@ -67,12 +67,12 @@ if (hero) {
 		})
 		status.textContent = `Слайд ${this.realIndex + 1} из ${numbers.length}`
 	}
-	const slider = new Swiper(hero.querySelector('#home-products'), {
+	const slider = new Swiper(hero.querySelector('.js-hero-slider'), {
 		loop: true,
 		speed: reducedMotion.matches ? 0 : 350,
 		navigation: {
-			prevEl: hero.querySelector('[data-direction="-1"]'),
-			nextEl: hero.querySelector('[data-direction="1"]'),
+			prevEl: hero.querySelector('.js-hero-prev'),
+			nextEl: hero.querySelector('.js-hero-next'),
 		},
 		a11y: {
 			prevSlideMessage: 'Предыдущий слайд',
@@ -89,8 +89,8 @@ if (hero) {
 	})
 }
 
-document.querySelectorAll('.products-list--slider').forEach(list => {
-	const slider = new Swiper(list.querySelector('.products-list__track'), {
+document.querySelectorAll('.js-products-carousel').forEach(list => {
+	const slider = new Swiper(list.querySelector('.js-products-slider'), {
 		slidesPerView: 'auto',
 		spaceBetween: 16,
 		speed: reducedMotion.matches ? 0 : 350,
@@ -100,8 +100,8 @@ document.querySelectorAll('.products-list--slider').forEach(list => {
 			1025: { slidesPerView: 4, spaceBetween: 24 },
 		},
 		navigation: {
-			prevEl: list.querySelector('[data-product-direction="-1"]'),
-			nextEl: list.querySelector('[data-product-direction="1"]'),
+			prevEl: list.querySelector('.js-products-prev'),
+			nextEl: list.querySelector('.js-products-next'),
 			lockClass: 'products-list__arrow--locked',
 		},
 		keyboard: { enabled: true, onlyInViewport: true, pageUpDown: false },
@@ -116,16 +116,16 @@ document.querySelectorAll('.products-list--slider').forEach(list => {
 	})
 })
 
-document.querySelectorAll('.faq').forEach(faq => {
+document.querySelectorAll('.js-faq').forEach(faq => {
 	faq.addEventListener('click', event => {
-		const button = event.target.closest('.faq__toggle')
+		const button = event.target.closest('.js-faq-toggle')
 		if (!button) return
 		const expanded = button.getAttribute('aria-expanded') === 'true'
-		faq.querySelectorAll('.faq__toggle').forEach(toggle => {
+		faq.querySelectorAll('.js-faq-toggle').forEach(toggle => {
 			const open = toggle === button && !expanded
-			const answer = document.getElementById(
-				toggle.getAttribute('aria-controls'),
-			)
+			const answer = toggle
+				.closest('.js-faq-item')
+				.querySelector('.js-faq-answer')
 			if (!open && answer.contains(document.activeElement)) button.focus()
 			toggle.setAttribute('aria-expanded', String(open))
 			answer.inert = !open
@@ -134,19 +134,17 @@ document.querySelectorAll('.faq').forEach(faq => {
 	})
 })
 
-const request = document.querySelector('.compact-request, .wholesale-request')
+const request = document.querySelector('.js-request')
 if (request) {
-	const form = request.querySelector('.form')
-	const fileInput = form.querySelector('.form__file')
-	const fileLabel = form.querySelector('.form__file-label span')
-	const removeFile = form.querySelector('.form__remove-file')
-	const fileStatus = form.querySelector('.form__file-status')
-	const status = form.querySelector('.form__status')
-	const contextLabel = request.querySelector(
-		'.compact-request__context, .wholesale-request__context',
-	)
+	const form = request.querySelector('.js-request-form')
+	const fileInput = form.querySelector('.js-request-file')
+	const fileLabel = form.querySelector('.js-request-file-label')
+	const removeFile = form.querySelector('.js-request-remove-file')
+	const fileStatus = form.querySelector('.js-request-file-status')
+	const status = form.querySelector('.js-request-status')
+	const contextLabel = request.querySelector('.js-request-context')
 	const defaultContext = contextLabel.textContent
-	if (request.classList.contains('wholesale-request')) {
+	if (request.classList.contains('js-wholesale-request')) {
 		const requestedContext = new URLSearchParams(window.location.search).get(
 			'request',
 		)
@@ -171,7 +169,7 @@ if (request) {
 		}
 	}
 
-	document.querySelectorAll('a[href="#request"]').forEach(link => {
+	document.querySelectorAll('.js-request-link').forEach(link => {
 		link.addEventListener('click', () => {
 			const context = link.dataset.requestContext || defaultContext
 			contextLabel.textContent = context
@@ -225,13 +223,13 @@ if (request) {
 	})
 }
 
-const expertCenter = document.querySelector('.expert-center-page')
+const expertCenter = document.querySelector('.js-expert-center')
 if (expertCenter) {
-	const topics = expertCenter.querySelector('.topic-filter')
-	const articles = [...expertCenter.querySelectorAll('.article-card')]
-	const empty = expertCenter.querySelector('.expert-center-page__empty')
-	const status = expertCenter.querySelector('.expert-center-page__status')
-	const pagination = expertCenter.querySelector('.pagination')
+	const topics = expertCenter.querySelector('.js-topics')
+	const articles = [...expertCenter.querySelectorAll('.js-expert-article')]
+	const empty = expertCenter.querySelector('.js-expert-empty')
+	const status = expertCenter.querySelector('.js-expert-status')
+	const pagination = expertCenter.querySelector('.js-pagination')
 	const pageSize = 6
 	let selectedTopic = 'all'
 	let page = 1
@@ -252,7 +250,7 @@ if (expertCenter) {
 		const addPageButton = (text, label, target, disabled = false) => {
 			const button = document.createElement('button')
 			button.type = 'button'
-			button.className = 'pagination__button'
+			button.className = 'pagination__button js-pagination-button'
 			button.textContent = text
 			button.setAttribute('aria-label', label)
 			button.dataset.page = target
@@ -267,26 +265,26 @@ if (expertCenter) {
 		addPageButton('›', 'Следующая страница', 'next', page >= pages)
 	}
 	topics.addEventListener('click', event => {
-		const button = event.target.closest('.topic-filter__button')
+		const button = event.target.closest('.js-topic-button')
 		if (!button) return
 		selectedTopic = button.dataset.topic
 		page = 1
 		topics
-			.querySelectorAll('button')
+			.querySelectorAll('.js-topic-button')
 			.forEach(topic =>
 				topic.setAttribute('aria-pressed', String(topic === button)),
 			)
 		updateArticles()
 	})
 	expertCenter
-		.querySelector('[data-all-topics]')
+		.querySelector('.js-topics-reset')
 		.addEventListener('click', () => {
-			const all = topics.querySelector('[data-topic="all"]')
+			const all = topics.querySelector('.js-topic-button[data-topic="all"]')
 			all.click()
 			all.focus()
 		})
 	pagination.addEventListener('click', event => {
-		const button = event.target.closest('[data-page]')
+		const button = event.target.closest('.js-pagination-button')
 		if (!button || button.disabled) return
 		page =
 			button.dataset.page === 'prev'
@@ -295,26 +293,26 @@ if (expertCenter) {
 					? page + 1
 					: Number(button.dataset.page)
 		updateArticles()
-		pagination.querySelector('[aria-current="page"]').focus()
+		pagination.querySelector('.js-pagination-button[aria-current="page"]').focus()
 	})
 	updateArticles()
 }
 
-const catalog = document.querySelector('.catalog')
+const catalog = document.querySelector('.js-catalog')
 if (catalog) {
-	const grid = catalog.querySelector('.catalog-grid')
-	const cards = [...grid.querySelectorAll('.product-card')]
-	const panel = catalog.querySelector('.catalog-filter')
-	const filterForm = panel.querySelector('form')
-	const checkboxes = [...filterForm.querySelectorAll('input[type="checkbox"]')]
+	const grid = catalog.querySelector('.js-catalog-grid')
+	const cards = [...grid.querySelectorAll('.js-product-card')]
+	const panel = catalog.querySelector('.js-catalog-filters')
+	const filterForm = panel.querySelector('.js-catalog-filter-form')
+	const checkboxes = [...filterForm.querySelectorAll('.js-catalog-filter-input')]
 	const drawer = window.matchMedia('(max-width: 1280px)')
-	const openFilters = catalog.querySelector('.catalog__open-filters')
-	const chips = catalog.querySelector('.catalog__chips')
-	const pagination = catalog.querySelector('.pagination')
-	const count = catalog.querySelector('.catalog-toolbar__count')
-	const sort = catalog.querySelector('#catalog-sort')
-	const searchForm = header.querySelector('.search')
-	const searchField = searchForm.querySelector('.search__field')
+	const openFilters = catalog.querySelector('.js-catalog-filters-open')
+	const chips = catalog.querySelector('.js-catalog-chips')
+	const pagination = catalog.querySelector('.js-pagination')
+	const count = catalog.querySelector('.js-catalog-count')
+	const sort = catalog.querySelector('.js-catalog-sort')
+	const searchForm = header.querySelector('.js-search-form')
+	const searchField = searchForm.querySelector('.js-search-input')
 	let query = ''
 	let page = 1
 
@@ -324,9 +322,9 @@ if (catalog) {
 		)
 		const groups = [...new Set(selected.map(input => input.name))]
 		const matches = cards.filter(card => {
-			const name = card.querySelector('.product-card__title').textContent
+			const name = card.querySelector('.js-product-title').textContent
 			const searchable =
-				`${name} ${card.dataset.brand} ${card.querySelector('.product-card__badge')?.textContent || ''}`.toLocaleLowerCase(
+				`${name} ${card.dataset.brand} ${card.querySelector('.js-product-badge')?.textContent || ''}`.toLocaleLowerCase(
 					'ru',
 				)
 			return (
@@ -343,9 +341,9 @@ if (catalog) {
 			matches.sort(
 				(a, b) =>
 					a
-						.querySelector('.product-card__title')
+						.querySelector('.js-product-title')
 						.textContent.localeCompare(
-							b.querySelector('.product-card__title').textContent,
+							b.querySelector('.js-product-title').textContent,
 							'ru',
 							{ numeric: true },
 						) * (sort.value === 'asc' ? 1 : -1),
@@ -361,12 +359,12 @@ if (catalog) {
 			card.hidden = index < (page - 1) * 8 || index >= page * 8
 		})
 		count.textContent = `Найдено товаров: ${matches.length}`
-		catalog.querySelector('.catalog__empty').hidden = matches.length > 0
+		catalog.querySelector('.js-catalog-empty').hidden = matches.length > 0
 		chips.replaceChildren()
 		selected.forEach(input => {
 			const chip = document.createElement('button')
 			chip.type = 'button'
-			chip.className = 'filter-chip'
+			chip.className = 'filter-chip js-filter-chip'
 			chip.textContent = `${input.dataset.groupLabel}: ${input.dataset.label}`
 			chip.setAttribute(
 				'aria-label',
@@ -377,7 +375,9 @@ if (catalog) {
 				input.dataset.applied = 'false'
 				page = 1
 				renderCatalog()
-				;(chips.querySelector('button') || count).focus({ preventScroll: true })
+				;(chips.querySelector('.js-filter-chip') || count).focus({
+					preventScroll: true,
+				})
 			})
 			chips.append(chip)
 		})
@@ -385,7 +385,7 @@ if (catalog) {
 		if (selected.length) {
 			const reset = document.createElement('button')
 			reset.type = 'button'
-			reset.className = 'button button--link'
+			reset.className = 'button button--link js-catalog-clear-filters'
 			reset.textContent = 'Сбросить всё'
 			reset.dataset.clearFilters = ''
 			chips.append(reset)
@@ -399,7 +399,7 @@ if (catalog) {
 		].forEach(value => {
 			const button = document.createElement('button')
 			button.type = 'button'
-			button.className = 'pagination__button'
+			button.className = 'pagination__button js-pagination-button'
 			button.dataset.page = value
 			button.textContent =
 				value === 'prev' ? '‹' : value === 'next' ? '›' : value
@@ -442,28 +442,30 @@ if (catalog) {
 		panel.removeAttribute('aria-modal')
 		if (!drawer.matches) panel.open = true
 		if (focusedInPanel)
-			(drawer.matches ? openFilters : panel.querySelector('summary')).focus({
-				preventScroll: true,
-			})
+			(
+				drawer.matches
+					? openFilters
+					: panel.querySelector('.js-catalog-filter-toggle')
+			).focus({ preventScroll: true })
 	}
 	openFilters.addEventListener('click', () => {
 		restoreFilters()
 		panel.setAttribute('aria-modal', 'true')
 		panel.showModal()
 		openFilters.setAttribute('aria-expanded', 'true')
-		panel.querySelector('.catalog-filter__close').focus()
+		panel.querySelector('.js-catalog-filters-close').focus()
 	})
 	panel
-		.querySelector('.catalog-filter__close')
+		.querySelector('.js-catalog-filters-close')
 		.addEventListener('click', closeFilters)
 	panel.addEventListener('cancel', event => {
 		event.preventDefault()
 		closeFilters()
 	})
 	panel.addEventListener('keydown', event => {
-		if (event.key !== 'Tab' || !panel.matches(':modal')) return
+		if (event.key !== 'Tab' || !panel.matches('.js-catalog-filters:modal')) return
 		const controls = [
-			...panel.querySelectorAll('button, input, summary'),
+			...panel.querySelectorAll('.js-catalog-filter-control'),
 		].filter(control => !control.disabled && control.getClientRects().length)
 		const first = controls[0]
 		const last = controls[controls.length - 1]
@@ -492,7 +494,7 @@ if (catalog) {
 		if (!drawer.matches) applyFilters()
 	})
 	catalog.addEventListener('click', event => {
-		if (!event.target.closest('[data-clear-filters]')) return
+		if (!event.target.closest('.js-catalog-clear-filters')) return
 		checkboxes.forEach(input => {
 			input.checked = false
 		})
@@ -509,15 +511,15 @@ if (catalog) {
 		page = 1
 		renderCatalog()
 		catalog
-			.querySelector('.catalog__results')
+			.querySelector('.js-catalog-results')
 			.scrollIntoView({ block: 'start' })
 	})
-	catalog.querySelectorAll('[data-catalog-view]').forEach(button => {
+	catalog.querySelectorAll('.js-catalog-view').forEach(button => {
 		button.addEventListener('click', () => {
 			const list = button.dataset.catalogView === 'list'
 			grid.classList.toggle('catalog-grid--list', list)
 			cards.forEach(card => card.classList.toggle('product-card--list', list))
-			catalog.querySelectorAll('[data-catalog-view]').forEach(control => {
+			catalog.querySelectorAll('.js-catalog-view').forEach(control => {
 				const pressed = control === button
 				control.setAttribute('aria-pressed', String(pressed))
 				control.classList.toggle('button--secondary', !pressed)
@@ -525,7 +527,7 @@ if (catalog) {
 		})
 	})
 	pagination.addEventListener('click', event => {
-		const button = event.target.closest('[data-page]')
+		const button = event.target.closest('.js-pagination-button')
 		if (!button || button.disabled) return
 		page =
 			button.dataset.page === 'prev'
@@ -534,7 +536,7 @@ if (catalog) {
 					? page + 1
 					: Number(button.dataset.page)
 		renderCatalog()
-		const results = catalog.querySelector('.catalog__results')
+		const results = catalog.querySelector('.js-catalog-results')
 		count.focus({ preventScroll: true })
 		results.scrollIntoView({ block: 'start' })
 	})
@@ -542,9 +544,9 @@ if (catalog) {
 	renderCatalog()
 }
 
-const productNav = document.querySelector('.product-nav')
+const productNav = document.querySelector('.js-product-nav')
 if (productNav) {
-	const links = [...productNav.querySelectorAll('a')]
+	const links = [...productNav.querySelectorAll('.js-product-nav-link')]
 	const updateProductNav = () => {
 		const current =
 			links.find(link => link.hash === window.location.hash) || links[0]
@@ -557,11 +559,11 @@ if (productNav) {
 	updateProductNav()
 }
 
-const articleContents = document.querySelector('.article-contents')
+const articleContents = document.querySelector('.js-article-contents')
 if (articleContents) {
-	const links = [...articleContents.querySelectorAll('a')]
-	const toggle = articleContents.querySelector('.article-contents__toggle')
-	const list = articleContents.querySelector('#article-contents-links')
+	const links = [...articleContents.querySelectorAll('.js-article-contents-link')]
+	const toggle = articleContents.querySelector('.js-article-contents-toggle')
+	const list = articleContents.querySelector('.js-article-contents-list')
 	const mobileContents = window.matchMedia('(max-width: 768px)')
 	const updateContentsVisibility = () => {
 		const collapsed =
@@ -577,7 +579,7 @@ if (articleContents) {
 	toggle.addEventListener('click', () => {
 		const expanded = toggle.getAttribute('aria-expanded') !== 'true'
 		toggle.setAttribute('aria-expanded', String(expanded))
-		toggle.querySelector('.article-contents__indicator').textContent = expanded
+		toggle.querySelector('.js-article-contents-indicator').textContent = expanded
 			? '−'
 			: '+'
 		updateContentsVisibility()

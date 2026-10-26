@@ -15,29 +15,29 @@
 </head>
 
 <body>
-	<header class="header">
+	<header class="header js-header">
 		<div class="header__container container">
 			<a class="header__logo" href="index.html" aria-label="MEAMO — главная"><img
 					src="/images/icons/meamo-logo-black.svg" alt="MEAMO" width="136" height="50"></a>
-			<button class="header__menu-toggle button button--secondary" type="button" aria-controls="header-menu"
+			<button class="header__menu-toggle button button--secondary js-menu-toggle" type="button" aria-controls="header-menu"
 				aria-expanded="false">Меню</button>
-			<div class="header__mobile-menu" id="header-menu">
+			<div class="header__mobile-menu js-menu" id="header-menu">
 				<nav class="header__nav" aria-label="Основная навигация">
-					<a class="header__link" href="catalog.html">Каталог</a>
-					<a class="header__link" href="labs.html">MEAMO Labs</a>
-					<a class="header__link" href="cooperation.html">Сотрудничество</a>
-					<a class="header__link" href="about.html">О компании</a>
-					<a class="header__link" href="expert-center.html">Экспертный центр</a>
-					<a class="header__link" href="contacts.html">Контакты</a>
+					<a class="header__link js-menu-link" href="catalog.html">Каталог</a>
+					<a class="header__link js-menu-link" href="labs.html">MEAMO Labs</a>
+					<a class="header__link js-menu-link" href="cooperation.html">Сотрудничество</a>
+					<a class="header__link js-menu-link" href="about.html">О компании</a>
+					<a class="header__link js-menu-link" href="expert-center.html">Экспертный центр</a>
+					<a class="header__link js-menu-link" href="contacts.html">Контакты</a>
 				</nav>
-				<a class="header__request button" href="#request">Запросить условия</a>
-				<button class="header__menu-close button button--link" type="button">Закрыть меню ×</button>
+				<a class="header__request button js-menu-link js-request-link" href="#request">Запросить условия</a>
+				<button class="header__menu-close button button--link js-menu-close" type="button">Закрыть меню ×</button>
 			</div>
-			<form class="search" action="catalog.html" method="get" role="search">
+			<form class="search js-search-form" action="catalog.html" method="get" role="search">
 				<label class="visually-hidden" for="catalog-search">Поиск по каталогу: название товара или бренда</label>
 				<button class="search__submit" type="submit" aria-label="Найти в каталоге"><img src="/images/icons/search.svg"
 						alt="" width="24" height="24"></button>
-				<input class="search__field" id="catalog-search" type="search" name="q"
+				<input class="search__field js-search-input" id="catalog-search" type="search" name="q"
 					placeholder="Поиск по каталогу: название товара или бренда">
 			</form>
 		</div>
@@ -65,7 +65,7 @@
 						<h2><span class="product-detail__name">Jeunetique Fine</span><span class="product-detail__price-note">Цена
 								зависит от объёма поставки</span></h2>
 						<p class="product-detail__intro">На сайте нет розничных цен. Менеджер подтвердит наличие, минимальное
-							количество и подготовит расчёт по вашему запросу.</p><a class="product-detail__cta button" href="#request"
+							количество и подготовит расчёт по вашему запросу.</p><a class="product-detail__cta button js-request-link" href="#request"
 							data-request-context="Jeunetique Fine — запрос условий">Запросить условия</a><a
 							class="product-detail__brand" href="brand.html">Перейти на страницу бренда <span
 								aria-hidden="true">→</span></a>
@@ -78,9 +78,9 @@
 				<div class="section-heading">
 					<h2 id="about-product-title">О товаре</h2>
 				</div>
-				<nav class="product-nav" aria-label="О товаре"><a href="#specifications"
-						aria-current="location">Характеристики</a><a href="#description">Описание</a><a
-						href="#materials">Материалы</a></nav>
+				<nav class="product-nav js-product-nav" aria-label="О товаре"><a href="#specifications"
+						aria-current="location" class="js-product-nav-link">Характеристики</a><a href="#description" class="js-product-nav-link">Описание</a><a
+						href="#materials" class="js-product-nav-link">Материалы</a></nav>
 				<div class="product-specifications__columns">
 					<div class="product-specifications__data" id="specifications" tabindex="-1">
 						<h3 class="visually-hidden">Характеристики Jeunetique Fine</h3>
@@ -135,7 +135,7 @@
 						<p>Материалы линейки HA и другого продукта Jeunetique Exo представлены отдельно. Они не заменяют инструкцию
 							и характеристики Jeunetique Fine.</p>
 						<p>По вопросам доступных документов, комплектации и условий хранения <a href="#request"
-								data-request-context="Jeunetique Fine — характеристики и комплектация">отправьте запрос по Jeunetique
+								data-request-context="Jeunetique Fine — характеристики и комплектация" class="js-request-link">отправьте запрос по Jeunetique
 								Fine</a>. Менеджер уточнит сведения по выбранному товару.</p>
 					</div>
 				</div>
@@ -162,7 +162,7 @@
 					</article>
 					<article class="document-card"><img src="/images/icons/document.svg" alt="" width="32" height="24">
 						<h3>Документы по выбранной позиции</h3>
-						<p>Уточнить состав доступных материалов Jeunetique Fine</p><a class="button button--link" href="#request"
+						<p>Уточнить состав доступных материалов Jeunetique Fine</p><a class="button button--link js-request-link" href="#request"
 							data-request-context="Jeunetique Fine — запрос документов">Запросить документы</a>
 					</article>
 				</div>
@@ -204,7 +204,7 @@
 						<p>Сопровождение до получения</p>
 					</li>
 				</ol>
-				<div class="supply-process__actions"><a class="button" href="#request">Запросить условия</a><a
+				<div class="supply-process__actions"><a class="button js-request-link" href="#request">Запросить условия</a><a
 						class="button button--secondary" href="catalog.html">Перейти в каталог</a></div>
 			</div>
 		</section>
@@ -214,47 +214,47 @@
 					<h2 id="similar-title">Похожие товары</h2>
 				</div>
 				<div class="products-list__grid">
-					<article class="product-card">
+					<article class="product-card js-product-card">
 						<a class="product-card__media" href="product-jeunetique-exo.html"
 							aria-label="Подробнее о Jeunetique Exo"><img src="/images/products/Jeunetique%20Exo.jpg"
 								alt="Упаковка Jeunetique Exo" width="1000" height="1000" loading="lazy"></a>
 						<div class="product-card__content">
 							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
-									class="product-card__badge">MEAMO Labs</span></div>
+									class="product-card__badge js-product-badge">MEAMO Labs</span></div>
 							<p class="product-card__country">Южная Корея</p>
-							<h3 class="product-card__title"><a href="product-jeunetique-exo.html">Jeunetique Exo</a></h3>
+							<h3 class="product-card__title js-product-title"><a href="product-jeunetique-exo.html">Jeunetique Exo</a></h3>
 							<p class="product-card__category">Экзосомная продукция</p>
-							<a class="button" href="#request" data-request-context="Jeunetique Exo — запрос условий">Запросить
+							<a class="button js-request-link" href="#request" data-request-context="Jeunetique Exo — запрос условий">Запросить
 								условия</a><a class="product-card__details button button--link"
 								href="product-jeunetique-exo.html">Подробнее<span class="visually-hidden"> о Jeunetique Exo</span></a>
 						</div>
 					</article>
-					<article class="product-card">
+					<article class="product-card js-product-card">
 						<a class="product-card__media" href="product-jeunetique-deep.html"
 							aria-label="Подробнее о Jeunetique Deep"><img src="/images/products/Jeunetique%20Deep.jpg"
 								alt="Упаковка Jeunetique Deep" width="1000" height="1000" loading="lazy"></a>
 						<div class="product-card__content">
 							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
-									class="product-card__badge">MEAMO Labs</span></div>
+									class="product-card__badge js-product-badge">MEAMO Labs</span></div>
 							<p class="product-card__country">Южная Корея</p>
-							<h3 class="product-card__title"><a href="product-jeunetique-deep.html">Jeunetique Deep</a></h3>
+							<h3 class="product-card__title js-product-title"><a href="product-jeunetique-deep.html">Jeunetique Deep</a></h3>
 							<p class="product-card__category">Филлеры</p>
-							<a class="button" href="#request" data-request-context="Jeunetique Deep — запрос условий">Запросить
+							<a class="button js-request-link" href="#request" data-request-context="Jeunetique Deep — запрос условий">Запросить
 								условия</a><a class="product-card__details button button--link"
 								href="product-jeunetique-deep.html">Подробнее<span class="visually-hidden"> о Jeunetique Deep</span></a>
 						</div>
 					</article>
-					<article class="product-card">
+					<article class="product-card js-product-card">
 						<a class="product-card__media" href="product-jeunetique-ultra.html"
 							aria-label="Подробнее о Jeunetique Ultra"><img src="/images/products/Jeunetique%20Ultra.jpg"
 								alt="Упаковка Jeunetique Ultra" width="1000" height="1000" loading="lazy"></a>
 						<div class="product-card__content">
 							<div class="product-card__labels"><span class="product-card__status">Наличие уточняется</span><span
-									class="product-card__badge">MEAMO Labs</span></div>
+									class="product-card__badge js-product-badge">MEAMO Labs</span></div>
 							<p class="product-card__country">Южная Корея</p>
-							<h3 class="product-card__title"><a href="product-jeunetique-ultra.html">Jeunetique Ultra</a></h3>
+							<h3 class="product-card__title js-product-title"><a href="product-jeunetique-ultra.html">Jeunetique Ultra</a></h3>
 							<p class="product-card__category">Филлеры</p>
-							<a class="button" href="#request" data-request-context="Jeunetique Ultra — запрос условий">Запросить
+							<a class="button js-request-link" href="#request" data-request-context="Jeunetique Ultra — запрос условий">Запросить
 								условия</a><a class="product-card__details button button--link"
 								href="product-jeunetique-ultra.html">Подробнее<span class="visually-hidden"> о Jeunetique Ultra</span></a>
 						</div>
@@ -262,30 +262,30 @@
 				</div>
 			</div>
 		</section>
-		<section class="faq" aria-labelledby="faq-title">
+		<section class="faq js-faq" aria-labelledby="faq-title">
 			<div class="container">
 				<div class="section-heading">
 					<h2 id="faq-title">Частые вопросы</h2>
 				</div>
 				<div class="faq__items">
-					<div class="faq__item">
-						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-1" type="button" aria-expanded="false"
+					<div class="faq__item js-faq-item">
+						<h3 class="faq__heading"><button class="faq__toggle js-faq-toggle" id="faq-question-1" type="button" aria-expanded="false"
 								aria-controls="faq-answer-1">Как получить цену на Jeunetique Fine?<span class="faq__indicator"
 									aria-hidden="true"></span></button></h3>
-						<div class="faq__answer" role="region" id="faq-answer-1" aria-labelledby="faq-question-1" aria-hidden="true"
+						<div class="faq__answer js-faq-answer" role="region" id="faq-answer-1" aria-labelledby="faq-question-1" aria-hidden="true"
 							inert>
 							<div class="faq__content">
 								<p>Укажите желаемое количество и контакт для ответа в <a href="#request"
-										data-request-context="Jeunetique Fine — расчёт поставки">форме запроса</a>. Менеджер уточнит условия
+										data-request-context="Jeunetique Fine — расчёт поставки" class="js-request-link">форме запроса</a>. Менеджер уточнит условия
 									конкретной поставки.</p>
 							</div>
 						</div>
 					</div>
-					<div class="faq__item">
-						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-2" type="button" aria-expanded="false"
+					<div class="faq__item js-faq-item">
+						<h3 class="faq__heading"><button class="faq__toggle js-faq-toggle" id="faq-question-2" type="button" aria-expanded="false"
 								aria-controls="faq-answer-2">Как уточнить минимальное количество?<span class="faq__indicator"
 									aria-hidden="true"></span></button></h3>
-						<div class="faq__answer" role="region" id="faq-answer-2" aria-labelledby="faq-question-2" aria-hidden="true"
+						<div class="faq__answer js-faq-answer" role="region" id="faq-answer-2" aria-labelledby="faq-question-2" aria-hidden="true"
 							inert>
 							<div class="faq__content">
 								<p>Минимальное количество согласуется по выбранной позиции. Укажите Jeunetique Fine и планируемый объём
@@ -293,15 +293,15 @@
 							</div>
 						</div>
 					</div>
-					<div class="faq__item">
-						<h3 class="faq__heading"><button class="faq__toggle" id="faq-question-3" type="button" aria-expanded="false"
+					<div class="faq__item js-faq-item">
+						<h3 class="faq__heading"><button class="faq__toggle js-faq-toggle" id="faq-question-3" type="button" aria-expanded="false"
 								aria-controls="faq-answer-3">Какие документы доступны по товару?<span class="faq__indicator"
 									aria-hidden="true"></span></button></h3>
-						<div class="faq__answer" role="region" id="faq-answer-3" aria-labelledby="faq-question-3" aria-hidden="true"
+						<div class="faq__answer js-faq-answer" role="region" id="faq-answer-3" aria-labelledby="faq-question-3" aria-hidden="true"
 							inert>
 							<div class="faq__content">
 								<p>Состав материалов по Jeunetique Fine уточняется отдельно. <a href="#request"
-										data-request-context="Jeunetique Fine — запрос документов">Запросите документы по Fine</a>;
+										data-request-context="Jeunetique Fine — запрос документов" class="js-request-link">Запросите документы по Fine</a>;
 									материалы HA и Exo относятся к другим сущностям.</p>
 							</div>
 						</div>
@@ -309,15 +309,15 @@
 				</div>
 			</div>
 		</section>
-		<section class="compact-request" id="request" aria-labelledby="request-title" tabindex="-1">
+		<section class="compact-request js-request" id="request" aria-labelledby="request-title" tabindex="-1">
 			<div class="compact-request__container container">
 				<div class="compact-request__copy">
 					<h2 id="request-title">Запросить условия</h2>
-					<p class="compact-request__context" id="request-context">Jeunetique Fine</p>
+					<p class="compact-request__context js-request-context" id="request-context">Jeunetique Fine</p>
 					<p class="compact-request__intro">Оставьте имя и контакт для ответа. Количество и комментарий можно добавить
 						по желанию.</p>
 				</div>
-				<form class="form form--compact" aria-labelledby="request-title"
+				<form class="form form--compact js-request-form" aria-labelledby="request-title"
 					aria-describedby="request-required request-status">
 					<input type="hidden" name="context" value="Jeunetique Fine">
 					<div class="form__row">
@@ -333,19 +333,19 @@
 							placeholder="Позиции, количество или ваш вопрос — необязательно"></textarea></div>
 					<div class="form__field">
 						<div class="form__attachment"><label class="form__file-label" for="request-file"><img
-									src="/images/icons/paperclip.svg" alt="" width="32" height="24"><span>Прикрепить файл или
-									фото</span><input class="form__file" id="request-file" name="attachment" type="file"
+									src="/images/icons/paperclip.svg" alt="" width="32" height="24"><span class="js-request-file-label">Прикрепить файл или
+									фото</span><input class="form__file js-request-file" id="request-file" name="attachment" type="file"
 									accept=".pdf,.xlsx,.xls,.csv,.jpg,.jpeg,.png" aria-describedby="request-file-hint"></label><button
-								class="form__remove-file" type="button" hidden aria-label="Удалить выбранный файл">×</button></div>
+								class="form__remove-file js-request-remove-file" type="button" hidden aria-label="Удалить выбранный файл">×</button></div>
 						<p class="form__hint" id="request-file-hint">Один файл до 10 МБ: PDF, XLSX, XLS, CSV, JPG, JPEG или PNG.</p>
-						<p class="form__file-status visually-hidden" role="status" aria-atomic="true"></p>
+						<p class="form__file-status visually-hidden js-request-file-status" role="status" aria-atomic="true"></p>
 					</div>
 					<div class="form__consent"><input class="form__checkbox-input" id="request-consent" name="consent"
 							type="checkbox" value="yes"><label class="form__checkbox-label" for="request-consent">Даю <a
 								href="personal-data.html">согласие на обработку персональных данных</a> и принимаю <a
 								href="privacy.html">политику конфиденциальности</a></label></div>
 					<p class="form__hint" id="request-required">* Обязательные поля. Вложение и сообщение — по желанию.</p>
-					<p class="form__status" id="request-status" role="status" aria-atomic="true" hidden></p>
+					<p class="form__status js-request-status" id="request-status" role="status" aria-atomic="true" hidden></p>
 					<button class="form__submit button" type="submit" aria-describedby="request-required request-status">Отправить
 						запрос
 						менеджеру</button>
@@ -453,7 +453,7 @@
 							10-2841-6857</a><span>Сеул, Южная Корея</span></address>
 				</div>
 			</div>
-			<a class="footer__request button button--secondary" href="#request">Запросить условия</a>
+			<a class="footer__request button button--secondary js-request-link" href="#request">Запросить условия</a>
 			<div class="footer__reviews">
 				<h2>Отзывы MEAMO на Trustpilot</h2>
 				<a class="footer__reviews-link button button--secondary" href="/" rel="noopener noreferrer">Читать отзывы</a>
