@@ -1,21 +1,23 @@
 .product-specifications {
-	margin-top: 96px;
+	padding-block: 64px;
 	@include mobile {
-		margin-top: 64px;
+		padding-block: 40px;
 	}
-	.section-heading {
-		margin-bottom: 24px;
+	> .container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 24px;
 	}
 	&__columns {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
 		align-items: start;
 		gap: 32px;
-		margin-top: 32px;
+		padding-top: 8px;
 		@include mobile {
 			grid-template-columns: minmax(0, 1fr);
-			gap: 40px;
-			margin-top: 24px;
+			gap: 24px;
+			padding-top: 0;
 		}
 	}
 	&__data {
@@ -34,10 +36,16 @@
 		grid-column: 1;
 		grid-row: 1;
 		min-width: 0;
+		display: grid;
+		row-gap: 1.5em;
 		line-height: 1.5;
 		@include mobile {
 			grid-column: auto;
 			grid-row: auto;
+		}
+		header {
+			display: grid;
+			row-gap: 16px;
 		}
 		h3 {
 			@include fluid-text(20, 20);
@@ -47,9 +55,8 @@
 			letter-spacing: normal;
 		}
 		p {
-			margin-top: 16px;
-			&:nth-child(2){
-				color: var(--color-muted)
+			&:nth-child(2) {
+				color: var(--color-muted);
 			}
 		}
 		a {

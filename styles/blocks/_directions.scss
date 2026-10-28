@@ -1,0 +1,12 @@
+.directions {
+	.container {
+		@include mobile {
+			gap: 32px;
+		}
+	}
+	.grid {
+		@include mobile {
+			gap: 24px;
+		}
+	}
+}

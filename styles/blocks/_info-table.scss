@@ -110,8 +110,9 @@
 				@include fluid-text(12, 12);
 				content: attr(data-label);
 				display: block;
-				margin-bottom: 8px;
+				padding-bottom: 8px;
 				color: var(--color-hover);
+				font-weight: 500;
 				line-height: 1.33;
 				letter-spacing: 0.3px;
 			}

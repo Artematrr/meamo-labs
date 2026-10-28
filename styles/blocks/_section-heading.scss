@@ -1,23 +1,18 @@
 .section-heading {
-	margin-bottom: 32px;
+	display: grid;
+	row-gap: 16px;
 	h2 {
 		text-wrap: initial;
 	}
 	p {
 		@include fluid-text(16, 16);
 		max-width: 800px;
-		margin-top: 16px;
 		color: var(--color-muted);
-	}
-	@include mobile {
-		margin-bottom: 24px;
+		line-height: 1.5;
 	}
 	&--large {
 		p {
-			@include fluid-text(18, 18);
-			max-width: 800px;
-			margin-top: 16px;
-			color: var(--color-muted);
+			@include fluid-text(18, 16);
 		}
 	}
 }

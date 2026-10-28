@@ -1,7 +1,7 @@
 .catalog {
-	margin-top: 50px;
+	padding-block: 32px;
 	@include mobile {
-		margin-top: 24px;
+		padding-block: 24px;
 	}
 	.pagination {
 		@include mobile {
@@ -37,7 +37,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 8px 16px;
-		margin-bottom: 24px;
+		padding-bottom: 24px;
 		&[hidden] {
 			display: none;
 		}

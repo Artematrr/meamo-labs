@@ -6,8 +6,8 @@
 	line-height: 1.42;
 	&--wholesale {
 		gap: 12px;
-		.form__submit {
-			margin-top: 12px;
+		.form__consent {
+			padding-bottom: 24px;
 		}
 	}
 	&__row {
@@ -27,22 +27,19 @@
 		}
 	}
 	&__group {
+		display: grid;
+		row-gap: 12px;
 		min-width: 0;
 		margin: 0;
 		padding: 0;
 		border: 0;
-		& + & {
-			margin-top: 16px;
-		}
-		> .form__hint,
-		> .form__field {
-			margin-top: 12px;
+		&:has(+ .form__group) {
+			padding-bottom: 16px;
 		}
 	}
 	&__legend {
 		@include fluid-text(16, 16);
-		margin-bottom: 12px;
-		padding: 0;
+		padding: 0 0 12px;
 		color: var(--color-muted);
 		line-height: 1.5;
 	}
@@ -134,7 +131,7 @@
 		grid-template-columns: 24px minmax(0, 1fr);
 		align-items: center;
 		gap: 16px;
-		padding-block: 12px;
+		min-height: 44px;
 	}
 	&__checkbox-input {
 		appearance: none;

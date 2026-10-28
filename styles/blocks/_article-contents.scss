@@ -4,13 +4,11 @@
 	grid-row: 1;
 	padding: 24px;
 	background-color: var(--color-paper);
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius-sm);
 	@include tablet {
 		grid-column: auto;
 		grid-row: auto;
-	}
-	@include mobile {
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-sm);
 	}
 	&__title {
 		@include fluid-text(20, 20);
@@ -18,15 +16,6 @@
 		font-weight: 500;
 		line-height: 1.4;
 		letter-spacing: normal;
-		@include mobile {
-			display: none;
-		}
-	}
-	&__mobile-heading {
-		display: none;
-		@include mobile {
-			display: block;
-		}
 	}
 	&__toggle {
 		@include reset-button;
@@ -54,41 +43,25 @@
 		@include fluid-text(16, 14);
 		display: grid;
 		gap: 16px;
-		margin-top: 16px;
-		padding-left: 18px;
-		list-style: decimal;
+		padding-top: 16px;
+		padding-left: 0;
+		list-style: none;
+		counter-reset: article-contents;
+		line-height: 1.42;
 		&[hidden] {
 			display: none;
 		}
-		@include mobile {
-			padding-left: 0;
-			list-style: none;
-			counter-reset: article-contents;
-			line-height: 1.42857;
-		}
 	}
 	li {
-		color: var(--color-muted);
-		@include mobile {
-			counter-increment: article-contents;
-			color: var(--color-blue);
-		}
-		&:has([aria-current='location']) {
-			color: var(--color-blue);
-			text-decoration: underline;
-			@include mobile {
-				text-decoration: none;
-			}
-		}
+		counter-increment: article-contents;
+		color: var(--color-blue);
 	}
 	a {
 		display: block;
 		padding-block: 10px;
 		&::before {
-			@include mobile {
-				content: counter(article-contents, decimal-leading-zero);
-				margin-right: 8px;
-			}
+			content: counter(article-contents, decimal-leading-zero);
+			margin-right: 8px;
 		}
 		@include hover {
 			text-decoration: underline;

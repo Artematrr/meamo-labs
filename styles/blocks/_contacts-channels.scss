@@ -4,11 +4,6 @@
 			display: none;
 		}
 	}
-	&.section {
-		@include mobile {
-			margin-top: 24px;
-		}
-	}
 	&__direct {
 		display: grid;
 		align-content: center;
@@ -45,6 +40,9 @@
 		}
 	}
 	&__messengers {
+		display: grid;
+		align-content: start;
+		row-gap: 16px;
 		@include fluid-text(14, 14);
 		padding: 24px;
 		border-radius: var(--radius-md);
@@ -59,14 +57,12 @@
 			letter-spacing: normal;
 		}
 		p {
-			margin-top: 16px;
 		}
 	}
 	&__actions {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 16px;
-		margin-top: 16px;
 		.button {
 			justify-content: flex-start;
 			gap: 8px;
@@ -80,10 +76,7 @@
 	}
 	&__hours {
 		@include fluid-text(14, 14);
-		margin-block: 32px;
+		padding-block: 0;
 		color: var(--color-muted);
-		@include mobile {
-			margin-block: 24px;
-		}
 	}
 }

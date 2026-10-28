@@ -11,7 +11,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 24px 32px;
+		gap: 24px;
 		padding: 24px;
 		border-radius: var(--radius-md);
 		background-color: var(--color-paper);
@@ -23,6 +23,7 @@
 		&--plain {
 			align-items: flex-start;
 			border-radius: 0;
+			gap: 16px 24px;
 		}
 	}
 	&__copy {
@@ -37,11 +38,15 @@
 		text-wrap: initial;
 	}
 	&__description {
-		margin-top: 8px;
+		padding-top: 8px;
 		color: var(--color-muted);
 	}
 	&__action {
 		flex: 0 0 328px;
+		margin-right: 24px;
+		@include tablet {
+			margin-right: unset;
+		}
 		@include mobile {
 			flex-basis: auto;
 			width: 100%;

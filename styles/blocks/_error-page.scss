@@ -23,11 +23,13 @@ main:has(> .error-page) {
 		}
 	}
 	&__copy {
+		display: grid;
+		align-content: start;
+		row-gap: 24px;
 		min-width: 0;
 	}
 	&__eyebrow {
 		@include fluid-text(12, 12);
-		margin-bottom: 24px;
 		color: var(--color-hover);
 		font-weight: 500;
 		line-height: 1.4;
@@ -40,7 +42,6 @@ main:has(> .error-page) {
 	}
 	&__description {
 		@include fluid-text(16, 16);
-		margin-top: 24px;
 		color: var(--color-muted);
 		line-height: 1.5;
 	}
@@ -48,7 +49,6 @@ main:has(> .error-page) {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 16px;
-		margin-top: 24px;
 		@include mobile {
 			display: grid;
 		}

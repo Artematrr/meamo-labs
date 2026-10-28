@@ -4,9 +4,13 @@
 	@include mobile {
 		padding-block: 40px;
 	}
+	> .container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 16px;
+	}
 	&__context {
 		@include fluid-text(12, 12);
-		margin-bottom: 16px;
 		color: var(--color-hover);
 		font-weight: 500;
 		line-height: 1.33;
@@ -14,7 +18,7 @@
 	}
 	&__intro {
 		max-width: 850px;
-		margin-block: 16px 24px;
+		padding-bottom: 8px;
 		color: var(--color-muted);
 	}
 }

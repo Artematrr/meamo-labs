@@ -1,5 +1,7 @@
 .article-sources {
 	@include fluid-text(14, 14);
+	display: grid;
+	row-gap: 16px;
 	padding: 24px;
 	background-color: var(--color-paper);
 	line-height: 1.5;
@@ -11,17 +13,17 @@
 		letter-spacing: normal;
 	}
 	p {
-		margin-top: 16px;
 		color: var(--color-muted);
 	}
 	&__list {
 		display: grid;
 		gap: 16px;
-		margin-top: 16px;
 		padding: 0;
 		list-style: none;
 	}
 	&__item {
+		display: grid;
+		row-gap: 8px;
 		padding: 16px;
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-sm);
@@ -34,12 +36,9 @@
 			letter-spacing: normal;
 			text-wrap: initial;
 		}
-		p {
-			margin-top: 8px;
-		}
 		a {
 			display: inline-block;
-			margin-top: 8px;
+			justify-self: start;
 			color: var(--color-blue);
 			font-weight: 500;
 			@include hover {

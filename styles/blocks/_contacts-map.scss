@@ -1,4 +1,7 @@
 .contacts-map {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	row-gap: 16px;
 	padding: 32px;
 	background-color: var(--color-mist);
 	&__surface {
@@ -15,12 +18,8 @@
 		border: 0;
 	}
 	&__city {
-		@include fluid-text(28, 28);
-		margin-top: 16px;
-		line-height: 1.28;
 	}
 	&__address {
 		@include fluid-text(16, 16);
-		margin-top: 16px;
 	}
 }

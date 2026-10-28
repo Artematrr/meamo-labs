@@ -17,12 +17,6 @@
 			}
 		}
 	}
-	&--slider {
-		margin-top: 128px;
-		@include mobile {
-			margin-top: 80px;
-		}
-	}
 	&__track {
 		position: relative;
 		width: 100%;
@@ -47,7 +41,6 @@
 	&__controls {
 		display: flex;
 		gap: 16px;
-		// margin-top: 32px;
 		@include mobile {
 			display: none;
 		}
@@ -76,8 +69,14 @@
 		@include mobile {
 			@include fluid-text(14, 14);
 			display: block;
-			margin-top: 32px;
 			color: var(--color-muted);
+		}
+	}
+	&--slider {
+		.product-card__media {
+			@include mobile {
+				height: 215px;
+			}
 		}
 	}
 }

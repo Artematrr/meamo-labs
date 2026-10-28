@@ -8,18 +8,22 @@
 			grid-template-columns: minmax(0, 1fr);
 		}
 		@include mobile {
-			gap: 24px;
+			gap: 20px 24px;
 			padding-block: 32px;
 		}
 	}
 	&__copy {
+		display: flex;
+		flex-direction: column;
+		row-gap: 24px;
 		min-width: 0;
 		@include tablet {
 			max-width: 720px;
+			row-gap: 20px;
+			margin-bottom: 4px;
 		}
 	}
 	&__intro {
-		margin-top: 20px;
 		color: var(--color-muted);
 		@include mobile {
 			line-height: 1.5;
@@ -29,7 +33,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 16px;
-		margin-top: 20px;
 		@include mobile {
 			display: grid;
 		}
@@ -86,7 +89,6 @@
 		grid-column: 1 / -1;
 		@include mobile {
 			justify-content: center;
-			margin-top: -4px;
 		}
 	}
 	&__control {
@@ -111,14 +113,10 @@
 		}
 	}
 	&--home {
-		margin-bottom: 32px;
 		background-color: var(--color-paper);
-		@include mobile {
-			margin-bottom: 24px;
-		}
 		h1 {
 			@include fluid-text(48, 32);
-			line-height: 1.1667;
+			line-height: 1.16;
 			text-wrap: initial;
 			@include mobile {
 				line-height: 1.25;
@@ -128,7 +126,7 @@
 	}
 	&__eyebrow {
 		@include fluid-text(12, 12);
-		margin-bottom: 24px;
+		padding-bottom: 4px;
 		color: var(--color-hover);
 		font-weight: 500;
 		line-height: 1.33;
@@ -143,32 +141,28 @@
 		height: 416px;
 		object-fit: cover;
 		@include mobile {
-			height: 292px;
+			height: 260px;
 		}
 	}
 	&--wholesale {
-		margin-bottom: 32px;
 		background-color: var(--color-paper);
-		@include mobile {
-			margin-bottom: 24px;
-		}
 		.hero-split__container {
 			align-items: start;
 			@include mobile {
-				gap: 32px;
+				gap: 48px;
 				padding-block: 40px;
 			}
 		}
 		h1 {
 			@include fluid-text(48, 36);
-			line-height: 1.1667;
+			line-height: 1.16;
 			text-wrap: initial;
 			@include mobile {
-				line-height: 1.2222;
+				line-height: 1.22;
 			}
 		}
-		.hero-split__actions {
-			margin-top: 24px;
+		.hero-split__intro {
+			padding-bottom: 4px;
 		}
 	}
 	&__title-wide {
@@ -193,14 +187,14 @@
 		}
 		h1 {
 			@include fluid-text(48, 36);
-			line-height: 1.1667;
+			line-height: 1.16;
 			text-wrap: initial;
 			@include mobile {
-				line-height: 1.2222;
+				line-height: 1.22;
 			}
 		}
-		.hero-split__actions {
-			margin-top: 24px;
+		.hero-split__intro {
+			padding-bottom: 4px;
 		}
 		.hero-split__illustration img {
 			border-radius: var(--radius-md);

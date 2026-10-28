@@ -1,10 +1,16 @@
 .supply-process {
-	margin-top: 48px;
 	padding-block: 64px;
 	background-color: var(--color-paper);
 	@include mobile {
-		margin-top: 32px;
 		padding-block: 40px;
+	}
+	> .container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 32px;
+		@include mobile {
+			row-gap: 24px;
+		}
 	}
 	&__steps {
 		display: grid;
@@ -16,6 +22,9 @@
 		}
 	}
 	&__step {
+		display: grid;
+		align-content: start;
+		row-gap: 16px;
 		min-width: 0;
 		padding: 24px;
 		@include tablet {
@@ -31,27 +40,21 @@
 	&__number {
 		@include fluid-text(28, 20);
 		display: block;
-		margin-bottom: 16px;
 		color: var(--color-hover);
 		font-family: var(--font-family-accent);
 		font-weight: 500;
 		line-height: 1.4;
 		@include mobile {
 			grid-row: span 2;
-			margin: 0;
 		}
 	}
 	&__title {
 		@include fluid-text(20, 20);
-		margin-bottom: 16px;
 		font-family: var(--font-family-base);
 		font-weight: 500;
 		line-height: 1.4;
 		letter-spacing: normal;
 		text-wrap: initial;
-		@include mobile {
-			margin: 0;
-		}
 	}
 	&__step p {
 		@include fluid-text(14, 14);
@@ -62,10 +65,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 16px;
-		margin-top: 32px;
 		@include mobile {
 			display: grid;
-			margin-top: 24px;
 		}
 	}
 	&__actions .button {

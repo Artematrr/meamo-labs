@@ -33,60 +33,38 @@
 	}
 }
 .section {
-	margin-block-start: 96px;
-	@include mobile {
-		margin-block-start: 64px;
-	}
-	&--spacious {
-		margin-block-start: 112px;
+	> .container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 32px;
 		@include mobile {
-			margin-block-start: 72px;
-		}
-	}
-	&--compact {
-		margin-block-start: 48px;
-		@include mobile {
-			margin-block-start: 32px;
-		}
-	}
-	&--ending {
-		margin-bottom: 160px;
-		@include mobile {
-			margin-bottom: 80px;
-		}
-	}
-	&--lead {
-		margin-block-start: 64px;
-		@include mobile {
-			margin-block-start: 40px;
-		}
-	}
-	&--before-form {
-		margin-bottom: 64px;
-		@include mobile {
-			margin-bottom: 40px;
-		}
-	}
-	&--huge {
-		margin-block-start: 128px;
-		@include mobile {
-			margin-block-start: 82px;
+			row-gap: 24px;
 		}
 	}
 	&__action {
 		width: fit-content;
 		min-width: 232px;
-		margin-top: 32px;
 		@include mobile {
 			width: 100%;
 			min-width: 0;
-			margin-top: 24px;
 		}
 	}
 }
-section:has(> .grid) + .section {
-	margin-block-start: 80px;
+.padding-sm {
+	padding-block: 32px;
 	@include mobile {
-		margin-block-start: 56px;
+		padding-block: 24px;
+	}
+}
+.padding-md {
+	padding-block: 48px;
+	@include mobile {
+		padding-block: 32px;
+	}
+}
+.padding-lg {
+	padding-block: 64px;
+	@include mobile {
+		padding-block: 40px;
 	}
 }

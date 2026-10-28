@@ -1,13 +1,13 @@
 .faq {
-	margin-top: 64px;
 	padding-block: 64px;
 	border-top: 1px solid var(--color-line);
 	@include mobile {
-		margin-top: 40px;
 		padding-block: 40px;
 	}
-	.section-heading {
-		margin-bottom: 16px;
+	> .container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 16px;
 	}
 	&__items {
 		display: grid;
@@ -28,7 +28,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 24px;
+		gap: 16px;
 		width: 100%;
 		padding: 24px;
 		border-radius: var(--radius-sm);
@@ -40,6 +40,9 @@
 		}
 		@include hover {
 			color: var(--color-hover);
+		}
+		@include mobile {
+			gap: 8px;
 		}
 	}
 	&__indicator {

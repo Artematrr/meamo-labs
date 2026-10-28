@@ -15,16 +15,17 @@
 	}
 	&__context {
 		@include fluid-text(18, 18);
-		margin-top: 16px;
 		line-height: 1.55;
 	}
 	&__intro {
 		@include fluid-text(16, 16);
-		margin-top: 16px;
 		color: var(--color-muted);
 		line-height: 1.5;
 	}
 	&__copy {
+		display: grid;
+		align-content: start;
+		row-gap: 16px;
 		@include tablet {
 			max-width: 600px;
 		}

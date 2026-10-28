@@ -1,13 +1,13 @@
 .catalog-categories {
 	@include fluid-text(14, 14);
-	margin-top: 24px;
+	padding-block: 24px;
 	line-height: 1.42;
 	@include mobile {
-		margin-top: 12px;
+		padding-block: 12px 0;
 	}
 	&__title {
 		@include fluid-text(14, 14);
-		margin-bottom: 24px;
+		padding-bottom: 24px;
 		font-family: var(--font-family-base);
 		font-weight: 500;
 		line-height: 1.42;
@@ -37,14 +37,14 @@
 		}
 	}
 	&__caption {
-		margin-top: 24px;
+		padding-block-start: 24px;
 		color: var(--color-muted);
 	}
 	&__seo-links {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 8px 64px;
-		margin-top: 8px;
+		padding-top: 8px;
 		font-weight: 500;
 		@include mobile {
 			column-gap: 32px;

@@ -3,20 +3,35 @@
 	@include mobile {
 		padding-block: 32px;
 	}
+	> .container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 16px;
+	}
+	.breadcrumbs {
+		padding-bottom: 16px;
+		@include mobile {
+			padding-bottom: 8px;
+		}
+	}
 	h1 {
 		@include fluid-text(40, 28);
-		margin-top: 32px;
 		line-height: 1.2;
 		letter-spacing: -0.6px;
 		@include mobile {
-			margin-top: 24px;
 			line-height: 1.28;
 			letter-spacing: -0.3px;
 		}
 	}
 	> .container > p {
-		margin-top: 16px;
 		color: var(--color-muted);
+	}
+	&--contacts {
+		@include mobile {
+			.breadcrumbs {
+				padding-bottom: 0;
+			}
+		}
 	}
 	&--article {
 		h1 {

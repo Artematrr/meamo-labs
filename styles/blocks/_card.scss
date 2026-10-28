@@ -31,11 +31,17 @@
 		line-height: 1.33;
 		letter-spacing: normal;
 		color: var(--color-hover);
-		margin-bottom: 8px;
+		padding-bottom: 12px;
 		text-wrap: initial;
+		@include mobile {
+			padding-bottom: 8px;
+		}
 	}
 	&--icon,
 	&--text.card--white {
+		display: grid;
+		align-content: start;
+		row-gap: 16px;
 		padding: 24px;
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-md);
@@ -48,17 +54,9 @@
 			border: 0;
 			border-radius: var(--radius-sm);
 		}
-		.card__title {
-			margin-top: 16px;
-			@include mobile {
-				margin: 0;
-			}
-		}
 		.card__description {
-			margin-top: 16px;
 			@include mobile {
-				line-height: 1.42857;
-				margin: 0;
+				line-height: 1.42;
 			}
 		}
 		.card__icon {
@@ -81,18 +79,23 @@
 	}
 	&--text {
 		@include mobile {
-			line-height: 1.42857;
+			line-height: 1.42;
 		}
 	}
 	&--icon-side {
 		@include fluid-text(14, 14);
 		display: grid;
+		align-content: start;
 		grid-template-columns: 32px minmax(0, 1fr);
 		gap: 8px 16px;
 		padding: 16px;
 		border-radius: var(--radius-sm);
 		background-color: var(--color-paper);
 		line-height: 1.42;
+		min-height: 154px;
+		@include mobile {
+			min-height: unset;
+		}
 		.card__icon {
 			grid-row: span 2;
 		}
@@ -105,7 +108,9 @@
 	}
 	&--text.card--feature {
 		@include fluid-text(16, 16);
-		display: block;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 16px;
 		padding: 24px;
 		border: 0;
 		border-radius: var(--radius-lg);
@@ -118,7 +123,6 @@
 			letter-spacing: -0.3px;
 		}
 		.card__description {
-			margin-top: 16px;
 			line-height: 1.5;
 		}
 	}
@@ -138,6 +142,7 @@
 	&--enum {
 		@include fluid-text(14, 14);
 		display: grid;
+		align-content: start;
 		grid-template-columns: 32px minmax(0, 1fr);
 		gap: 8px 16px;
 		padding: 16px;

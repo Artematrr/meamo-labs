@@ -3,7 +3,7 @@
 	grid-template-columns: minmax(0, 1fr) 240px auto;
 	align-items: center;
 	gap: 16px;
-	margin-bottom: 24px;
+	padding-bottom: 24px;
 	@include mobile {
 		grid-template-columns: minmax(0, 1fr);
 		gap: 12px;

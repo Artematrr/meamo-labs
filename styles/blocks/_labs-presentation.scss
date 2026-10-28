@@ -15,10 +15,16 @@
 		}
 	}
 	&__copy {
+		display: grid;
+		align-content: start;
+		row-gap: 16px;
 		@include fluid-text(16, 16);
 		line-height: 1.5;
 		@include tablet {
 			max-width: 600px;
+		}
+		@include mobile {
+			max-width: unset;
 		}
 	}
 	&__logo {
@@ -28,21 +34,20 @@
 	}
 	h2 {
 		@include fluid-text(48, 36);
-		margin-top: 16px;
 		color: inherit;
-		line-height: 1.1667;
+		line-height: 1.16;
 		text-wrap: initial;
 		@include mobile {
-			margin-top: 24px;
-			line-height: 1.2222;
+			padding-top: 8px;
+			line-height: 1.22;
+			letter-spacing: -0.5px;
 		}
 	}
 	&__copy p {
-		margin-top: 24px;
+		padding-block: 8px;
 	}
 	&__copy .button {
-		width: цшверЖ аше-сщтеутеж fit-content;
-		margin-top: 24px;
+		width: fit-content;
 		@include mobile {
 			width: 100%;
 		}
@@ -62,9 +67,9 @@
 		border-radius: var(--radius-md);
 		background-color: var(--color-white);
 		color: var(--color-blue);
-		line-height: 20px;
+		line-height: 1.42;
 		&--rounded {
-			border-radius: var(--radius-lg);
+			border-radius: var(--radius-md);
 		}
 	}
 	&__product img {
@@ -87,32 +92,32 @@
 		outline-color: var(--color-white);
 	}
 	&__breadcrumbs {
-		margin-bottom: 32px;
+		padding-bottom: 32px;
 	}
 	&--hero {
+		.labs-presentation__copy {
+			row-gap: 40px;
+			@include mobile {
+				row-gap: 24px;
+			}
+		}
 		h1 {
 			@include fluid-text(48, 36);
-			margin-top: 40px;
 			color: inherit;
-			line-height: 1.1667;
+			line-height: 1.16;
 			text-wrap: initial;
 			@include mobile {
-				margin-top: 24px;
-				line-height: 1.2222;
+				line-height: 1.22;
 			}
 		}
 		.labs-presentation__copy p {
-			margin-top: 40px;
-			@include mobile {
-				margin-top: 24px;
-			}
+			padding-block: 0;
 		}
 		.labs-presentation__copy .button {
-			width: 280px;
-			margin-top: 40px;
+			max-width: 280px;
+			width: 100%;
 			@include mobile {
-				width: 100%;
-				margin-top: 24px;
+				max-width: unset;
 			}
 		}
 	}

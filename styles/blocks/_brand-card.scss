@@ -1,5 +1,7 @@
 .brand-card {
 	@include fluid-text(16, 16);
+	display: grid;
+	row-gap: 16px;
 	max-width: 624px;
 	padding: 24px;
 	border-radius: var(--radius-md);
@@ -10,15 +12,11 @@
 		color: var(--color-hover);
 		text-transform: uppercase;
 	}
-	h3 {
-		margin-block: 16px;
-	}
 	p:not(.brand-card__label) {
+		padding-bottom: 8px;
 		color: var(--color-muted);
 	}
 	.button {
 		width: 100%;
-		margin-top: 16px;
-		margin-top: 24px;
 	}
 }

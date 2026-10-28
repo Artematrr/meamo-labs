@@ -43,7 +43,7 @@
 	</header>
 
 	<main>
-		<section class="intro" aria-labelledby="contacts-title">
+		<section class="intro intro--contacts" aria-labelledby="contacts-title">
 			<div class="container">
 				<nav class="breadcrumbs breadcrumbs--compact" aria-label="Хлебные крошки">
 					<ol>
@@ -56,7 +56,7 @@
 				<p>Свяжитесь с нами по вопросам ассортимента, документов и оптовых поставок.</p>
 			</div>
 		</section>
-		<section class="contacts-channels section section--spacious" aria-labelledby="channels-title">
+		<section class="contacts-channels section padding-lg" aria-labelledby="channels-title">
 			<div class="container">
 				<div class="section-heading">
 					<h2 id="channels-title">Будем на связи</h2>
@@ -84,16 +84,14 @@
 					</div>
 				</div>
 				<p class="contacts-channels__hours">Пн–Пт 9:00–18:00 · время Южной Кореи</p>
-			</div>
-		</section>
-		<section class="contacts-map section--before-form" aria-labelledby="map-title">
-			<div class="container">
-				<h2 class="visually-hidden" id="map-title">Расположение на карте</h2>
-				<div class="contacts-map__surface"><iframe class="contacts-map__frame"
-						src="https://yandex.ru/map-widget/v1/?ll=127.036%2C37.563&amp;z=12&amp;lang=ru_RU"
-						title="Яндекс Карты: район Sungdong-gu, Сеул" loading="lazy" allowfullscreen></iframe></div>
-				<h3 class="contacts-map__city">Сеул, Южная Корея</h3>
-				<p class="contacts-map__address">Sungdong-gu, 02633, Seoul, Korea</p>
+				<div class="contacts-map" role="region" aria-labelledby="map-title">
+					<h2 class="visually-hidden" id="map-title">Расположение на карте</h2>
+					<div class="contacts-map__surface"><iframe class="contacts-map__frame"
+							src="https://yandex.ru/map-widget/v1/?ll=127.036%2C37.563&amp;z=12&amp;lang=ru_RU"
+							title="Яндекс Карты: район Sungdong-gu, Сеул" loading="lazy" allowfullscreen></iframe></div>
+					<h3 class="contacts-map__city">Сеул, Южная Корея</h3>
+					<p class="contacts-map__address">Sungdong-gu, 02633, Seoul, Korea</p>
+				</div>
 			</div>
 		</section>
 

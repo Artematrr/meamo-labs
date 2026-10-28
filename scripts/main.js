@@ -564,17 +564,10 @@ if (articleContents) {
 	const links = [...articleContents.querySelectorAll('.js-article-contents-link')]
 	const toggle = articleContents.querySelector('.js-article-contents-toggle')
 	const list = articleContents.querySelector('.js-article-contents-list')
-	const mobileContents = window.matchMedia('(max-width: 768px)')
 	const updateContentsVisibility = () => {
-		const collapsed =
-			mobileContents.matches && toggle.getAttribute('aria-expanded') === 'false'
+		const collapsed = toggle.getAttribute('aria-expanded') === 'false'
 		if (collapsed && list.contains(document.activeElement)) toggle.focus()
 		list.hidden = collapsed
-		if (!mobileContents.matches && document.activeElement === toggle) {
-			;(
-				links.find(link => link.hasAttribute('aria-current')) || links[0]
-			).focus({ preventScroll: true })
-		}
 	}
 	toggle.addEventListener('click', () => {
 		const expanded = toggle.getAttribute('aria-expanded') !== 'true'
@@ -584,7 +577,6 @@ if (articleContents) {
 			: '+'
 		updateContentsVisibility()
 	})
-	mobileContents.addEventListener('change', updateContentsVisibility)
 	updateContentsVisibility()
 	const updateContents = () =>
 		links.forEach(link => {

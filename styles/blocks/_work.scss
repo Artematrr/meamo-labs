@@ -1,0 +1,14 @@
+.work {
+	.grid {
+		@include mobile {
+			gap: 24px;
+		}
+	}
+	.card__description {
+		line-height: 1.42;
+		max-width: 250px;
+		@include mobile {
+			max-width: unset;
+		}
+	}
+}

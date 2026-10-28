@@ -1,0 +1,49 @@
+.expert-center {
+	&__all {
+		@include fluid-text(14, 14);
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		min-height: 48px;
+		font-weight: 500;
+		padding-block: 12px;
+		@include hover {
+			text-decoration: underline;
+		}
+	}
+	&__grid {
+		@include mobile {
+			gap: 24px;
+		}
+		.article-card[hidden] {
+			display: none;
+		}
+	}
+	&__topics {
+		padding-block: 16px;
+	}
+	&__empty {
+		padding-block: 32px;
+		p {
+			padding-block: 24px;
+			color: var(--color-muted);
+		}
+	}
+	&--listing {
+		padding-bottom: 32px;
+		@include mobile {
+			padding-bottom: 24px;
+		}
+		.expert-center__grid {
+			padding-block: 32px;
+			row-gap: 32px;
+			@include mobile {
+				padding-block: 24px 32px;
+				column-gap: 16px;
+			}
+		}
+		.pagination {
+			padding-top: 0;
+		}
+	}
+}
