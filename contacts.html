@@ -107,13 +107,13 @@
 						<legend class="form__legend">Как с вами связаться</legend>
 						<div class="form__row form__row--three">
 							<div class="form__field"><label class="form__label" for="request-name">Имя *</label><input
-									class="form__input" id="request-name" name="name" type="text" required autocomplete="name"
+									class="form__input js-request-control" id="request-name" name="name" type="text" required autocomplete="name"
 									placeholder="Ваше имя"></div>
 							<div class="form__field"><label class="form__label" for="request-email">Email</label><input
-									class="form__input" id="request-email" name="email" type="email" autocomplete="email"
+									class="form__input js-request-control" id="request-email" name="email" type="email" autocomplete="email"
 									placeholder="name@company.ru"></div>
 							<div class="form__field"><label class="form__label" for="request-phone">Телефон</label><input
-									class="form__input" id="request-phone" name="phone" type="tel" autocomplete="tel"
+									class="form__input js-request-control" id="request-phone" name="phone" type="tel" autocomplete="tel"
 									placeholder="Номер с кодом страны"></div>
 						</div>
 						<p class="form__hint">Достаточно одного способа связи</p>
@@ -122,39 +122,45 @@
 						<legend class="form__legend">Дополнительные сведения</legend>
 						<div class="form__row form__row--three">
 							<div class="form__field"><label class="form__label" for="request-company">Компания</label><input
-									class="form__input" id="request-company" name="company" type="text" autocomplete="organization"
+									class="form__input js-request-control" id="request-company" name="company" type="text" autocomplete="organization"
 									placeholder="Название клиники или компании"></div>
 							<div class="form__field"><label class="form__label" for="request-location">Страна / город</label><input
-									class="form__input" id="request-location" name="location" type="text" autocomplete="address-level2"
+									class="form__input js-request-control" id="request-location" name="location" type="text" autocomplete="address-level2"
 									placeholder="Город получения"></div>
 							<div class="form__field"><label class="form__label" for="request-products">Список продукции</label><input
-									class="form__input" id="request-products" name="products" type="text" autocomplete="off"
+									class="form__input js-request-control" id="request-products" name="products" type="text" autocomplete="off"
 									placeholder="Название и количество"></div>
 						</div>
 						<div class="form__field"><label class="form__label" for="request-message">Комментарий</label><textarea
-								class="form__textarea" id="request-message" name="message" rows="4"
+								class="form__textarea js-request-control" id="request-message" name="message" rows="4"
 								placeholder="Дополнительная информация о запросе."></textarea>
 						</div>
 					</fieldset>
 					<div class="form__field">
-						<div class="form__attachment"><label class="form__file-label" for="request-file"><img
+						<div class="form__attachment js-request-attachment"><label class="form__file-label" for="request-file"><img
 									src="/images/icons/paperclip.svg" alt="" width="32" height="24"><span class="js-request-file-label">Прикрепить файл или
 									фото</span><input class="form__file js-request-file" id="request-file" name="attachment" type="file"
-									accept=".pdf,.xlsx,.xls,.csv,.jpg,.jpeg,.png" aria-describedby="request-file-hint"></label><button
-								class="form__remove-file js-request-remove-file" type="button" hidden aria-label="Удалить выбранный файл">×</button></div>
+									accept=".pdf,.xlsx,.xls,.csv,.jpg,.jpeg,.png" aria-describedby="request-file-hint request-file-status"></label><button
+								class="form__remove-file js-request-remove-file" type="button" hidden aria-label="Удалить выбранный файл">×</button><span class="form__upload-description js-request-upload-description">Список продукции или фото упаковки</span></div>
 						<p class="form__hint" id="request-file-hint">Один файл до 10 МБ: PDF, XLSX, XLS, CSV, JPG, JPEG или PNG.</p>
-						<p class="form__file-status visually-hidden js-request-file-status" role="status" aria-atomic="true"></p>
+						<p class="form__file-status visually-hidden js-request-file-status" id="request-file-status" role="status" aria-atomic="true"></p>
 					</div>
-					<div class="form__consent"><input class="form__checkbox-input" id="request-consent" name="consent"
-							type="checkbox" value="yes"><label class="form__checkbox-label" for="request-consent">Даю <a
+					<div class="form__consent"><input class="form__checkbox-input js-request-control" id="request-consent" name="consent"
+							type="checkbox" value="yes" required><label class="form__checkbox-label" for="request-consent">Даю <a
 								href="personal-data.html">согласие на обработку персональных данных</a> и принимаю <a
 								href="privacy.html">политику конфиденциальности</a></label></div>
-					<p class="form__hint" id="request-required" hidden>* Обязательные поля. Вложение и сообщение — по желанию.</p>
+					<p class="form__hint" id="request-required">* Обязательные поля. Согласие обязательно. Вложение и сообщение — по желанию.</p>
 					<p class="form__status js-request-status" id="request-status" role="status" aria-atomic="true" hidden></p>
-					<button class="form__submit button" type="submit" aria-describedby="request-required request-status">Отправить
+					<button class="form__submit button js-request-submit" type="submit" aria-describedby="request-required request-status">Отправить
 						запрос
 						менеджеру</button>
 				</form>
+				<div class="form__success js-request-success" tabindex="-1" hidden>
+					<h2>Запрос отправлен</h2>
+					<p><span class="form__success-desktop">Спасибо! Мы получили ваш запрос. Менеджер свяжется с вами по указанному контакту.</span><span class="form__success-mobile">Менеджер свяжется с вами по указанным контактам.</span></p>
+					<a class="button" href="catalog.html">Перейти в каталог</a>
+					<p class="form__hint">Можно продолжить просмотр каталога.</p>
+				</div>
 			</div>
 		</section>
 	</main>

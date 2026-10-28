@@ -11,3 +11,6 @@
 9. [Экспертный центр](https://meamo-labs.vercel.app/expert-center.html)
 10. [Статья](https://meamo-labs.vercel.app/article.html)
 11. [Ошибка 404](https://meamo-labs.vercel.app/404.html)
+
+- [Тест компактной формы](https://meamo-labs.vercel.app/index.html?ui-demo=1#request)
+- [Тест полной формы](https://meamo-labs.vercel.app/contacts.html?ui-demo=1#request)

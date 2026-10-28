@@ -177,49 +177,330 @@ if (request) {
 		})
 	})
 
-	const updateFile = () => {
-		const file = fileInput.files[0]
-		const error =
-			file &&
-			(file.size > 10 * 1024 * 1024
-				? 'Выберите файл до 10 МБ.'
-				: !/\.(pdf|xlsx|xls|csv|jpe?g|png)$/i.test(file.name)
-					? 'Выберите файл PDF, XLSX, XLS, CSV, JPG, JPEG или PNG.'
-					: '')
-		fileInput.setCustomValidity(error || '')
-		fileLabel.textContent = file ? file.name : 'Прикрепить файл или фото'
-		removeFile.hidden = !file
-		fileStatus.textContent =
-			error || (file ? `Выбран файл: ${file.name}.` : 'Выбранный файл удалён.')
+	form.noValidate = true
+	const demo = new URLSearchParams(location.search).get('ui-demo') === '1'
+	const controls = [...form.querySelectorAll('.js-request-control')]
+	const submit = form.querySelector('.js-request-submit')
+	const attachment = form.querySelector('.js-request-attachment')
+	const fileDescription = form.querySelector('.js-request-upload-description')
+	status.setAttribute('aria-live', 'off')
+	const success = request.querySelector('.js-request-success')
+	let selectedFile = null
+	let fileError = ''
+	let submitted = false
+	let sending = false
+	const messages = new Map()
+	controls.forEach(input => {
+		const message = document.createElement('p')
+		message.className = 'form__message'
+		message.id = `${input.id}-message`
+		message.hidden = true
+		input.setAttribute('aria-describedby', message.id)
+		input.parentElement.append(message)
+		messages.set(input, message)
+	})
+	const setField = (input, error = '', valid = false) => {
+		input.setAttribute('aria-invalid', String(Boolean(error)))
+		input.classList.toggle('form__input--success', valid && !error)
+		const message = messages.get(input)
+		message.textContent = error || (valid ? (input.name === 'message' ? 'Комментарий добавлен' : 'Данные заполнены корректно') : '')
+		message.classList.toggle('form__message--success', valid && !error)
+		message.hidden = !message.textContent
 	}
-	fileInput.addEventListener('change', updateFile)
+	const phoneValid = value => /^\+[1-9]\d{1,14}$/.test(value.replace(/[\s()\-]/g, ''))
+	const emailValid = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+	const validate = () => {
+		const fields = form.elements
+		const name = fields.namedItem('name')
+		const contact = fields.namedItem('contact')
+		const email = fields.namedItem('email')
+		const phone = fields.namedItem('phone')
+		const consent = fields.namedItem('consent')
+		setField(name, name.value.trim() ? '' : 'Укажите имя.')
+		if (contact) {
+			if (/^[+\d\s()\-]+$/.test(contact.value)) maskPhone(contact)
+			const value = contact.value.trim()
+			setField(contact, !value ? 'Укажите email или телефон для ответа.' :
+				!(value.includes('@') ? emailValid(value) : phoneValid(value)) ? 'Проверьте email или номер с кодом страны.' : '')
+		} else {
+			const missing = !email.value.trim() && !phone.value.trim()
+			setField(email, missing ? 'Укажите email или телефон для ответа.' :
+				email.value.trim() && !emailValid(email.value.trim()) ? 'Проверьте email: например, name@company.ru' : '')
+			setField(phone, phone.value.trim() && !phoneValid(phone.value) ? 'Укажите номер с кодом страны.' : '')
+		}
+		setField(consent, consent.checked ? '' : 'Подтвердите согласие, чтобы отправить запрос')
+		return controls.find(input => input.getAttribute('aria-invalid') === 'true') || (fileError ? fileInput : null)
+	}
+	const maskPhone = input => {
+		const value = input.value
+		const cursor = input.selectionStart
+		const digits = value.replace(/\D/g, '').slice(0, 15)
+		input.value = digits ? `+${digits}` : value === '+' ? '+' : ''
+		const position = Math.min(input.value.length, value.slice(0, cursor).replace(/\D/g, '').length + (input.value ? 1 : 0))
+		input.setSelectionRange(position, position)
+	}
+	controls.forEach(input => {
+		input.addEventListener('input', () => {
+			if (input.type === 'tel' || (input.name === 'contact' && /^\+[\d\s()\-]*$/.test(input.value))) maskPhone(input)
+			if (submitted) validate()
+			else setField(input)
+		})
+		if (input.name === 'contact') input.addEventListener('blur', () => {
+			if (/^[+\d\s()\-]+$/.test(input.value)) maskPhone(input)
+			if (submitted) validate()
+		})
+	})
+
+	const showFile = (state = selectedFile ? 'attached' : 'default') => {
+		const errors = {
+			error: 'Не удалось загрузить файл. Повторите попытку.',
+			unsupported: 'Формат не поддерживается. PDF, XLSX, XLS, CSV, JPG, JPEG или PNG.',
+			oversize: 'Файл больше 10 МБ. Уменьшите размер или выберите другой.',
+			tooMany: 'Можно прикрепить один файл. Выберите нужный.',
+		}
+		fileError = errors[state] || ''
+		attachment.classList.toggle('form__attachment--error', Boolean(fileError))
+		attachment.classList.toggle('form__attachment--attached', state === 'attached')
+		fileInput.setAttribute('aria-invalid', String(Boolean(fileError)))
+		fileDescription.textContent = fileError ? 'Попробуйте ещё раз или выберите другой файл' : 'Список продукции или фото упаковки'
+		const info = selectedFile ? `${selectedFile.name} · ${Math.max(1, Math.round(selectedFile.size / 1024))} КБ` : 'Список продукции.xlsx · 24 КБ'
+		fileLabel.textContent = fileError || (state === 'default' ? 'Прикрепить файл или фото' : info)
+		fileStatus.textContent = state === 'uploading' ? 'Загружаем…' : fileError || (state === 'attached' ? 'Файл прикреплён' : '')
+		fileStatus.classList.toggle('visually-hidden', state !== 'uploading')
+		removeFile.hidden = state === 'default'
+	}
+	fileInput.addEventListener('change', () => {
+		if (!fileInput.files.length) return
+		const file = fileInput.files[0]
+		const state = fileInput.files.length > 1 ? 'tooMany' : file.size > 10 * 1024 * 1024 ? 'oversize' :
+			!/\.(pdf|xlsx|xls|csv|jpe?g|png)$/i.test(file.name) ? 'unsupported' : 'attached'
+		if (state === 'attached') selectedFile = file
+		else {
+			const retained = new DataTransfer()
+			if (selectedFile) retained.items.add(selectedFile)
+			fileInput.files = retained.files
+		}
+		showFile(state)
+	})
 	removeFile.addEventListener('click', () => {
+		selectedFile = null
 		fileInput.value = ''
-		updateFile()
+		showFile('default')
+		fileStatus.textContent = 'Выбранный файл удалён.'
 		fileInput.focus()
 	})
-	form.addEventListener('input', () => {
-		form.elements.namedItem('name').setCustomValidity('')
-		if (form.elements.namedItem('email'))
-			form.elements.namedItem('email').setCustomValidity('')
+
+	const feedback = document.createElement('aside')
+	feedback.className = 'form-feedback'
+	feedback.hidden = true
+	feedback.setAttribute('aria-label', 'Результат отправки запроса')
+	feedback.innerHTML = `<div class="form-feedback__message js-feedback-message" role="status" aria-live="polite" aria-atomic="true"><strong class="form-feedback__title js-feedback-title"></strong><p class="js-feedback-text"></p></div><button class="form-feedback__close js-feedback-close" type="button" aria-label="Закрыть уведомление">×</button><button class="button button--secondary js-feedback-retry" type="button" hidden>Повторить отправку</button>`
+	document.body.append(feedback)
+	const feedbackTitle = feedback.querySelector('.js-feedback-title')
+	const feedbackText = feedback.querySelector('.js-feedback-text')
+	const retry = feedback.querySelector('.js-feedback-retry')
+	const showFeedback = state => {
+		if (state !== 'success') {
+			form.hidden = false
+			success.hidden = true
+		}
+		sending = state === 'sending'
+		form.setAttribute('aria-busy', String(sending))
+		submit.disabled = sending
+		submit.textContent = sending ? 'Отправляем запрос…' : 'Отправить запрос менеджеру'
+		feedback.hidden = false
+		feedback.classList.toggle('form-feedback--error', state === 'error')
+		feedbackTitle.textContent = state === 'sending' ? 'Отправляем запрос…' : state === 'success' ? 'Запрос отправлен' : 'Не удалось отправить запрос'
+		feedbackText.textContent = state === 'sending' ? 'Пожалуйста, дождитесь завершения отправки.' : state === 'success' ?
+			'Спасибо! Мы получили ваш запрос. Менеджер свяжется с вами по указанному контакту.' : demo ?
+			'Введённые данные сохранены. Попробуйте ещё раз.' : 'Отправка пока не подключена. Введённые данные и выбранный файл сохранены.'
+		retry.hidden = state !== 'error'
+		status.textContent = feedbackText.textContent
+		status.hidden = false
+		status.classList.add('visually-hidden')
+		if (state === 'success') {
+			form.hidden = true
+			success.hidden = false
+			success.focus()
+		}
+	}
+	feedback.querySelector('.js-feedback-close').addEventListener('click', () => {
+		feedback.hidden = true
+		if (success.hidden) (sending && demo ? demoPanel : submit).focus()
+		else success.focus()
 	})
+	retry.addEventListener('click', () => form.requestSubmit())
 	form.addEventListener('submit', event => {
 		event.preventDefault()
-		const name = form.elements.namedItem('name')
-		name.setCustomValidity(name.value.trim() ? '' : 'Укажите имя.')
-		const email = form.elements.namedItem('email')
-		if (email)
-			email.setCustomValidity(
-				email.value.trim() || form.elements.namedItem('phone').value.trim()
-					? ''
-					: 'Укажите email или телефон.',
-			)
-		if (!form.reportValidity()) return
-		status.hidden = false
-		status.textContent =
-			'Не удалось отправить запрос. Попробуйте позже — заполненные поля и выбранный файл сохранены.'
-		status.tabIndex = -1
-		status.focus()
+		if (sending) return
+		submitted = true
+		const invalid = validate()
+		if (invalid) {
+			invalid.focus()
+			return
+		}
+		showFeedback(demo ? 'sending' : 'error')
+	})
+
+	let demoPanel
+	if (demo) {
+		demoPanel = document.createElement('div')
+		demoPanel.className = 'form__demo'
+		demoPanel.tabIndex = -1
+		demoPanel.innerHTML = `<strong>Демонстрация состояний — данные не отправляются</strong>
+			<p>Заполните форму и нажмите отправку. Состояние отправки сохраняется до выбора результата ниже.</p>
+			<div class="form__row">
+			<label class="form__field js-select-label">Поля<select class="js-select js-demo-fields"><option value="default">Исходное состояние</option><option value="filled">Заполнены</option><option value="error">Ошибка</option><option value="success">Корректно заполнены</option></select></label>
+			<label class="form__field js-select-label">Согласие<select class="js-select js-demo-consent"><option value="default">Не отмечено</option><option value="checked">Отмечено</option><option value="error">Ошибка</option></select></label>
+			<label class="form__field js-select-label">Вложение<select class="js-select js-demo-upload"><option value="default">Не выбрано</option><option value="uploading">Загружается</option><option value="attached">Прикреплено</option><option value="error">Ошибка загрузки</option><option value="unsupported">Неподдерживаемый формат</option><option value="oversize">Больше 10 МБ</option><option value="tooMany">Больше одного файла</option></select></label>
+			<label class="form__field js-select-label">Вид вложения<select class="js-select js-demo-upload-view"><option value="compact">Компактный</option><option value="full">Полный Upload</option></select></label>
+			</div><div class="form__demo-actions"><button class="button js-demo-feedback" data-state="sending" type="button">Отправка</button><button class="button button--secondary js-demo-feedback" data-state="error" type="button">Ошибка отправки</button><button class="button button--secondary js-demo-feedback" data-state="success" type="button">Успех</button><button class="button button--link js-demo-reset" type="button">Вернуться к форме / сбросить</button></div>
+			<details><summary>Состояния кнопок и селекта</summary><div class="form__demo-actions">${['', ' button--secondary', ' button--link'].map(mod => `<button type="button" class="button${mod}">Запросить условия</button><button type="button" class="button${mod}" disabled>Запросить условия</button>`).join('')}</div><label class="form__field js-select-label">Недоступный селект<select class="js-select" disabled><option>Все категории</option></select></label></details>`
+		form.before(demoPanel)
+		demoPanel.querySelector('.js-demo-fields').addEventListener('change', event => {
+			const state = event.target.value
+			controls.filter(input => input.type !== 'checkbox').forEach(input => {
+				input.value = state === 'default' ? '' : input.name === 'name' ? 'Анна' : input.name === 'email' || input.name === 'contact' ? 'buyer@example.com' : input.type === 'tel' ? '+821028416857' : 'Пример для просмотра состояния'
+				setField(input, state === 'error' ? 'Проверьте введённые данные' : '', state === 'success')
+			})
+		})
+		demoPanel.querySelector('.js-demo-consent').addEventListener('change', event => {
+			const consent = form.elements.namedItem('consent')
+			consent.checked = event.target.value === 'checked'
+			setField(consent, event.target.value === 'error' ? 'Подтвердите согласие, чтобы отправить запрос' : '')
+		})
+		demoPanel.querySelector('.js-demo-upload').addEventListener('change', event => showFile(event.target.value))
+		demoPanel.querySelector('.js-demo-upload-view').addEventListener('change', event => {
+			attachment.classList.toggle('form__attachment--full', event.target.value === 'full')
+		})
+		demoPanel.querySelectorAll('.js-demo-feedback').forEach(button => button.addEventListener('click', () => showFeedback(button.dataset.state)))
+		demoPanel.querySelector('.js-demo-reset').addEventListener('click', () => {
+			form.hidden = false
+			success.hidden = true
+			const context = form.elements.namedItem('context').value
+			form.reset()
+			form.elements.namedItem('context').value = context
+			submitted = false
+			sending = false
+			form.setAttribute('aria-busy', 'false')
+			submit.disabled = false
+			submit.textContent = 'Отправить запрос менеджеру'
+			controls.forEach(input => setField(input))
+			selectedFile = null
+			showFile('default')
+			attachment.classList.remove('form__attachment--full')
+			feedback.hidden = true
+			status.hidden = true
+			demoPanel.querySelectorAll('.js-select').forEach(select => {
+				select.selectedIndex = 0
+				select.dispatchEvent(new Event('change'))
+			})
+			controls[0].focus()
+		})
+	}
+}
+
+const enhanceSelect = select => {
+	const wrapper = document.createElement('span')
+	wrapper.className = 'select js-select-wrapper'
+	select.before(wrapper)
+	wrapper.append(select)
+	select.hidden = true
+	const button = document.createElement('button')
+	button.type = 'button'
+	button.className = 'select__button js-select-button'
+	button.setAttribute('role', 'combobox')
+	button.setAttribute('aria-haspopup', 'listbox')
+	button.setAttribute('aria-expanded', 'false')
+	const list = document.createElement('span')
+	list.className = 'select__list js-select-list'
+	list.id = `select-options-${document.querySelectorAll('.js-select-wrapper').length}`
+	list.setAttribute('role', 'listbox')
+	list.addEventListener('pointerdown', event => event.preventDefault())
+	list.hidden = true
+	button.setAttribute('aria-controls', list.id)
+	const label = select.closest('.js-select-label')
+	if (label) {
+		label.htmlFor = `${list.id}-button`
+		button.id = label.htmlFor
+		button.setAttribute('aria-label', label.firstChild.textContent.trim())
+		list.setAttribute('aria-label', label.firstChild.textContent.trim())
+	}
+	let active = select.selectedIndex
+	const options = [...select.options].map((option, index) => {
+		const item = document.createElement('span')
+		item.className = 'select__option js-select-option'
+		item.id = `${list.id}-${index}`
+		item.setAttribute('role', 'option')
+		item.textContent = option.textContent
+		item.addEventListener('click', event => {
+			event.preventDefault()
+			choose(index)
+		})
+		list.append(item)
+		return item
+	})
+	wrapper.append(button, list)
+	const highlight = index => {
+		active = index
+		options.forEach((option, i) => option.classList.toggle('select__option--active', i === active))
+		button.setAttribute('aria-activedescendant', options[active].id)
+		options[active].scrollIntoView({ block: 'nearest' })
+	}
+	const close = () => {
+		list.hidden = true
+		button.setAttribute('aria-expanded', 'false')
+		button.removeAttribute('aria-activedescendant')
+	}
+	const sync = () => {
+		button.textContent = select.options[select.selectedIndex].textContent
+		button.disabled = select.disabled
+		button.classList.toggle('select__button--placeholder', select.selectedIndex === 0)
+		options.forEach((option, i) => option.setAttribute('aria-selected', String(i === select.selectedIndex)))
+	}
+	const choose = index => {
+		select.selectedIndex = index
+		select.dispatchEvent(new Event('change', { bubbles: true }))
+		close()
+		button.focus()
+	}
+	const open = () => {
+		list.hidden = false
+		button.setAttribute('aria-expanded', 'true')
+		highlight(select.selectedIndex)
+	}
+	button.addEventListener('click', () => list.hidden ? open() : close())
+	button.addEventListener('keydown', event => {
+		if (event.key === 'Tab' || event.key === 'Escape') {
+			close()
+			if (event.key === 'Escape') event.preventDefault()
+			return
+		}
+		if (!['ArrowDown', 'ArrowUp', 'Home', 'End', 'Enter', ' '].includes(event.key)) return
+		event.preventDefault()
+		if (list.hidden) {
+			open()
+			if (event.key === 'Home' || event.key === 'End') highlight(event.key === 'Home' ? 0 : options.length - 1)
+		} else if (event.key === 'Enter' || event.key === ' ') choose(active)
+		else highlight(event.key === 'Home' ? 0 : event.key === 'End' ? options.length - 1 : Math.max(0, Math.min(options.length - 1, active + (event.key === 'ArrowDown' ? 1 : -1))))
+	})
+	document.addEventListener('click', event => {
+		if (!wrapper.contains(event.target)) close()
+	})
+	button.addEventListener('blur', close)
+	select.addEventListener('change', sync)
+	sync()
+}
+document.querySelectorAll('.js-select').forEach(enhanceSelect)
+const demoSort = document.querySelector('.js-catalog-sort')
+if (demoSort && new URLSearchParams(location.search).get('ui-demo') === '1') {
+	const label = document.createElement('label')
+	label.className = 'catalog-toolbar__demo form__hint'
+	label.innerHTML = '<input class="js-demo-sort-disabled" type="checkbox"> Демонстрация: отключить сортировку'
+	demoSort.closest('.js-select-label').after(label)
+	label.querySelector('.js-demo-sort-disabled').addEventListener('change', event => {
+		demoSort.disabled = event.target.checked
+		demoSort.dispatchEvent(new Event('change'))
 	})
 }
 

@@ -49,3 +49,20 @@
 		}
 	}
 }
+
+.button:disabled {
+	color: var(--color-muted);
+	background-color: var(--color-line);
+	border-color: var(--transparent);
+	cursor: default;
+	text-decoration: none;
+}
+.button--secondary:disabled {
+	color: var(--color-muted);
+	background-color: var(--color-white);
+	border-color: var(--color-line);
+}
+.button--link:disabled {
+	color: var(--color-muted);
+	background-color: var(--transparent);
+}
